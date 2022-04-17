@@ -76,6 +76,7 @@
   font-size: 19px;
   height: 57px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .my-profile-edit:active,
@@ -114,6 +115,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.transaction-history__sale:active,
+.transaction-history__purchase:active {
+  opacity: 0.7;
 }
 
 .transaction-history__sale {
