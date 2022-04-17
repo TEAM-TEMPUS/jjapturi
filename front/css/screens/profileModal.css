@@ -1,0 +1,99 @@
+.profile-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #d4d4d4;
+  background-color: white;
+  position: relative;
+  width: 522px;
+  height: 721px;
+  padding: 77px 33px 30px 33px;
+}
+
+.profile-cancel {
+  position: absolute;
+  right: 33px;
+  top: 33px;
+  font-size: 33px;
+  color: #4751FD;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 291px;
+  margin-bottom: 25px;
+}
+
+.profile__image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid #B1B1B1;
+}
+
+.profile__badge {
+  width: 91px;
+  height: 35px;
+}
+
+.profile__nickname {
+  font-weight: 500;
+  font-size: 27px;
+}
+
+.profile__phone-number-wrap {
+  font-size: 18px;
+}
+
+.profile__phone-icon {
+  margin-right: 5px;
+  color: #4751FD;
+}
+
+.transaction-info,
+.transaction-info__list {
+  width: 100%;
+}
+
+.transaction-info__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-bottom: 3px solid #B1B1B1;
+  padding: 0 41px;
+  margin-bottom: 20px;
+}
+
+.transaction-info__title {
+  font-size: 18px;
+  color: #787878;
+}
+
+.transaction-info__content {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 65px;
+}
+
+.profile__introduction {
+  line-height: 31px;
+  width: 420px;
+  height: 187px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.profile__introduction__title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.profile__introduction__content {
+  font-size: 18px;
+  color: #787878;
+}
