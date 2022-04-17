@@ -84,8 +84,7 @@
   line-height: 31px;
   width: 420px;
   height: 187px;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .profile__introduction__title {

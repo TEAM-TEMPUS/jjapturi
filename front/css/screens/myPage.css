@@ -61,6 +61,8 @@
   font-weight: 400;
   font-size: 22px;
   min-height: 72px;
+  max-height: 170px;
+  overflow-y: scroll;
 }
 
 .my-page__edit-buttons {
