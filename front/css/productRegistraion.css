@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap');
+
+/*전체 선택자*/
+* {
+  margin:0;   /* 마진 리셋 */
+  padding:0;   /* 패딩 리셋 */
+}
+
+/*div id 스타일 적용*/
+#container {
+  margin:0 auto;  /* 화면 중앙에 배치 */
+  width:900px;    /* 너비 */    
+  background-color: #fff;
+}
+
+/* 본문  main*/
+#contents {
+  width:700px;
+  margin:50px auto;  
+}
+
+/*상품등록 스타일적용*/
+div h2 {    
+  font-family:"Noto Sans KR";
+  font-size:38px;
+  font-weight:700px; /*폰트 폭 적용*/
+  text-align:center; /*텍스트 가운데 정렬해줌*/
+  margin:50px auto;
+  line-height: 2.5;
+}
+
+/*상품이미지 등록 스타일적용*/
+div h3 {
+  font-family:"Noto Sans KR";
+  font-weight:500px; /*폰트 폭 적용*/
+  font-size:18px;
+
+}
+
+/*사진선텍 스타일 적용*/
+
+input[type="file"]{
+  display: none;
+}
+label{
+  width:100px;
+  height:40px;    
+  background-color:#4751FD;
+  border:#ffffff;
+  color:#ffffff;
+  border-radius: 5px;
+  margin-left:85px;
+  padding-left:20px;
+   padding-top:10px; 
+}
+
+
+div span {
+  font-family:"Noto Sans KR";
+  font-weight:700px; /*폰트 폭 적용*/
+  font-size:14px;
+}
+
+/*이미지 스타일 적용*/
+div img {
+ width: 500px; 
+ height:300px;
+ border-radius: 5px;
+ margin-left:80px;
+}
+
+/*테이블안 title 스타일 적용*/
+.title{
+	font-family: "Noto Sans KR";
+	font-size:14px;
+	font-weight:400px;
+	border-radius:7px ;
+	border-color:#adb5bd;
+	color:#dee2e6;
+	width:700px; 
+	height:40px;
+	padding-left:10px;
+	margin-top:10px;
+	margin-left:-90px;
+}
+
+/*테이블안 category 스타일 적용*/
+.category{
+	font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+	margin-left:-90px;
+	margin-top:10px;
+}
+
+/*거래지역 스타일 적용*/
+.addr{
+	font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	
+	border-radius:7px ;
+	font-color:#000000;
+	width:700px; 
+	height:40px;
+	padding-left:10px;
+	margin-left:-90px;
+	margin-top:10px;
+}
+
+#date1{
+	font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+	margin-left:-90px;
+	margin-top:10px;
+}
+
+#date2{
+	font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+/*가격 스타일 적용*/
+.price{
+	font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+	margin-left:-90px;
+	margin-top:10px;
+}
+
+/*설명 스타일 적용*/
+#explanation{
+	font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:700px; 
+	height:200px;
+	padding-top:10px;
+	padding-left:10px;
+	margin-left:78px;
+	margin-top:10px;
+	
+}
+
+/*등록하기 버튼 스타일적용*/
+.button>button{
+
+  width:200px;
+  height:50px;    
+  background-color:#4751FD;
+  border:#ffffff;
+  color:#ffffff;
+  border-radius: 10px;
+  margin-left:350px;
+  margin-top:50px;
+}
+
+
+
