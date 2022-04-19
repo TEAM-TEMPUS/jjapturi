@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 상세페이지</title>
+    <!-- detailPage(Css)스타일 연결 -->
+    <link rel="stylesheet" href="css/detailPage.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+    <div id="wrap">
+    <header></header>
+    <div id="container-detailpage"> 
+     <main class="contents-detailpage">
+        <section class="detail-page">
+           <!-- 카테고리 -->
+            <div class="detail-page-category">
+            <h2>청소</h2>                                                       
+            </div>
+           
+           <!-- 상품등록 이미지-->
+            <div class="detail-productimge">
+              <img alt="" src="../imge/gibon.png">
+              <br><br>
+            </div>
+    
+           <!-- 사용자 프로필 정보 -->
+           <div class="detail-userprofile">
+             <img alt="" src="../imge/icon_mypage.png" class="myprofile">
+                   <ul class="detail-userprofile-info">
+                       <li>
+                           <p>차를너무사랑해</p>
+                           <p class="detail-userprofile-rank"> <img alt="" src="../imge/rank_bronze.png"></p>
+                       </li>
+                   </ul>
+           </div>
+           
+           <!-- 제품등록 정보 -->
+           <div class="detail-product-info">
+           <ul class="detail-product-item">
+                       <li>
+                           <p class="item-title">깨끗~하게 출장세차 해드려요</p>
+                           <p class="item-addr">대구광역시 달서구 송형1동</p>
+                           <p class="item-date"><img alt="" src="../imge/icon_calendar.png" class="imge-calendar">
+                           <span class="date-info">2022-04-23 ~ 2022-05-20</span>
+                           </p>
+                           <p class="item-price"><img alt="" src="../imge/status_reserved.png" class="imge-reservation">
+                           <span class="price-info">30,000원</span>
+                           </p>
+                       </li>
+                   </ul>
+           
+           </div>
+          <br><br>
+           <!-- 상품정보태그 -->
+           <div>
+               <h5>상품정보</h5>
+           </div>
+             <!-- 선긋기 -->
+         <hr style="border: solid 0.75px #ADADAD;">
+          
+          
+          <!-- 설명정보 등록 -->
+          <div class="product-explanation">
+          <p>
+          깨끗하게 세차해드립니다~ 시간으로 계산하는게 아닙니다.
+          아래 가격표 보시고 문의주세요!
+          일반세차
+          경/소형 30,000원
+            준중, 중형 40,000원
+          준대, 준대형 50,000원
+           SUV 60,000원
+          디테일링세차
+          경/소형 90,000원
+          준중, 중형 100,000원
+          준대, 준대형 110,000원
+          SUV 120,000원
+          *차종에 따라 가격변동 될수있음*
+          실내세차까지 원할 시 30,000원 추가
+          디테일링 소요시간 3시간 (차 오염도에 따라  달라집니다.)
+          디테일링은 엔진룸까지 포함입니다.
+          (업체 아니고 개인입니다!)
+          </p>
+          </div>
+          
+          <!-- 예약버튼 -->
+          <div class="detail-product-reservation">
+          <button class="product-reservation">예약중</button>
+          
+          </div>
+          
+          
+          <!-- 상품문의 태그 -->
+          <div class="detail-product-inquiry">
+              <h5>상품문의</h5>
+          
+          </div>
+          
+          <!-- 댓글 작성 -->
+          <div calss="detail-product-comment">
+          <textarea class="comment-info"></textarea>
+          </div>
+         
+         <!-- 상품문의 등록 버튼 -->
+         <div class="detail-product-inquiry-button">
+         <button class="product-inquiry-button">등록</button>
+         
+         
+         <br>
+         <!-- 선긋기 -->
+         <hr style="border: solid 0.75px #ADADAD;">
+         
+         
+         <!-- 댓글 작성 정보 -->
+          <div class="user-comment">
+               <img alt="" src="../imge/icon_mypage.png" class="myprofile">
+                   <ul class="user-comment-info">
+                       <li>
+                           <p class="user-nick-name">청소가 좋아</p>
+                           <p class="user-content">안녕하세요~ 혹시 다른 날짜로 조정할수있을까요? 그러면 가능할거같아요~</p>
+                           <!-- 선긋기 -->
+                         <hr style="border: solid 0.75px #ADADAD;">
+                       </li>
+                   </ul>
+          </div>
+          
+          <!-- 댓글 작성 정보 -->
+          <div class="user-comment">
+               <img alt="" src="../imge/icon_mypage.png" class="myprofile">
+                   <ul class="user-comment-info">
+                       <li>
+                           <p class="user-nick-name">나나미미</p>
+                           <p class="user-content">페이 조정가능할까요? 문의드립니다</p>
+                           <!-- 선긋기 -->
+                         <hr style="border: solid 0.75px #ADADAD;">
+                       </li>
+                   </ul>
+          </div>
+                  </section>
+             </main>
+        </div>
+        <footer></footer>
+    </div>
+    </body>
+    </html>
