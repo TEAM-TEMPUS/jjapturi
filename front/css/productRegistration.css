@@ -9,7 +9,7 @@
 }
 
 /*본문 중앙배치*/
-#container-inner {
+.container__inner {
     margin:0 auto;  /* 화면 중앙에 배치 */
     width:900px;    /* 너비 */    
     background-color: #fff;
@@ -92,7 +92,7 @@ input[type="file"]{
 	font-weight:400px;
 	border-radius:7px ;
 	border-color:#adb5bd;
-	color:#dee2e6;
+	color:#000000;
 	width:700px; 
 	height:40px;
 	padding-left:10px;
@@ -119,15 +119,14 @@ input[type="file"]{
 	font-weight:400px;
 	border-radius:7px ;
 	border-color:#adb5bd;
-	color:#dee2e6;
+	color:#000000;
 	width:700px; 
 	height:40px;
 	padding-left:10px;
     margin-left: 18px;
 }
 /*상품정보입력 스타일 적용(날짜)*/
-.product-registration-item__info1,
-.product-registration-item__info2{
+.product-registration-item__info1{
     font-family: "Noto Sans KR";
 	font-weight:400px; /*폰트 폭 적용*/
 	font-size:14px;
@@ -139,13 +138,25 @@ input[type="file"]{
     margin-left: 50px;
 	
 }
+.product-registration-item__info2{
+    font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+    margin-left: 20px;
+}
+
 
 /*날짜 물결표시*/
 .product-registration-item__flow{
     font-family: "Noto Sans KR";
 	font-weight:500px; /*폰트 폭 적용*/
 	font-size:24px;
-    margin-left: 50px;
+    margin-left:20px;
 }
 
 
