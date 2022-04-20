@@ -9,7 +9,7 @@
 }
 
 /*본문 중앙배치*/
-#container-inner {
+.container__inner {
     margin:0 auto;  /* 화면 중앙에 배치 */
     width: 800px;    /* 너비 */    
     background-color: #fff;
