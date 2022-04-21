@@ -1,8 +1,14 @@
+/* reset */
 @import "reset.css";
+
 /* home */
 @import "home.css";
+
 /* login */
 @import "login.css";
+
+/* product-list */
+@import "product-list.css";
 
 /* noonnu font */
 @font-face {
