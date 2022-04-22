@@ -206,6 +206,22 @@ textarea:focus{
     background-color:rgba(71,81,253,0.1);
   }  
 
+/*상품문의 스코롤바*/
+textarea::-webkit-scrollbar {
+    width: 10px;
+  }
+  textarea::-webkit-scrollbar-thumb {
+    background-color: #4751FD;
+    border-radius: 10px;
+  }
+  textarea::-webkit-scrollbar-track {
+    background-color: rgba(71,81,253,0.1);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+
+
+
 /*상품문의 등록 버튼*/
 .detailpage-info__inquirybtns{
 	display: block;
