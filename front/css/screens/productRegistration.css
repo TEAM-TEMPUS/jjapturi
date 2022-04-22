@@ -70,6 +70,7 @@ input[type="file"]{
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 
   }
  
@@ -217,6 +218,7 @@ block으로 바꾸어주는 것 => display: block으로 해주는 것이다*/
      color:#ffffff;
      margin:0 auto;
      margin-top: 50px;
+     cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 }
 
 /*온오프 버튼*/
@@ -236,6 +238,7 @@ input[type="checkbox"] {
     transition-duration: 0.2s;
     margin-top: -1395px;
     margin-left: 820px;
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
   }
   
   .onofbutton>label>span {
