@@ -5,28 +5,34 @@
 #product-list {
   display: flex;
   justify-content: center;
-  padding-top: 5rem;
-  padding-bottom: 11rem;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
 }
 
 .product-list__wrap {
-  width: 1024px;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-list__title {
   text-align: center;
   font: 700 28px "Noto Sans KR", sans-serif;
   color: #000;
-  margin-bottom: 6rem;
+  border-bottom: 1px solid #cacaca;
+  padding: 0 16px 3px;
+  margin-bottom: 5rem;
 }
 
 .product__wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
+/* product-item */
 .product-item__wrap {
   display: flex;
   flex-wrap: wrap;
@@ -38,6 +44,7 @@
 
 .product-item {
   width: 18rem;
+  margin-bottom: 3rem;
 }
 
 .product-item__inner {
@@ -65,7 +72,7 @@
   position: relative;
   width: 100%;
   height: 286px;
-  border-radius: 28px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -103,6 +110,7 @@
 
 .product-item__title {
   font-weight: 500;
+  font-size: 18px;
 }
 
 .product-item__place,
@@ -134,4 +142,55 @@
 
 .product-item__price::after {
   content: "원";
+}
+
+/* pagenation */
+.pagenation__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.pagenation__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagenation__inner a:last-child {
+  margin-right: 0;
+}
+
+.pagenation__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  border-radius: 3px;
+  color: #000;
+}
+
+.pagenation--previous,
+.pagenation--next {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.pagenation-number {
+  font: 400 16px "Noto Sans KR", sans-serif;
+  text-align: center;
+  background: #fff;
+}
+
+.pagenation-number:hover {
+  background-color: rgba(71, 80, 253, 0.2);
+  transition: 0.3s ease 0s;
+}
+
+.pagenation-number.current {
+  color: #fff;
+  background-color: #4751fd;
 }
