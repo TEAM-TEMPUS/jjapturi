@@ -150,6 +150,7 @@
     font-family:"Noto Sans KR";
   	font-size:18px;
   	font-weight:400px; /*폰트 폭 적용*/
+    line-height: 30px;  
 }
 
 /*예약버튼 스타일 적용*/
