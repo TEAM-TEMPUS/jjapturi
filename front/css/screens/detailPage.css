@@ -64,6 +64,7 @@
     width:60px;
 	height:20px;
     margin-left: 70px;
+    margin-top: 10px;
 }
 
 /*제품등록 정보 제목 적용*/
@@ -95,10 +96,12 @@
 
 /*제품등록 정보 날짜 적용*/
 .detailpage-info_dateinfo{
-	font-family:"Noto Sans KR";
+	position: absolute;
+    font-family:"Noto Sans KR";
   	font-size:22px;
   	font-weight:400; /*폰트 폭 적용*/
-    margin-top: 20px;
+    margin-top: 25px;
+    margin-left: 10px;
 }
 
 /*예약중 이미지*/
