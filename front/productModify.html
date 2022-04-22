@@ -21,19 +21,26 @@
               상품이미지 등록(필수)
             </h2>
 
+           <!--이미지 업로드를 위한 div부분-->
+           <div class="product-registration__imagspace">
             <img
               alt=""
               src="img/gibon.png"
               class="product-registration__imge"
+              id="product-registration__imge"
             />
-
+          </div>
             <!-- 사진업로드 -->
             <p class="product-registration__imgselect">
+              <!--이미지 다중 업로드를 위해 multiple작성 기본이미지에서 등록 이미지 변환하기 위해 onchange작성 -->
               <input
                 type="file"
                 id="file"
+                name="file"
+                multiple="multiple" 
                 accept="imge/*"
                 style="display: none"
+                onchange="setDetailImage(event);"
               />
               <label for="file">
                 <i class="fa-solid fa-rectangle-history-circle-plus"></i>
@@ -132,5 +139,6 @@
       <footer></footer>
       <!-- //footer -->
     </div>
+    <script src="js/productRegistration.js"></script>
   </body>
 </html>
