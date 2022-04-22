@@ -199,6 +199,12 @@
     margin-top: 80px;
 }
 
+/*상품 문의 클릭했을시 보더변환*/
+textarea:focus{
+    outline:1px solid #4751FD;
+    background-color:rgba(71,81,253,0.1);
+  }  
+
 /*상품문의 등록 버튼*/
 .detailpage-info__inquirybtns{
 	display: block;
