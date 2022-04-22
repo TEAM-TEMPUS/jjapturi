@@ -111,6 +111,13 @@
     margin-top: 20px;
 }
 
+/* 예약중 옆에 가격 정보*/
+.detailpage-info__priceinfo{
+   position: absolute;
+   height: 50px;
+   padding-top: 5px;
+
+}
 
 
 /*제품등록 정보 가격 적용*/
