@@ -14,6 +14,11 @@
       type="text/css"
       href="css/screens/profileModal.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/screens/reservationConfirmModal.css"
+    />
   </head>
   <body>
     <div id="wrap">
@@ -167,74 +172,108 @@
           </article>
         </main>
 
-        <section class="modal profile-modal">
-          <article class="modal__body">
-            <div class="profile-wrap">
-              <div class="profile-cancel">
-                <i class="fas fa-times"></i>
-              </div>
-
-              <div class="profile">
-                <img
-                  src="img/basic-profile-image.png"
-                  alt="프로필 사진"
-                  class="profile__image"
-                />
-
-                <img
-                  src="img/bronze-badge.png"
-                  alt="회원 등급"
-                  class="profile__badge"
-                />
-
-                <span class="profile__nickname">차를너무사랑해</span>
-
-                <div class="profile__phone-number-wrap">
-                  <i class="fas fa-phone-alt profile__phone-icon"></i>
-                  <span class="profile__phone-number">010-1234-1234</span>
+        <section class="modals">
+          <article class="modal profile-modal">
+            <div class="modal__body">
+              <div class="profile-wrap">
+                <div class="profile-cancel">
+                  <i class="fas fa-times"></i>
                 </div>
-              </div>
 
-              <div class="transaction-info">
-                <ul class="transaction-info__list">
-                  <li class="transaction-info__item">
-                    <span class="transaction-info__title">거래건수</span><br />
-                    <span class="transaction-info__content">4</span>
-                  </li>
+                <div class="profile">
+                  <img
+                    src="img/basic-profile-image.png"
+                    alt="프로필 사진"
+                    class="profile__image"
+                  />
 
-                  <li class="transaction-info__item">
-                    <span class="transaction-info__title">회원등급</span><br />
-                    <span class="transaction-info__content">브론즈</span>
-                  </li>
+                  <img
+                    src="img/bronze-badge.png"
+                    alt="회원 등급"
+                    class="profile__badge"
+                  />
 
-                  <li class="transaction-info__item">
-                    <span class="transaction-info__title">평점</span><br />
-                    <span class="transaction-info__content">5.0</span>
-                  </li>
-                </ul>
-              </div>
+                  <span class="profile__nickname">차를너무사랑해</span>
 
-              <div class="profile__introduction">
-                <h1 class="profile__introduction__title">자기 소개</h1>
+                  <div class="profile__phone-number-wrap">
+                    <i class="fas fa-phone-alt profile__phone-icon"></i>
+                    <span class="profile__phone-number">010-1234-1234</span>
+                  </div>
+                </div>
 
-                <p class="profile__introduction__content">
-                  안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
-                  감사하겠습니다 :) 안녕하세요~ 개인 출장 세차를 하고 있습니다.
-                  믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장 세차를
-                  하고 있습니다. 믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~
-                  개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면 감사하겠습니다
-                  :)안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
-                  감사하겠습니다 :)안녕하세요~ 개인 출장 세차를 하고 있습니다.
-                  믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장 세차를
-                  하고 있습니다. 믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~
-                  개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면 감사하겠습니다
-                  :)안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
-                  감사하겠습니다 :)안녕하세요~ 개인 출장 세차를 하고 있습니다.
-                  믿고 맡겨주시면 감사하겠습니다 :)
-                </p>
+                <div class="transaction-info">
+                  <ul class="transaction-info__list">
+                    <li class="transaction-info__item">
+                      <span class="transaction-info__title">거래건수</span
+                      ><br />
+                      <span class="transaction-info__content">4</span>
+                    </li>
+
+                    <li class="transaction-info__item">
+                      <span class="transaction-info__title">회원등급</span
+                      ><br />
+                      <span class="transaction-info__content">브론즈</span>
+                    </li>
+
+                    <li class="transaction-info__item">
+                      <span class="transaction-info__title">평점</span><br />
+                      <span class="transaction-info__content">5.0</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="profile__introduction">
+                  <h1 class="profile__introduction__title">자기 소개</h1>
+
+                  <p class="profile__introduction__content">
+                    안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
+                    감사하겠습니다 :) 안녕하세요~ 개인 출장 세차를 하고
+                    있습니다. 믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인
+                    출장 세차를 하고 있습니다. 믿고 맡겨주시면 감사하겠습니다
+                    :)안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고
+                    맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장 세차를
+                    하고 있습니다. 믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~
+                    개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
+                    감사하겠습니다 :)안녕하세요~ 개인 출장 세차를 하고 있습니다.
+                    믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장
+                    세차를 하고 있습니다. 믿고 맡겨주시면 감사하겠습니다
+                    :)안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고
+                    맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장 세차를
+                    하고 있습니다. 믿고 맡겨주시면 감사하겠습니다 :)
+                  </p>
+                </div>
               </div>
             </div>
           </article>
+
+          <!-- <article class="modal modal--reservation-confirm">
+            <div class="modal__body modal__body--reservation-confirm">
+              <div class="reservation-confirm">
+                <div class="reservation-confirm__description">
+                  <h1 class="reservation-confirm__description-title">
+                    예약하시겠습니까?
+                  </h1>
+
+                  <p class="reservation-confirm__description-content">
+                    확인을 누르시면
+                    <span class="reservation-confirm__nickname">junjun</span
+                    >님과 연결됩니다.<br />
+                    이후 채팅을 통해서 진행해주세요.
+                  </p>
+                </div>
+
+                <div class="reservation-confirm__buttons">
+                  <button type="button" class="reservation-confirm__check">
+                    확인
+                  </button>
+
+                  <button type="button" class="reservation-confirm__cancel">
+                    취소
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article> -->
         </section>
       </div>
       <!-- //container -->
