@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 /*전체 선택자로 리셋*/
 * {
@@ -19,7 +19,7 @@
 .detailpage-info__categorytitle{
     font-family:"Noto Sans KR";
     font-size:38px;
-    font-weight:700px; /*폰트 폭 적용*/
+    font-weight:700; /*폰트 폭 적용*/
     text-align:center; /*텍스트 가운데 정렬해줌*/
     margin: 0 auto;
     line-height: 2.5;
@@ -53,7 +53,7 @@
     display: flex;
     font-family:"Noto Sans KR";
     font-size:22px;
-    font-weight:400px; /*폰트 폭 적용*/
+    font-weight:400; /*폰트 폭 적용*/
     margin-top: -55px;
     margin-left: 70px;
 }
@@ -71,7 +71,7 @@
 .detailpage-info__title{
     font-family:"Noto Sans KR";
     font-size:32px;
-    font-weight:700px; /*폰트 폭 적용*/
+    font-weight:700; /*폰트 폭 적용*/
     margin-top: 20px;
 }
 
@@ -79,7 +79,7 @@
 .detailpage-info__addr{
 	font-family:"Noto Sans KR";
   	font-size:22px;
-  	font-weight:400px; /*폰트 폭 적용*/
+  	font-weight:400; /*폰트 폭 적용*/
   	color:#dee2e6;
     margin-top: 20px;
 
@@ -97,7 +97,7 @@
 .detailpage-info_dateinfo{
 	font-family:"Noto Sans KR";
   	font-size:22px;
-  	font-weight:400px; /*폰트 폭 적용*/
+  	font-weight:400; /*폰트 폭 적용*/
     margin-top: 20px;
 }
 
@@ -115,7 +115,7 @@
 	position: absolute;
     font-family:"Noto Sans KR";
   	font-size:32px;
-  	font-weight:700px; /*폰트 폭 적용*/
+  	font-weight:700; /*폰트 폭 적용*/
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -124,7 +124,7 @@
 .detailpage-info__productname{
     font-family:"Noto Sans KR";
   	font-size:26px;
-  	font-weight:500px; /*폰트 폭 적용*/
+  	font-weight:500; /*폰트 폭 적용*/
     margin-top: 50px;  
 }
 
@@ -152,7 +152,7 @@
 	border-radius: 10px;
 	border-color:#4751FD;
     margin:0 auto;
-    align-text:center;
+    text-align: center;
 }
 
 /*상품문의 태그*/
@@ -160,7 +160,7 @@
     position: absolute;
     font-family:"Noto Sans KR";
   	font-size:26px;
-  	font-weight:500px; /*폰트 폭 적용*/
+  	font-weight:500; /*폰트 폭 적용*/
     margin-top: 30px;
 
 
@@ -219,7 +219,7 @@
 .detailpage-info__username{
     font-family:"Noto Sans KR";
   	font-size:20px;
-  	font-weight:500px; /*폰트 폭 적용*/
+  	font-weight:500; /*폰트 폭 적용*/
     margin-top: -60px;
     margin-left: 70px;
 }
@@ -228,7 +228,7 @@
 .detailpage-info__usercomment{
     font-family:"Noto Sans KR";
   	font-size:18px;
-  	font-weight:400px; /*폰트 폭 적용*/
+  	font-weight:400; /*폰트 폭 적용*/
     color:#adb5bd;
     margin-left: 70px;
 }
