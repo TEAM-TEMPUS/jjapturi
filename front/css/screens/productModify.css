@@ -41,14 +41,15 @@
     font-size:18px;
 }
 
+/*이미지등록하면 이미지나타나는 스타일 적용*/
 /*이미지 스타일 적용*/
-.product-registration__imge{
-    width: 500px; 
-    height:300px;
-    border-radius: 5px;
-    margin-left:80px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+.product-registration__imagspace{
+  width: 700px; 
+  height:300px;
+  border-radius: 5px;
+  margin-left:80px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 
 }
 
@@ -112,7 +113,7 @@ textarea::placeholder{
     color:#adb5bd;
 }
 
-/*input 내용 선택했을시 보더 생상변화*/
+/*input 내용 선택했을시 보더 색상변화*/
 input:focus {
     outline:1px solid #4751FD;
     background-color:rgba(71,81,253,0.1);
@@ -125,7 +126,7 @@ input:focus {
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-	color:#adb5bd;
+	/*color:#adb5bd;*/
 	width:200px; 
 	height:40px;
 	padding-left:10px;
