@@ -226,6 +226,7 @@ select:focus{
 
 /*상품정보입력 스타일 적용(설명)*/
 .product-registration-explanation__explain{
+    resize:none; /*창 늘리고 줄이는거 없앰*/
     font-family: "Noto Sans KR";
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
