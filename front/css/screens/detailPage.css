@@ -152,6 +152,7 @@
     font-family:"Noto Sans KR";
   	font-size:18px;
   	font-weight:400px; /*폰트 폭 적용*/
+    line-height: 30px;  
 }
 
 /*예약버튼 스타일 적용*/
@@ -165,6 +166,7 @@
 	border-color:#4751FD;
     margin:0 auto;
     text-align: center;
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 }
 
 /*상품문의 태그*/
@@ -201,6 +203,7 @@
 	border-color:#4751FD;
 	margin-top: 10px;
     margin-left: 91%;
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 
 	
 }
@@ -224,7 +227,8 @@
     width:50px;
 	height:50px;
 	border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 
@@ -233,7 +237,7 @@
     font-family:"Noto Sans KR";
   	font-size:20px;
   	font-weight:500; /*폰트 폭 적용*/
-    margin-top: -60px;
+    margin-top: -100px;
     margin-left: 70px;
 }
 
@@ -244,6 +248,7 @@
   	font-weight:400; /*폰트 폭 적용*/
     color:#adb5bd;
     margin-left: 70px;
+    margin-top: 10px;
 }
 
 /*선 긋기*/
