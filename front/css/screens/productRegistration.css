@@ -112,6 +112,12 @@ textarea::placeholder{
     color:#adb5bd;
 }
 
+/*input 내용 선택했을시 보더 생상변화*/
+input:focus {
+    outline:1px solid #4751FD;
+    background-color:rgba(71,81,253,0.1);
+  }
+
 
 
 /*상품정보입력 스타일 적용(카테고리)*/
@@ -139,6 +145,12 @@ select option:nth-child(5),
 select option:nth-child(6){
     color: #000000;
 }
+
+/*상품정보입력 카테고리 선택했을때 보더변환*/
+select:focus{
+    outline:1px solid #4751FD;
+    background-color:rgba(71,81,253,0.1);
+  }  
 
 /*상품정보입력 스타일 적용(거래지역)*/
 .product-registration-addr_info{
@@ -228,6 +240,14 @@ select option:nth-child(6){
 
 }
 
+/*상품정보입력 선택했을시 보더 변환*/
+textarea:focus{
+    outline:1px solid #4751FD;
+    background-color:rgba(71,81,253,0.1);
+  }  
+
+
+
 /*등록하기 버튼*/
 /*margin:0 auto했는데 버튼이 중앙으로 가지않는다면
  inline이 기본인 button을 
@@ -307,4 +327,3 @@ input[type="checkbox"] {
     /* left: 29px; */
     transform: translateX(26px);
   }
-
