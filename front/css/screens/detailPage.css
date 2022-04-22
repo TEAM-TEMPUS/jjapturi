@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
-
+@import "../components/modal.css";
+@import "../components/reservationConfirmModal.css";
+@import "../components/profileModal.css";
 /*전체 선택자로 리셋*/
 * {
   margin:0;   /* 마진 리셋 */
