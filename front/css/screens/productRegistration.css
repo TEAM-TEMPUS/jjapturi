@@ -103,18 +103,43 @@ input[type="file"]{
 	
 }
 
+/*placeholder 색상 주기*/
+input::placeholder{
+    color:#adb5bd;
+}
+
+textarea::placeholder{
+    color:#adb5bd;
+}
+
+
+
 /*상품정보입력 스타일 적용(카테고리)*/
 .product-registration-category__info{
     font-family: "Noto Sans KR";
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-	font-color:#000000;
+	color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
     margin-left: 18px;
 }
+
+/*상품정보입력 카테고리 스타일 적용*/
+select option:first-child{
+    color: #adb5bd;
+}
+
+select option:nth-child(2),
+select option:nth-child(3),
+select option:nth-child(4),
+select option:nth-child(5),
+select option:nth-child(6){
+    color: #000000;
+}
+
 /*상품정보입력 스타일 적용(거래지역)*/
 .product-registration-addr_info{
     font-family: "Noto Sans KR";
@@ -134,7 +159,7 @@ input[type="file"]{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-	font-color:#000000;
+	color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
@@ -146,7 +171,7 @@ input[type="file"]{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-	font-color:#000000;
+	color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
@@ -169,7 +194,7 @@ input[type="file"]{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px;
-	font-color:#000000;
+	color:#000000;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
@@ -193,7 +218,7 @@ input[type="file"]{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-	font-color:#000000;
+	color:#000000;
 	width:700px; 
 	height:200px;
 	padding-top:10px;
@@ -282,3 +307,4 @@ input[type="checkbox"] {
     /* left: 29px; */
     transform: translateX(26px);
   }
+
