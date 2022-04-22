@@ -61,11 +61,13 @@ input[type="file"]{
     display: block;
     text-align: center;
     width:100px;
-    height:20px;    
+    height:40px;    
     background-color:#4751FD;
     border:#ffffff;
     color:#ffffff;
     border-radius: 5px;
+    margin-left: -5px;
+    margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
 
@@ -227,8 +229,8 @@ input[type="checkbox"] {
   .onofbutton>label {
     display: block;
     position: absolute;
-    width: 60px;
-    height: 15px;
+    width: 62px;
+    height: 35px;
     border-radius: 17px;
     background-color: #4751FD;
     transition-duration: 0.2s;
