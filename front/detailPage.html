@@ -8,6 +8,12 @@
     <title>상품 상세 페이지</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/screens/detailpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/components/modal.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/screens/profileModal.css"
+    />
   </head>
   <body>
     <div id="wrap">
@@ -78,7 +84,7 @@
                     src="img/status_reserved.png"
                     class="detailpage-info__reservationimge"
                   />
-                <!--예약중 옆에 가격 정보-->  
+                  <!--예약중 옆에 가격 정보-->
                   <span class="detailpage-info__priceinfo">30,000원</span>
                 </li>
               </ul>
@@ -160,6 +166,76 @@
             </div>
           </article>
         </main>
+
+        <section class="modal profile-modal">
+          <article class="modal__body">
+            <div class="profile-wrap">
+              <div class="profile-cancel">
+                <i class="fas fa-times"></i>
+              </div>
+
+              <div class="profile">
+                <img
+                  src="img/basic-profile-image.png"
+                  alt="프로필 사진"
+                  class="profile__image"
+                />
+
+                <img
+                  src="img/bronze-badge.png"
+                  alt="회원 등급"
+                  class="profile__badge"
+                />
+
+                <span class="profile__nickname">차를너무사랑해</span>
+
+                <div class="profile__phone-number-wrap">
+                  <i class="fas fa-phone-alt profile__phone-icon"></i>
+                  <span class="profile__phone-number">010-1234-1234</span>
+                </div>
+              </div>
+
+              <div class="transaction-info">
+                <ul class="transaction-info__list">
+                  <li class="transaction-info__item">
+                    <span class="transaction-info__title">거래건수</span><br />
+                    <span class="transaction-info__content">4</span>
+                  </li>
+
+                  <li class="transaction-info__item">
+                    <span class="transaction-info__title">회원등급</span><br />
+                    <span class="transaction-info__content">브론즈</span>
+                  </li>
+
+                  <li class="transaction-info__item">
+                    <span class="transaction-info__title">평점</span><br />
+                    <span class="transaction-info__content">5.0</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="profile__introduction">
+                <h1 class="profile__introduction__title">자기 소개</h1>
+
+                <p class="profile__introduction__content">
+                  안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
+                  감사하겠습니다 :) 안녕하세요~ 개인 출장 세차를 하고 있습니다.
+                  믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장 세차를
+                  하고 있습니다. 믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~
+                  개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면 감사하겠습니다
+                  :)안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
+                  감사하겠습니다 :)안녕하세요~ 개인 출장 세차를 하고 있습니다.
+                  믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장 세차를
+                  하고 있습니다. 믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~
+                  개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면 감사하겠습니다
+                  :)안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
+                  감사하겠습니다 :)안녕하세요~ 개인 출장 세차를 하고 있습니다.
+                  믿고 맡겨주시면 감사하겠습니다 :)
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
       </div>
       <!-- //container -->
       <!-- footer -->
