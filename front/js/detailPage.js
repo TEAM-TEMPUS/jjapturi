@@ -1,15 +1,36 @@
 const body = document.querySelector("body");
-const detailPageInfoReservationBtn = document.querySelector(".detailpage-info__reservationbtn");
-const reservationConfirmCancel = document.querySelector(".reservation-confirm__cancel");
-const modalReservationConfirm = document.querySelector(".modal--reservation-confirm");
 
-detailPageInfoReservationBtn.addEventListener("click", function() {
-  modalReservationConfirm.style.display = "block";
-  body.style.overflow = "hidden"
-});
+function addReservationConfirmModalEvent() {
+  const detailPageInfoReservationBtn = document.querySelector(".detailpage-info__reservationbtn");
+  const reservationConfirmCancel = document.querySelector(".reservation-confirm__cancel");
+  const modalReservationConfirm = document.querySelector(".modal--reservation-confirm");
+  
+  detailPageInfoReservationBtn.addEventListener("click", function() {
+    modalReservationConfirm.style.display = "block";
+    body.style.overflow = "hidden"
+  });
+  
+  reservationConfirmCancel.addEventListener("click", function() {
+    modalReservationConfirm.style.display = "none";
+    body.style.overflowY = "scroll"
+  });
+}
 
-reservationConfirmCancel.addEventListener("click", function() {
-  modalReservationConfirm.style.display = "none";
-  body.style.overflowY = "scroll"
-})
+function addProfileModalEvent() {
+  const detailPagePublisherInfo = document.querySelector(".detailpage-publisher-info");
+  const profileCancel = document.querySelector(".profile-cancel");
+  const modalProfile = document.querySelector(".modal--profile");
 
+  detailPagePublisherInfo.addEventListener("click", function() {
+    modalProfile.style.display = "block";
+    body.style.overflow = "hidden"
+  });
+  
+  profileCancel.addEventListener("click", function() {
+    modalProfile.style.display = "none";
+    body.style.overflowY = "scroll"
+  });
+}
+
+addReservationConfirmModalEvent();
+addProfileModalEvent();
