@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- favicon -->
-	<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- favicon -->
+<link rel="icon" type="image/png" sizes="32x32"
+	href="../img/favicon-32x32.png">
 
-	<title>타임마켓</title>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../css/membersignup.css" />
+<title>타임마켓</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../css/screens/membersignup.css" />
 </head>
-
 <body>
 	<header id="header-bar" class="header-bar-box">
 		<div class="header-bar-box__wrap">
@@ -23,87 +23,84 @@
 						<img src="../img/logo_200.png" alt="타임마켓" class="header-logo">
 						<p class="logo">타임마켓</p>
 					</div>
-				</a>
-			</div>
-		</div>
+				</a>	
+				</div>
+				</div>		
 	</header>
 
 
 
-	<div class="main-content">
+<div class="main-content">	
 
-		<h2 class="member-title text-center">회원가입</h2>
+						<h2 class="member-title text-center">회원가입</h2>
 
-		<!-- Form 시작 -->
-		<form class="form-signup" id="join" action="join" method="post" name="joinform">
+						<!-- Form 시작 -->
+						<form class="form-signup" id="join" action="join" method="post" name="joinform">
+			
+							<!-- 닉네임 -->
+							<div class="form-label-group">
+								<label for="nickname">닉네임</label>
+								<br>
+								<div class="form-input-box">
+									<input type="text" id="nickname" name="nickname" class="form-control" placeholder="닉네임" required=""> 
+									<button type="submit" class="btn btn-info btn-sm">중복확인</button>
+								</div>
+								
+							</div>
+							
+							<!-- 아이디 -->
+							<div class="form-label-group">
+								<label for="id">아이디</label>
+								<br>
+								<div class="form-input-box">
+									<input type="text" id="id" name="id" class="form-control" placeholder="아이디" required=""> 
+									<button type="submit" class="btn btn-info btn-sm">중복확인</button>	
+								</div>
+								
+							</div>
+							
+							<!-- 비밀번호 -->
+							<div class="form-label-group">
+								<label for="pwd">비밀번호</label>
+								<br>
+								<input type="password" id="pwd" name="pwd" class="form-control form-margin-top" placeholder="비밀번호" required=""> 
+							</div>
 
-			<!-- 닉네임 -->
-			<div class="form-label-group">
-				<label for="nickname">닉네임</label>
-				<br>
-				<div class="form-input-box">
-					<input type="text" id="nickname" name="nickname" class="form-control" placeholder="닉네임" required="">
-					<button type="submit" class="btn btn-info btn-sm">중복확인</button>
-				</div>
+							<div class="form-label-group">
+								<label for="pwdcheck">비밀번호 재확인</label>	
+								<br>						
+								<input type="password" id="pwdcheck" name="pwdcheck" class="form-control form-margin-top" placeholder="비밀번호 재확인" required="">
+							</div>
 
-			</div>
-
-			<!-- 아이디 -->
-			<div class="form-label-group">
-				<label for="id">아이디</label>
-				<br>
-				<div class="form-input-box">
-					<input type="text" id="id" name="id" class="form-control" placeholder="아이디" required="">
-					<button type="submit" class="btn btn-info btn-sm">중복확인</button>
-				</div>
-
-			</div>
-
-			<!-- 비밀번호 -->
-			<div class="form-label-group">
-				<label for="pwd">비밀번호</label>
-				<br>
-				<input type="password" id="pwd" name="pwd" class="form-control form-margin-top" placeholder="비밀번호"
-					required="">
-			</div>
-
-			<div class="form-label-group">
-				<label for="pwdcheck">비밀번호 재확인</label>
-				<br>
-				<input type="password" id="pwdcheck" name="pwdcheck" class="form-control form-margin-top"
-					placeholder="비밀번호 재확인" required="">
-			</div>
-
-			<div class="form-label-group">
-				<label for="addr">주소</label>
-				<br>
-				<input type="text" name="addr" class="form-control form-margin-top" placeholder="주소">
-			</div>
-
-			<!-- 문제의 input 부분 -->
-			<div class="form-label-group">
-				<label for="email">이메일</label>
-				<br>
-				<input type="email" id="email" name="email" class="form-control form-margin-top" placeholder="이메일">
-			</div>
-
-			<div class="form-label-group btn-sign-up-margin">
-				<label for="phone">휴대전화</label>
-				<br>
-				<input type="text" id="phone" name="phone" class="form-control form-margin-top" placeholder="휴대전화"
-					required="">
-			</div>
-
-
-			<button type="submit" class="btn btn-default">
-				<p class="btn-sign-up">
-					가입하기
-				</p>
-			</button>
-
-
-		</form>
-	</div>
+							<div class="form-label-group">
+								<label for="addr">주소</label>
+								<br>
+								<input type="text" name="addr" class="form-control form-margin-top" placeholder="주소"> 
+							</div>
+						
+							<!-- 문제의 input 부분 -->
+							<div class="form-label-group">
+								<label for="email">이메일</label>
+								<br>		
+								<input type="email" id="email" name="email" class="form-control form-margin-top" placeholder="이메일"> 
+							</div>
+										
+							<div class="form-label-group btn-sign-up-margin">
+								<label for="phone">휴대전화</label>
+								<br>	
+								<input type="text" id="phone" name="phone" class="form-control form-margin-top" placeholder="휴대전화" required=""> 
+							</div>
+							
+							
+							<button type="submit" class="btn btn-default">
+								<p class="btn-sign-up">
+									가입하기
+								</p>
+							</button>
+					
+				
+						</form>
+					</div>
 
 
 
@@ -114,42 +111,39 @@
 		<div class="p-footer__inner">
 			<div class="p-footer__site-group-list">
 				<ul class="p-footer__site-group">
-					<li>
-						<div class="p-footer__site-group-title">4조 세미프로젝트</div>
-					</li>
-					<li class="p-footer__site-group-item"><a href="#">홍길동:aaa@gmail.com</a></li>
-
-					<li class="p-footer__site-group-item"><a href="#">홍길동:aaa@gmail.com</a></li>
-
-					<li class="p-footer__site-group-item"><a href="#">홍길동:aaa@gmail.com</a></li>
-
-					<li class="p-footer__site-group-item"><a href="#">홍길동:aaa@gmail.com</a></li>
-
+					<li><div class="p-footer__site-group-title">4조 세미프로젝트</div></li>
+					<li class="p-footer__site-group-item"><a
+						href="#">홍길동:aaa@gmail.com</a></li>
+						
+					<li class="p-footer__site-group-item"><a
+						href="#">홍길동:aaa@gmail.com</a></li>
+						
+					<li class="p-footer__site-group-item"><a
+						href="#">홍길동:aaa@gmail.com</a></li>
+						
+					<li class="p-footer__site-group-item"><a
+						href="#">홍길동:aaa@gmail.com</a></li>
+						
 					<br>
 					<li class="p-footer__site-group-item">
-						<b>@2022 Article 4 Semi-Project.All rights reserved.</b>
-					</li>
-
+						<b>@2022 Article 4 Semi-Project.All rights reserved.</b></li>
+					
 				</ul>
-
+				
 				<ul class="p-footer__site-group">
-					<li>
-						<div class="p-footer__site-group-title">SKILLS</div>
-					</li>
-					<li class="p-footer__site-group-item"><a href="#">JAVA,HTML,CSS,Javascript,Git,Bla</a></li>
+					<li><div class="p-footer__site-group-title">SKILLS</div></li>
+					<li class="p-footer__site-group-item"><a
+						href="#">JAVA,HTML,CSS,Javascript,Git,Bla</a></li>				
 				</ul>
-
+				
 				<ul class="p-footer__site-group">
-					<li>
-						<div class="p-footer__site-group-title">GITHUB</div>
-					</li>
-					<li class="p-footer__site-group-item"><a href="#">깃허브 어쩌구 저쩌구 샬라샬라</a></li>
-
+					<li><div class="p-footer__site-group-title">GITHUB</div></li>
+					<li class="p-footer__site-group-item"><a
+						href="#">깃허브 어쩌구 저쩌구 샬라샬라</a></li>
+					
 				</ul>
 				<ul class="p-footer__site-group">
-					<li>
-						<div class="p-footer__site-group-title">고객센터</div>
-					</li>
+					<li><div class="p-footer__site-group-title">고객센터</div></li>
 					<li class="p-footer__site-group-item"><a href="#">시간마켓 고객센터</a></li>
 
 				</ul>
@@ -158,7 +152,6 @@
 	</footer>
 
 
-
+	
 </body>
-
 </html>
