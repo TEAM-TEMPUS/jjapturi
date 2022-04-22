@@ -41,9 +41,10 @@
     font-size:18px;
 }
 
+/*이미지등록하면 이미지나타나는 스타일 적용*/
 /*이미지 스타일 적용*/
-.product-registration__imge{
-    width: 500px; 
+.product-registration__imagspace{
+    width: 700px; 
     height:300px;
     border-radius: 5px;
     margin-left:80px;
@@ -165,6 +166,7 @@ select:focus{
 	padding-left:10px;
     margin-left: 18px;
 }
+
 /*상품정보입력 스타일 적용(날짜)*/
 .product-registration-item__info1{
     font-family: "Noto Sans KR";
