@@ -48,6 +48,7 @@
 	border-radius: 20px;
     margin-top:40px;
     margin-left: 10px;
+
 }
 
 /*프로필 닉네임,등급 위치*/
@@ -58,6 +59,12 @@
     font-weight:400; /*폰트 폭 적용*/
     margin-top: -55px;
     margin-left: 70px;
+
+}
+
+/*사용자 프로필 마우스 포인터 손모양으로 바꿈 */
+.detailpage-publisher-info{
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 }
 
 
@@ -256,3 +263,4 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
