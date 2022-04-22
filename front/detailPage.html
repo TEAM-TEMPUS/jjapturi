@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>상품 상세 페이지</title>
+    <link rel="stylesheet" type="text/css" href="css/detailpage.css" />
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+      </header>
+      <!-- container -->
+      <div id="container">
+        
+        <main class="container__inner">
+          <article class="detailpage-info">
+            <!--제목-->
+            <h2 class="detailpage-info__categorytitle">청소</h2>
+            <!--등록이미지-->
+          <img alt="" src="imge/gibon.png" class="detailpage-info__productimge">
+
+            <div>
+               
+                <ul class="detailpage-info__list">
+                    <!--등록자 정보-->
+                    <li class="detailpage-info__item">
+                        <img alt="" src="imge/icon_mypage.png" class="detailpage-info__registrantimge">
+                        <span class="detailpage-info__registrantname">차를너무사랑해</span>
+                        <span class="detailpage-info__rank"><img alt="" src="imge/rank_bronze.png" class="detailpage-info__rankinfo"></span>
+                    </li>
+
+                    <!--등록제목-->
+                    <li class="detailpage-info__item">
+                        <h2 class="detailpage-info__title">깨끗~하게 출장세차 해드려요</h2>
+                    </li>
+
+                    <!--거래지역-->
+                    <li class="detailpage-info__item">
+                        <h2 class="detailpage-info__addr">대구광역시 달서구 송형1동</h2>
+                    </li>
+
+                    <!--날짜-->
+                    <li class="detailpage-info__item">
+                        <img alt="" src="imge/icon_calendar.png" class="detailpage-info__dateimge">
+                        <span class="detailpage-info_dateinfo">2022-04-23 ~ 2022-05-20</span>
+                    </li>
+
+                    <!--예약중과 가격-->
+                    <li class="detailpage-info__item">
+                        <img alt="" src="imge/status_reserved.png" class="detailpage-info__reservationimge">
+                        <span class="detailpage-info__priceinfo">30,000원</span>
+                    </li>
+                </ul>
+            </div>
+            
+              <!-- 설명정보 등록 -->
+            <div class="detailpage-info_product">
+                <h5 class="detailpage-info__productname">상품정보</h5>
+                 <!-- 선긋기 -->
+                <hr class="detailpage-info__line">
+                <p class="detailpage-info__contents">
+                    깨끗하게 세차해드립니다~ 시간으로 계산하는게 아닙니다.
+                    아래 가격표 보시고 문의주세요!
+                    일반세차
+                    경/소형 30,000원
+                      준중, 중형 40,000원
+                    준대, 준대형 50,000원
+                     SUV 60,000원
+                    디테일링세차
+                    경/소형 90,000원
+                    준중, 중형 100,000원
+                    준대, 준대형 110,000원
+                    SUV 120,000원
+                    *차종에 따라 가격변동 될수있음*
+                    실내세차까지 원할 시 30,000원 추가
+                    디테일링 소요시간 3시간 (차 오염도에 따라  달라집니다.)
+                    디테일링은 엔진룸까지 포함입니다.
+                    (업체 아니고 개인입니다!)
+                </p>
+
+            </div>
+            
+            <!-- 예약버튼 -->
+            <div class="detailpage-info__reservation">
+            <button ytpe="button"class="detailpage-info__reservationbtn">예약중</button>
+            </div>
+            
+            <!-- 상품문의 내용적기 -->
+            <div class="detailpage-info__inquiry">
+            <h5 class="detailpage-info__inquirys">상품문의</h5>
+            <textarea class="detailpage-info__comment"></textarea>
+            </div>
+            
+            <!-- 상품문의 등록 버튼 -->
+            <div class="detailpage-info__inquirybtn">
+            <button class="detailpage-info__inquirybtns">등록</button>
+            </div>
+            
+            <hr class="detailpage-info__line">
+
+             <!-- 댓글 작성 정보1 -->
+            <div class="detailpage-info__comments">
+                <ul class="detailpage-info__user">
+                    <li class="detailpage-info__useritem">
+                        <img alt="" src="imge/icon_mypage.png" class="detailpage-info__userimg">
+                        <p class="detailpage-info__username">강하다리</p>
+                        <p class="detailpage-info__usercomment">다른 사진들도 받아볼수있을까요??</p>
+                        <hr class="detailpage-info__commentline">
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 댓글 작성 정보2 -->
+            <div class="detailpage-info__comments">
+                <ul class="detailpage-info__user">
+                    <li class="detailpage-info__useritem">
+                        <img alt="" src="imge/icon_mypage.png" class="detailpage-info__userimg">
+                        <p class="detailpage-info__username">문어야문여</p>
+                        <p class="detailpage-info__usercomment">저 표에 있는 가격말고는 추가로 들어가는 비용은 없는게 확실하죠?</p>
+                    
+                        <hr class="detailpage-info__commentline">
+                    </li>
+                </ul>
+            </div>
+         </article>
+        </main>
+      </div>
+      <!-- //container -->
+      <!-- footer -->
+      <footer></footer>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

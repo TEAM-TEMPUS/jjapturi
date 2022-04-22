@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap');
+
+/*전체 선택자로 리셋*/
+* {
+  margin:0;   /* 마진 리셋 */
+  padding:0;   /* 패딩 리셋 */
+}
+
+/*본문 중앙배치*/
+.container__inner {
+    margin:0 auto;  /* 화면 중앙에 배치 */
+    width:900px;    /* 너비 */    
+    background-color: #fff;
+  }
+
+/*상품등록 타이틀 스타일 적용*/
+.product-registration__bigtitle{
+    font-family:"Noto Sans KR";
+    font-size:38px;
+    font-weight:700px; /*폰트 폭 적용*/
+    text-align: center; /*텍스트 가운데 정렬해줌*/
+    margin:50px auto;
+    line-height: 2.5;
+
+}
+
+/*이미지 제목*/
+.product-registration-info__imgetitle{
+    font-family:"Noto Sans KR";
+    font-weight:500px; /*폰트 폭 적용*/
+    font-size:18px;
+}
+
+/*소제목 타이틀 스타일 적용*/
+.product-registration-info__smalltitle{ 
+    display: inline-block;
+    font-family:"Noto Sans KR";
+    font-weight:500px; /*폰트 폭 적용*/
+    font-size:18px;
+}
+
+/*이미지 스타일 적용*/
+.product-registration__imge{
+    width: 500px; 
+    height:300px;
+    border-radius: 5px;
+    margin-left:80px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+
+/*사진선택 스타일 적용*/
+
+input[type="file"]{
+    display: none;
+  }
+  label{
+    display: block;
+    text-align: center;
+    width:100px;
+    height:20px;    
+    background-color:#4751FD;
+    border:#ffffff;
+    color:#ffffff;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+  }
+ 
+  /*사진선택 위치 적용*/
+.product-registration__imgselect{
+    margin-top: -50px;
+    margin-left: 85px;
+    margin-bottom: 50px;
+}
+
+/*상품정보입력 ul스타일 적용*/
+.product-registration-info__list{
+    list-style: none;
+    line-height:90px;
+}
+
+/*상품정보입력 스타일 적용(제목)*/
+.product-registration-title__info{
+
+    font-family: "Noto Sans KR";
+	font-size:14px;
+	font-weight:400px;
+	border-radius:7px ;
+	border-color:#adb5bd;
+	color:#000000;
+	width:700px; 
+	height:40px;
+	padding-left:10px;
+    margin-left: 50px;
+	
+}
+
+/*상품정보입력 스타일 적용(카테고리)*/
+.product-registration-category__info{
+    font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+    margin-left: 18px;
+}
+/*상품정보입력 스타일 적용(거래지역)*/
+.product-registration-addr_info{
+    font-family: "Noto Sans KR";
+	font-size:14px;
+	font-weight:400px;
+	border-radius:7px ;
+	border-color:#adb5bd;
+	color:#000000;
+	width:700px; 
+	height:40px;
+	padding-left:10px;
+    margin-left: 18px;
+}
+/*상품정보입력 스타일 적용(날짜)*/
+.product-registration-item__info1{
+    font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+    margin-left: 50px;
+	
+}
+.product-registration-item__info2{
+    font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+    margin-left: 20px;
+}
+
+
+/*날짜 물결표시*/
+.product-registration-item__flow{
+    font-family: "Noto Sans KR";
+	font-weight:500px; /*폰트 폭 적용*/
+	font-size:24px;
+    margin-left:20px;
+}
+
+
+/*상품정보입력 스타일 적용(가격)*/
+.product-registration-price__info{
+    font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px;
+	font-color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+    margin-left: 50px;
+}
+
+/*상품정보입력 소제목*/
+.product-registration-explanation__smalltitle{
+ 
+    font-family:"Noto Sans KR";
+    font-weight:500px; /*폰트 폭 적용*/
+    font-size:18px;
+    margin-top: 20px;
+    line-height:60px;
+
+}
+
+/*상품정보입력 스타일 적용(설명)*/
+.product-registration-explanation__explain{
+    font-family: "Noto Sans KR";
+	font-weight:400px; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	font-color:#000000;
+	width:700px; 
+	height:200px;
+	padding-top:10px;
+	padding-left:10px;
+    margin-left: 90px;
+    margin-top: -50px;
+
+}
+
+/*등록하기 버튼*/
+/*margin:0 auto했는데 버튼이 중앙으로 가지않는다면
+ inline이 기본인 button을 
+block으로 바꾸어주는 것 => display: block으로 해주는 것이다*/
+.product-registration-button__button{
+     display: block;
+     text-align: center;
+     width:200px;
+     height:50px;    
+     border-radius: 10px;
+     background-color:#4751FD;
+     border:#ffffff;
+     color:#ffffff;
+     margin:0 auto;
+     margin-top: 50px;
+}
+
+/*온오프 버튼*/
+/*on/off스위치버튼*/
+input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .onofbutton>label {
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 15px;
+    border-radius: 17px;
+    background-color: #4751FD;
+    transition-duration: 0.2s;
+    margin-top: -1395px;
+    margin-left: 820px;
+  }
+  
+  .onofbutton>label>span {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    z-index: 1;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition-duration: 0.2s;
+  }
+  
+  .onofbutton>label:before,
+  .onofbutton>label:after{
+    position: absolute;
+    top: 0;
+    width: 34px;
+    font-size: 11px;
+    line-height: 34px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .onofbutton>label:before {
+    left: 0;
+    content: '판매';
+  }
+  
+  .onofbutton>label:after {
+    right: 0;
+    content: '구매';
+  }
+  
+  .onofbutton>input:checked + label {
+    background-color: red;
+  }
+  
+  .onofbutton>input:checked + label span {
+    /* left: 29px; */
+    transform: translateX(26px);
+  }
