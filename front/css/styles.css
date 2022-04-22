@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 /* components */
-@import "components/modal.css";
+/* @import "components/modal.css"; */
 
 /* screens */
-@import "screens/myPage.css";
-@import "screens/reservationConfirmModal.css";
-@import "screens/profileModal.css";
+/* @import "screens/myPage.css"; */
+/* @import "screens/reservationConfirmModal.css"; */
+/* @import "screens/profileModal.css"; */
 
 * {
   box-sizing: border-box;
