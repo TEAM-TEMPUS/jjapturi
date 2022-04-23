@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
-
+@import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
 /*전체 선택자로 리셋*/
 * {
   margin:0;   /* 마진 리셋 */
@@ -44,14 +45,16 @@
 /*이미지등록하면 이미지나타나는 스타일 적용*/
 /*이미지 스타일 적용*/
 .product-registration__imagspace{
-    width: 700px; 
-    height:300px;
+   max-width: 500px; 
+    height:auto;
     border-radius: 5px;
     margin-left:80px;
     margin-bottom: 50px;
     margin-top: 50px;
+    padding-bottom: 50px;
 
 }
+
 
 /*사진선택 스타일 적용*/
 
@@ -68,9 +71,9 @@ input[type="file"]{
     color:#ffffff;
     border-radius: 5px;
     margin-left: -5px;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-top: 30px;
+    padding-top: 12px;
+    
     cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 
   }
@@ -300,8 +303,9 @@ input[type="checkbox"] {
     border-radius: 17px;
     background-color: #4751FD;
     transition-duration: 0.2s;
-    margin-top: -1395px;
+    margin-top: -1610px;
     margin-left: 820px;
+    
     cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
   }
   
@@ -346,3 +350,98 @@ input[type="checkbox"] {
     /* left: 29px; */
     transform: translateX(26px);
   }
+
+  /*slick슬라이드 적용*/
+ 
+/*한꺼번에 묶어서 이전/다음버튼 설정해준다*/
+        /*이렇게 해줘야 글자를 투명해졌던게 화살표만 나타내줄수 있다*/
+        .slick-prev:before{
+          font-family: 'xeicon';
+          color:#fff;
+          font-size: 45px;
+          content: "\e93d"; /*왼쪽 아이콘 원래 content값을 브라우저에서 확인후 넣어준다.*/
+          font-family: 'xeicon'; /*넣어줘야 적용된다*/
+      }
+
+      .slick-next:before{
+          font-family: 'xeicon';
+          color:#fff;
+          font-size: 45px;
+          content: "\e940"; /*오른쪽 아이콘 원래 content값을 브라우저에서 확인후 넣어준다.*/
+          font-family: 'xeicon'; /*넣어줘야 적용된다*/
+      }
+      /*이전/다음버튼 클래스명은 자동으로 생성된다 브라우저창 F12눌러서 보면된다*/
+      /*visual클래스에 있는 button안 slick-prev클래스명*/
+      .slick-prev{
+          left:-10px;
+          font-size: 0; /*Previous글자 사이즈 0으로만듬*/
+          color:transparent; /*Previous글자를 투명으로 넣어준다*/
+          /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
+          position: absolute;
+          z-index: 10;
+          top:50%;
+          transform: translateY(-50%); /*버튼들이 Y축으로 가운데로 온다.*/
+          /*이전/다음 버튼 모양 조정*/
+          width: 71px;
+          height: 71px;
+          border-radius: 100%;
+          background: rgba(0,0,0,.5);
+          border: none;
+          /*이전/다음버튼 화살표를 넣기위해 아이콘폰트쓸것이다 xeicon쓸거다*/
+      }
+
+
+      .slick-next{
+          right:-30px;
+          font-size: 0; /*Next글자 사이즈 0으로만듬*/
+          color:transparent; /*Next글자를 투명으로 넣어준다*/
+          /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
+          position: absolute;
+          z-index: 10;
+          top:50%;
+          transform: translateY(-50%); /*버튼들이 Y축으로 가운데로 온다.*/
+          /*이전/다음 버튼 모양 조정*/
+          width: 71px;
+          height: 71px;
+          border-radius: 100%;
+          background: rgba(0,0,0,.5);
+          border: none;
+          /*이전/다음버튼 화살표를 넣기위해 아이콘폰트쓸것이다 xeicon쓸거다*/
+          
+      }
+
+      .slick-dots{
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 100%;
+          margin-left:-46px ;
+          display: flex;
+          justify-content: center;
+      }
+
+      .slick-dots li{
+          list-style: none;
+          margin: 0 15px;
+      }
+
+     .slick-dots li button{
+          position: absolute;
+          background: #adb5bd;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: none;
+          margin-top: -40px;
+          overflow: hidden;
+          font-size: 0; /*Next글자 사이즈 0으로만듬*/
+          color:transparent; /*Next글자를 투명으로 넣어준다*/
+         
+     }
+
+     .slick-dots .slick-active button{
+         background: #4751FD;
+         border: none;
+         font-size: 0; /*글자 사이즈 0으로만듬*/
+         color:transparent; /*글자를 투명으로 넣어준다*/
+     }
