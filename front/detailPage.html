@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>상품 상세 페이지</title>
+     <!--1번 cdn방법 slick에서 css링크가져옴--> 
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+     
+   <!--8번 xeicon을 가져온다 방법: xeicon사이트-> 메뉴바 get started -> 사이트 <head> 태그 안에 아래의 코드를 붙입니다 밑 코드 복사
+       그다음 라이브러리를 들어가 원하는 아이콘을 가져온다-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+   <!--5번 제이쿼리 가져오기-->
+   <!--제이쿼리 다운방법: 제이쿼리 홈페이지->다운로드->맨아래 cdn링크클릭-> 맨위 minified클릭->코드 복사-->
+   <!--제이쿼리 스크립트 삽입 방법은 라이브러리 제일 맨위에 와야한다-->
+   <!--src남겨놓고 다 삭제-->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   <!--2번 cdn방법 slick에서 js링크가져옴-->
+   <!--1번 2번 실행 안될시 //cdn 앞에 http://넣어줘야 한다.-->
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/screens/detailpage.css" />
   </head>
@@ -19,12 +36,28 @@
             <!--제목-->
             <h2 class="detailpage-info__categorytitle">청소</h2>
             <!--등록이미지-->
+            <div class="detailpage-info__productimgespace">
             <img
               alt=""
-              src="img/gibon.png"
+              src="img/clean1.png"
               class="detailpage-info__productimge"
             />
-
+            <img
+              alt=""
+              src="img/clean2.png"
+              class="detailpage-info__productimge"
+            />
+            <img
+              alt=""
+              src="img/clean1.png"
+              class="detailpage-info__productimge"
+            />
+            <img
+              alt=""
+              src="img/clean2.png"
+              class="detailpage-info__productimge"
+            />
+          </div>
             <div>
               <ul class="detailpage-info__list">
                 <!--등록자 정보-->
@@ -174,6 +207,7 @@
                 </div>
 
                 <div class="profile">
+                  
                   <img
                     src="img/basic-profile-image.png"
                     alt="프로필 사진"
@@ -280,5 +314,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/detailPage.js"></script>
+    <script src="js/detailPageslick.js"></script>
   </body>
 </html>
