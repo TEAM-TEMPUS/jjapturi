@@ -10,3 +10,36 @@
   font-weight: normal;
   font-style: normal;
 }
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+li, li a {
+  list-style: none;
+}
+
+a {
+  color: #000;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+button {
+  outline: none !important;
+  border: none;
+  background: 0 0;
+}
