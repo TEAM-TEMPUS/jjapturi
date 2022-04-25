@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- favicon -->
+<link rel="icon" type="image/png" sizes="32x32"
+	href="../img/favicon-32x32.png">
+
+<title>타임마켓</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+	rel="stylesheet">
+
+	<!-- google Material Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+<link rel="stylesheet" type="text/css" href="../css/screens/buyproduct.css"/>
+
+
+</head>
+<body>
+
+	<header id="header-bar" class="header-bar-box">
+	
+	
+		<div class="header-bar-box__wrap">
+			<div class="header-logo-box">
+				<a href="#" class="header-logo-box__link">
+					<div class="logo-box">
+						<img src="../img/logo_200.png" alt="타임마켓" class="header-logo">
+						<p class="logo">타임마켓</p>
+					</div>
+				</a>
+			</div>
+			
+			
+			<section class="header-search">
+				<div class="search">
+					<input type="text" id="header-search-input"
+						class="search__input" placeholder="상품명, 지역명 입력">
+					<button class="search__button">
+						<a href="#"> <img src="../img/icon_search.png" alt="search"
+							class="search__icon" width="20">
+						</a>
+					</button>
+				</div>
+			</section>
+			
+			
+			<div class="menu-bar-info-box">
+				<div class="menu-bar">
+					<a href="#menu" id="toggle">
+					<span>
+						<div class="test"></div>
+					</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="#">청소</a></li>
+							<li><a href="#">심부름</a></li>
+							<li><a href="#">산책</a></li>
+							<li><a href="#">설치</a></li>
+							<li><a href="#">과외</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				
+				<div class="info-box">
+					<a href="#" class="info-box__link"> <img
+						src="../img/icon_mypage.png" alt="" class="info-box__img">
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	
+	
+	<div class="section__content-body-container">
+		<div class="product-title-switch__wrap">
+			<!-- on-off-switch -->
+			<div class="on-off--switch">
+			  <input id="checkbox" type="checkbox" class="checkbox" />
+			  <label for="checkbox" class="switch">
+				<span class="switch__circle">
+				  <span class="switch__circle-inner"></span>
+				</span>
+				<span class="switch__left">판매</span>
+				<span class="switch__right">구매</span>
+			  </label>
+			</div>
+
+
+			<h2 class="product-list__title">구매내역</h2>
+		  </div>
+
+
+	<div class="box__item-container">
+		<div class="box__image">
+		<a href="#" class="link__item " target="_blank">
+			<span class="medal--status">
+				<img src="../img/medal_gold.png" class="medal__img" alt="골드 메달">
+			</span>
+			<img src="../img/logo_200.png" class="image__item  " alt="상품 이미지">		
+		</a>
+		</div>
+		<div class="box__information">
+			<div class="box__information-major">
+				<div class="box__item-title">
+					<span class="text__item-title text__item-title--ellipsis">
+						<a class="link__item" href="#" target="_blank" >		
+															
+								<span class="text__item"><b>깨~끗하게 세차 한답니다</b>
+	
+								</span>
+							</a>
+						</span>
+					</div>
+	
+	
+					<div class="box__item-addr">
+						<span class="text__addr"><b>서울특별시 강서구 방화동</b></span>	
+						</div>
+	
+						<div class="box__item-day">
+							<span class="text__day">2022-04-23 ~ 2022-05-20</span>
+						</div>
+	
+						<div class="box__price-buy">						
+							<span class="text text__value">30,000</span>
+							<span class="text text__unit">원</span>
+						</div>	
+						
+						<div class="box__item-text">
+							<span class="text__text"><b>깨끗하게 세차 시켜드려용</b></span>	
+							</div>
+	
+							<div class="box__information-reservation">
+								<button type="submit" class="btn__cancle">예약취소</button>
+		
+							</div>
+						</div>
+					</div>		
+			</div>
+
+			<div class="box__item-container">
+				<div class="box__image">
+				<a href="#" class="link__item " target="_blank">
+					<span class="medal--status">
+						<img src="../img/medal_silver.png" class="medal__img" alt="실버 메달">
+					</span>
+					<img src="../img/status_reserved.png" class="image__item  " alt="상품 이미지">		
+				</a>
+				</div>
+				<div class="box__information">
+					<div class="box__information-major">
+						<div class="box__item-title">
+							<span class="text__item-title text__item-title--ellipsis">
+								<a class="link__item" href="#" target="_blank" >		
+																	
+										<span class="text__item"><b>냉장고 깨끗하게 청소, 정리해드려요~ 완전 정리왕</b>
+			
+										</span>
+									</a>
+								</span>
+							</div>
+			
+			
+							<div class="box__item-addr">
+								<span class="text__addr"><b>인천광역시 남동구 구월1동</b></span>	
+								</div>
+			
+								<div class="box__item-day">
+									<span class="material-symbols-rounded">
+										calendar_today
+									  </span>
+									<span class="text__day">2022-04-23 ~ 2022-05-20</span>
+								</div>
+			
+								<div class="box__price-buy">						
+									<span class="text text__value">50,000</span>
+									<span class="text text__unit">원</span>
+								</div>	
+								
+								<div class="box__item-text">
+									<span class="text__text"><b>주부 10년차 누구보다 깨끗하게 정리하는 팁을 가지고 있습니다^^</b></span>	
+									</div>
+			
+									<div class="box__information-reservation">
+										<button type="submit" class="btn__complete">거래완료</button>
+				
+									</div>
+								</div>
+							</div>		
+					</div>
+
+			
+					<div class="box__item-container">
+						<div class="box__image">
+						<a href="#" class="link__item " target="_blank">
+							<span class="medal--status">
+								<img src="" class="medal__img" alt="">
+							</span>
+							<img src="../img/image_clock.png" class="image__item  " alt="상품 이미지">		
+						</a>
+						</div>
+						<div class="box__information">
+							<div class="box__information-major">
+								<div class="box__item-title">
+									<span class="text__item-title text__item-title--ellipsis">
+										<a class="link__item" href="#" target="_blank" >		
+																			
+												<span class="text__item"><b>창고 정리 5일 정도 같이 해주실 분 구해요~</b>
+					
+												</span>
+											</a>
+										</span>
+									</div>
+					
+					
+									<div class="box__item-addr">
+										<span class="text__addr"><b>서울 서대문구 북가좌동</b></span>	
+										</div>
+					
+										<div class="box__item-day">
+											<span class="text__day">2022-04-23 ~ 2022-05-20</span>
+										</div>
+					
+										<div class="box__price-buy">						
+											<span class="text text__value">350,000</span>
+											<span class="text text__unit">원</span>
+										</div>	
+										
+										<div class="box__item-text">
+											<span class="text__text"><b>대형 창고이고 여분옷도 따로 챙겨오셔야하고 저희가 따로 지급은 안해줍...</b></span>	
+											</div>
+					
+											<div class="box__information-reservation">
+												<button type="submit" class="btn__cancle">예약취소</button>
+						
+											</div>
+										</div>
+									</div>		
+							</div>
+		
+							<div class="box__item-container">
+								<div class="box__image">
+								<a href="#" class="link__item " target="_blank">
+									<span class="medal--status">
+										<img src="" class="medal__img" alt="">
+									</span>
+									<img src="../img/yongki.jpg" class="image__item  " alt="상품 이미지">		
+								</a>
+								</div>
+								<div class="box__information">
+									<div class="box__information-major">
+										<div class="box__item-title">
+											<span class="text__item-title text__item-title--ellipsis">
+												<a class="link__item" href="#" target="_blank" >		
+																					
+														<span class="text__item"><b>입주청소 해주실 분 찾습니다!</b>
+							
+														</span>
+													</a>
+												</span>
+											</div>
+							
+							
+											<div class="box__item-addr">
+												<span class="text__addr"><b>대구 수성수 범어2동</b></span>	
+												</div>
+							
+												<div class="box__item-day">
+													<span class="text__day">2022-04-23 ~ 2022-05-20</span>
+												</div>
+							
+												<div class="box__price-buy">						
+													<span class="text text__value">70,000</span>
+													<span class="text text__unit">원</span>
+												</div>	
+												
+												<div class="box__item-text">
+													<span class="text__text"><b>입주하기전에 청소 해주실 분을 찾고있습니다! 직장떄문에 바쁜 관계로 청소를...</b></span>	
+													</div>
+							
+													<div class="box__information-reservation">
+														<button type="submit" class="btn__complete">거래완료</button>
+								
+													</div>
+												</div>
+											</div>		
+									</div>
+		</div>
+	
+	
+	
+	
+	
+
+
+
+
+	
+
+	<div class="pagenation__wrap">
+		<div class="pagenation__inner">
+		  <a href="#" class="pagenation__item pagenation--previous">
+			<span class="material-symbols-rounded"><b><</b></span>
+		  </a>
+		  <a href="#" class="pagenation__item pagenation-number">1</a>
+		  <a href="#" class="pagenation__item pagenation-number current">2</a>
+		  <a href="#" class="pagenation__item pagenation-number">3</a>
+		  <a href="#" class="pagenation__item pagenation-number">4</a>
+		  <a href="#" class="pagenation__item pagenation-number">5</a>
+		  <a href="#" class="pagenation__item pagenation--next">
+			<span class="material-symbols-rounded"> <b>></b> </span>
+		  </a>
+		</div>
+	  </div>
+	</div>
+
+
+	  <!-- product-navigation -->
+      <div class="product--navigation">
+        <div class="menu-bar">
+          <a href="#item-menu" id="navigation">
+            <span>
+              <div class="menu-area"></div>
+            </span>
+          </a>
+          <div id="menu_wrap">
+            <ul>
+              <li><a href="#">판매/구매하기</a></li>
+              <li><a href="#">마이페이지</a></li>
+              <li><a href="#">구매내역</a></li>
+              <li><a href="#">판매내역</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+	
+
+
+
+
+
+
+
+
+	<footer class="p-footer p-footer--dark">
+		<div class="p-footer__inner">
+			<div class="p-footer__site-group-list">
+				<ul class="p-footer__site-group">
+					<li><div class="p-footer__site-group-title">4조 세미프로젝트</div></li>
+					<li class="p-footer__site-group-item"><a
+						href="#">홍길동:aaa@gmail.com</a></li>
+						
+					<li class="p-footer__site-group-item"><a
+						href="#">홍길동:aaa@gmail.com</a></li>
+						
+					<li class="p-footer__site-group-item"><a
+						href="#">홍길동:aaa@gmail.com</a></li>
+						
+					<li class="p-footer__site-group-item"><a
+						href="#">홍길동:aaa@gmail.com</a></li>
+						
+					<br>
+					<li class="p-footer__site-group-item">
+						<b>@2022 Article 4 Semi-Project.All rights reserved.</b></li>
+					
+				</ul>
+				
+				<ul class="p-footer__site-group">
+					<li><div class="p-footer__site-group-title">SKILLS</div></li>
+					<li class="p-footer__site-group-item"><a
+						href="#">JAVA,HTML,CSS,Javascript,Git,Bla</a></li>				
+				</ul>
+				
+				<ul class="p-footer__site-group">
+					<li><div class="p-footer__site-group-title">GITHUB</div></li>
+					<li class="p-footer__site-group-item"><a
+						href="#">깃허브 어쩌구 저쩌구 샬라샬라</a></li>
+					
+				</ul>
+				<ul class="p-footer__site-group">
+					<li><div class="p-footer__site-group-title">고객센터</div></li>
+					<li class="p-footer__site-group-item"><a href="#">시간마켓 고객센터</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="../js/default.js"></script>
+	
+	<script src="../js/product-navigation.js"></script>
+</body>
+</html>
