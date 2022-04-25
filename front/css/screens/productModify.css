@@ -94,16 +94,17 @@ input[type="file"]{
 /*상품정보입력 스타일 적용(제목)*/
 .product-registration-title__info{
 
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-size:14px;
 	font-weight:400;
 	border-radius:7px ;
 	border-color:#adb5bd;
+  border:1px solid #adb5bd;
 	color:#000000;
 	width:700px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 50px;
+  margin-left: 50px;
 	
 }
 
@@ -126,15 +127,16 @@ input:focus {
 
 /*상품정보입력 스타일 적용(카테고리)*/
 .product-registration-category__info{
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
+  border:1px solid #adb5bd;
 	color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 18px;
+  margin-left: 18px;
 }
 
 /*상품정보입력 카테고리 스타일 적용*/
@@ -158,64 +160,68 @@ select:focus{
 
 /*상품정보입력 스타일 적용(거래지역)*/
 .product-registration-addr_info{
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-size:14px;
 	font-weight:400;
 	border-radius:7px ;
 	border-color:#adb5bd;
+  border:1px solid #adb5bd;
 	color:#000000;
 	width:700px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 18px;
+  margin-left: 18px;
 }
 
 /*상품정보입력 스타일 적용(날짜)*/
 .product-registration-item__info1{
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
+  border:1px solid #adb5bd;
 	color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 50px;
+  margin-left: 50px;
 	
 }
 .product-registration-item__info2{
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
+  border:1px solid #adb5bd;
 	color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 
 /*날짜 물결표시*/
 .product-registration-item__flow{
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-weight:500; /*폰트 폭 적용*/
 	font-size:24px;
-    margin-left:20px;
+  margin-left:20px;
 }
 
 
 /*상품정보입력 스타일 적용(가격)*/
 .product-registration-price__info{
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px;
+  border:1px solid #adb5bd;
 	color:#000000;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 /*상품정보입력 소제목*/
@@ -231,8 +237,8 @@ select:focus{
 
 /*상품정보입력 스타일 적용(설명)*/
 .product-registration-explanation__explain{
-    resize:none; /*창 늘리고 줄이는거 없앰*/
-    font-family: "Noto Sans KR";
+  resize:none; /*창 늘리고 줄이는거 없앰*/
+  font-family: "Noto Sans KR";
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
@@ -241,8 +247,8 @@ select:focus{
 	height:200px;
 	padding-top:10px;
 	padding-left:10px;
-    margin-left: 90px;
-    margin-top: -50px;
+  margin-left: 90px;
+  margin-top: -50px;
 
 }
 
@@ -303,8 +309,8 @@ input[type="checkbox"] {
     border-radius: 17px;
     background-color: #4751FD;
     transition-duration: 0.2s;
-    margin-top: -1430px;
-    margin-left: 820px;
+    margin-left: 800px;
+    margin-top: 32px;
     
     cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
   }
@@ -445,3 +451,9 @@ input[type="checkbox"] {
          font-size: 0; /*글자 사이즈 0으로만듬*/
          color:transparent; /*글자를 투명으로 넣어준다*/
      }
+
+     /*이미지 슬라이드 밑에 점없어지는거*/
+
+    .slick-dots li:first-child:nth-last-child(1){
+      display:none
+  }
