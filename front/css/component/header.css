@@ -1,100 +1,123 @@
-/* styles */
-@import "/css/styles.css";
+@charset "EUC-KR";
+@import "styles.css";
 
-/* header */
-.fixed-bar-box-shadow {
+* {
   box-sizing: border-box;
-  border-bottom: 1px solid #eee;
-  /* position: sticky; */
-  top: 0;
-  z-index: 9999;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-#fixed-bar {
-  /* position: fixed; */
-  top: 0;
+/*font */
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ul, li, li a {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* header */
+.header-bar-box{
+  box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    z-index: 1;
+    top: 0;
+}
+
+#header-bar{
   width: 100%;
   background-color: #fff;
 }
 
-#fixed-bar #fixed-bar-wrap {
+.header-bar-box__wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  /* max-width: 1024px; */
-  /* margin: 0 auto; */
   padding: 22px 0;
-  /* gap: 32px; */
+
 }
 
-#fixed-bar-logo-title {
-  display: inline-block;
-  margin-left: 100px;
-}
-
-.fixed-logo-box {
+.header-logo-box{
   display: flex;
   justify-content: flex-start;
 }
 
-.logo-box {
+.header-logo-box__link{
+  display: inline-block;
+  margin-left: 100px;
+}
+
+
+.logo-box{
   display: flex;
   align-items: center;
-  /* 글자 무너짐 방지 */
   width: 7rem;
 }
 
-.fixed-logo {
+
+.header-logo{
   width: 30px;
   margin-bottom: 5px;
   margin-right: 10px;
   vertical-align: text-bottom;
 }
 
-.logo {
-  font-family: "yg-jalnan";
+.logo{
+  font-family: 'yg-jalnan';
   font-size: 18px;
 }
 
+
+  
+
+
+
 /* search input box */
 
-.search-input-wrap {
-  display: flex;
-  width: 500px;
-  height: 50px;
-  justify-content: space-between;
-  padding: 0 2.5rem;
-  border-radius: 50px;
-  background-color: #efefef;
-  text-decoration: none;
-  box-sizing: border-box;
+.search {
+    display: flex;
+    width: 500px;
+    height: 50px;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    border-radius: 50px;
+    background-color: #efefef;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-/* input {
+
+input {
   border: 0;
   padding: 1rem 1.4rem;
   margin: 1.6rem 0;
   font-size: 1.6rem;
   font-weight: 400;
-} */
+}
 
-input:focus {
+input:focus{
   outline: none;
 }
 
 /* placeholder color */
-input::-ms-input-placeholder {
-  color: #787878;
-}
-input::-webkit-input-placeholder {
-  color: #787878;
-}
-input::-moz-placeholder {
-  color: #787878;
-}
+input::-ms-input-placeholder { color: #787878; }
+input::-webkit-input-placeholder { color: #787878; }
+input::-moz-placeholder { color: #787878; }
 
-.fixed-search-input {
+.search__input {
   display: block;
   width: 100%;
   border: none;
@@ -110,27 +133,41 @@ button {
   background-color: transparent;
 }
 
-#header-search-button {
-  margin: 0;
-  margin-left: 30px;
-  background-color: transparent;
-}
+
+
+
+
+
+
+
 
 /* hamburger menu */
 
 /* Important styles */
-.menu-bar-info-box {
+.menu-bar-info-box{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 100px;
 }
 
+
 #toggle {
   display: block;
   width: 26px;
   /* height: 30px; */
   /* margin: 30px auto 10px; */
+}
+
+.test {
+  display: block;
+  position: absolute;
+  background: transparent;
+  height: 26px;
+  width: 26px;
+  top: -12px;
+  z-index: 9999;
+  cursor: pointer;
 }
 
 #toggle span:after,
@@ -140,7 +177,7 @@ button {
   left: 0;
   top: -9px;
 }
-#toggle span:after {
+#toggle span:after{
   top: 9px;
 }
 #toggle span {
@@ -157,18 +194,6 @@ button {
   transition: all 0.3s;
   backface-visibility: hidden;
   border-radius: 50px;
-}
-
-/* hamburger-menu-bar 영역 cursor pointer 잡히게 */
-.test {
-  display: block;
-  position: absolute;
-  background: transparent;
-  height: 26px;
-  width: 26px;
-  top: -12px;
-  z-index: 9999;
-  cursor: pointer;
 }
 
 /* on activation */
@@ -197,53 +222,44 @@ button {
   /* margin: auto; */
   right: 63px;
   margin-top: 30px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
   text-align: center;
   border-radius: 15px;
   background: white;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.1);
   /* just for this demo */
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s;
+  transition: opacity .4s;
 }
-/* menu 말풍선모양 */
-/* #menu:after {
-  position: absolute;
-  top: -15px;
-  left: 95px;
-  content: "";
-  display: block;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 20px solid white;
-} */
+
 
 #menu li a {
   padding: 5px;
   color: #000;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all .2s;
 }
 #menu li a:hover,
 #menu li a:focus {
-  background: #4751fd;
+  background: #4751FD;
   border-radius: 5px;
   color: #fff;
 }
 
 /* myinfo */
-.info-box {
+.info-box{
   display: flex;
 }
 
-.info-box-a {
+.info-box__link{
   display: flex;
   align-items: center;
   margin-left: 30px;
 }
 
-.fixed-myinfo {
+.info-box__img{
   width: 30px;
 }
+
