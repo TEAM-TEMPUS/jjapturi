@@ -94,16 +94,16 @@ input[type="file"]{
 /*상품정보입력 스타일 적용(제목)*/
 .product-registration-title__info{
 
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-size:14px;
 	font-weight:400;
 	border-radius:7px ;
-	border-color:#adb5bd;
-	color:#000000;
+	border:1px solid #adb5bd;
+  color:#000000;
 	width:700px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 50px;
+  margin-left: 50px;
 	
 }
 
@@ -126,7 +126,7 @@ input:focus {
 
 /*상품정보입력 스타일 적용(카테고리)*/
 .product-registration-category__info{
-    font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR";
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
@@ -134,7 +134,7 @@ input:focus {
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 18px;
+  margin-left: 18px;
 }
 
 /*상품정보입력 카테고리 스타일 적용*/
@@ -162,7 +162,7 @@ select:focus{
 	font-size:14px;
 	font-weight:400;
 	border-radius:7px ;
-	border-color:#adb5bd;
+	border:1px solid #adb5bd;
 	color:#000000;
 	width:700px; 
 	height:40px;
@@ -176,7 +176,8 @@ select:focus{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-	color:#adb5bd;
+	border:1px solid #adb5bd;
+  color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
@@ -188,7 +189,8 @@ select:focus{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-	color:#adb5bd;
+	border:1px solid #adb5bd;
+  color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
@@ -211,7 +213,8 @@ select:focus{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px;
-	color:#000000;
+	border:1px solid #adb5bd;
+  color:#000000;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
