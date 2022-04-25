@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import "../components/modal.css";
+@import "../components/reservationConfirmModal.css";
+@import "../components/profileModal.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
 /*전체 선택자로 리셋*/
 * {
   margin:0;   /* 마진 리셋 */
@@ -19,7 +24,7 @@
 .detailpage-info__categorytitle{
     font-family:"Noto Sans KR";
     font-size:38px;
-    font-weight:700px; /*폰트 폭 적용*/
+    font-weight:700; /*폰트 폭 적용*/
     text-align:center; /*텍스트 가운데 정렬해줌*/
     margin: 0 auto;
     line-height: 2.5;
@@ -46,6 +51,7 @@
 	border-radius: 20px;
     margin-top:40px;
     margin-left: 10px;
+
 }
 
 /*프로필 닉네임,등급 위치*/
@@ -53,9 +59,15 @@
     display: flex;
     font-family:"Noto Sans KR";
     font-size:22px;
-    font-weight:400px; /*폰트 폭 적용*/
+    font-weight:400; /*폰트 폭 적용*/
     margin-top: -55px;
     margin-left: 70px;
+
+}
+
+/*사용자 프로필 마우스 포인터 손모양으로 바꿈 */
+.detailpage-publisher-info{
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 }
 
 
@@ -64,6 +76,7 @@
     width:60px;
 	height:20px;
     margin-left: 70px;
+    margin-top: 10px;
 }
 
 /*제품등록 정보 제목 적용*/
@@ -71,7 +84,7 @@
 .detailpage-info__title{
     font-family:"Noto Sans KR";
     font-size:32px;
-    font-weight:700px; /*폰트 폭 적용*/
+    font-weight:700; /*폰트 폭 적용*/
     margin-top: 20px;
 }
 
@@ -79,7 +92,7 @@
 .detailpage-info__addr{
 	font-family:"Noto Sans KR";
   	font-size:22px;
-  	font-weight:400px; /*폰트 폭 적용*/
+  	font-weight:400; /*폰트 폭 적용*/
   	color:#dee2e6;
     margin-top: 20px;
 
@@ -95,10 +108,12 @@
 
 /*제품등록 정보 날짜 적용*/
 .detailpage-info_dateinfo{
-	font-family:"Noto Sans KR";
+	position: absolute;
+    font-family:"Noto Sans KR";
   	font-size:22px;
-  	font-weight:400px; /*폰트 폭 적용*/
-    margin-top: 20px;
+  	font-weight:400; /*폰트 폭 적용*/
+    margin-top: 25px;
+    margin-left: 10px;
 }
 
 /*예약중 이미지*/
@@ -108,6 +123,13 @@
     margin-top: 20px;
 }
 
+/* 예약중 옆에 가격 정보*/
+.detailpage-info__priceinfo{
+   position: absolute;
+   height: 50px;
+   padding-top: 5px;
+
+}
 
 
 /*제품등록 정보 가격 적용*/
@@ -115,7 +137,7 @@
 	position: absolute;
     font-family:"Noto Sans KR";
   	font-size:32px;
-  	font-weight:700px; /*폰트 폭 적용*/
+  	font-weight:700; /*폰트 폭 적용*/
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -124,7 +146,7 @@
 .detailpage-info__productname{
     font-family:"Noto Sans KR";
   	font-size:26px;
-  	font-weight:500px; /*폰트 폭 적용*/
+  	font-weight:500; /*폰트 폭 적용*/
     margin-top: 50px;  
 }
 
@@ -140,6 +162,7 @@
     font-family:"Noto Sans KR";
   	font-size:18px;
   	font-weight:400px; /*폰트 폭 적용*/
+    line-height: 30px;  
 }
 
 /*예약버튼 스타일 적용*/
@@ -152,7 +175,8 @@
 	border-radius: 10px;
 	border-color:#4751FD;
     margin:0 auto;
-    align-text:center;
+    text-align: center;
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 }
 
 /*상품문의 태그*/
@@ -160,7 +184,7 @@
     position: absolute;
     font-family:"Noto Sans KR";
   	font-size:26px;
-  	font-weight:500px; /*폰트 폭 적용*/
+  	font-weight:500; /*폰트 폭 적용*/
     margin-top: 30px;
 
 
@@ -168,7 +192,8 @@
 
 /*상품문의 내용*/
 .detailpage-info__comment{
-	width:780px; 
+	resize:none; /*창 늘리고 줄이는거 없앰*/
+    width:780px; 
 	height:100px;
 	border-radius: 10px;
 	border-color: #4751FD;
@@ -177,6 +202,28 @@
 	padding-left: 10px;
     margin-top: 80px;
 }
+
+/*상품 문의 클릭했을시 보더변환*/
+textarea:focus{
+    outline:1px solid #4751FD;
+    background-color:rgba(71,81,253,0.1);
+  }  
+
+/*상품문의 스코롤바*/
+textarea::-webkit-scrollbar {
+    width: 10px;
+  }
+  textarea::-webkit-scrollbar-thumb {
+    background-color: #4751FD;
+    border-radius: 10px;
+  }
+  textarea::-webkit-scrollbar-track {
+    background-color: rgba(71,81,253,0.1);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+
+
 
 /*상품문의 등록 버튼*/
 .detailpage-info__inquirybtns{
@@ -187,7 +234,9 @@
 	color:#4751FD;
 	border-radius: 10px;
 	border-color:#4751FD;
-	margin-left: 93%;
+	margin-top: 10px;
+    margin-left: 91%;
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
 
 	
 }
@@ -211,7 +260,8 @@
     width:50px;
 	height:50px;
 	border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 
@@ -219,8 +269,8 @@
 .detailpage-info__username{
     font-family:"Noto Sans KR";
   	font-size:20px;
-  	font-weight:500px; /*폰트 폭 적용*/
-    margin-top: -60px;
+  	font-weight:500; /*폰트 폭 적용*/
+    margin-top: -100px;
     margin-left: 70px;
 }
 
@@ -228,9 +278,109 @@
 .detailpage-info__usercomment{
     font-family:"Noto Sans KR";
   	font-size:18px;
-  	font-weight:400px; /*폰트 폭 적용*/
+  	font-weight:400; /*폰트 폭 적용*/
     color:#adb5bd;
     margin-left: 70px;
+    margin-top: 10px;
 }
 
+/*선 긋기*/
+.detailpage-info__line{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
+/*slcik*/
+/*한꺼번에 묶어서 이전/다음버튼 설정해준다*/
+        /*이렇게 해줘야 글자를 투명해졌던게 화살표만 나타내줄수 있다*/
+        .slick-prev:before{
+            font-family: 'xeicon';
+            color:#fff;
+            font-size: 45px;
+            content: "\e93d"; /*왼쪽 아이콘 원래 content값을 브라우저에서 확인후 넣어준다.*/
+            font-family: 'xeicon'; /*넣어줘야 적용된다*/
+        }
+  
+        .slick-next:before{
+            font-family: 'xeicon';
+            color:#fff;
+            font-size: 45px;
+            content: "\e940"; /*오른쪽 아이콘 원래 content값을 브라우저에서 확인후 넣어준다.*/
+            font-family: 'xeicon'; /*넣어줘야 적용된다*/
+        }
+        /*이전/다음버튼 클래스명은 자동으로 생성된다 브라우저창 F12눌러서 보면된다*/
+        /*visual클래스에 있는 button안 slick-prev클래스명*/
+        .slick-prev{
+            left:-100px;
+            font-size: 0; /*Previous글자 사이즈 0으로만듬*/
+            color:transparent; /*Previous글자를 투명으로 넣어준다*/
+            /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
+            position: absolute;
+            z-index: 10;
+            top:50%;
+            transform: translateY(-50%); /*버튼들이 Y축으로 가운데로 온다.*/
+            /*이전/다음 버튼 모양 조정*/
+            width: 71px;
+            height: 71px;
+            border-radius: 100%;
+            background: rgba(0,0,0,.5);
+            border: none;
+            /*이전/다음버튼 화살표를 넣기위해 아이콘폰트쓸것이다 xeicon쓸거다*/
+        }
+  
+  
+        .slick-next{
+            right:-100px;
+            font-size: 0; /*Next글자 사이즈 0으로만듬*/
+            color:transparent; /*Next글자를 투명으로 넣어준다*/
+            /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
+            position: absolute;
+            z-index: 10;
+            top:50%;
+            transform: translateY(-50%); /*버튼들이 Y축으로 가운데로 온다.*/
+            /*이전/다음 버튼 모양 조정*/
+            width: 71px;
+            height: 71px;
+            border-radius: 100%;
+            background: rgba(0,0,0,.5);
+            border: none;
+            /*이전/다음버튼 화살표를 넣기위해 아이콘폰트쓸것이다 xeicon쓸거다*/
+            
+        }
+  
+        .slick-dots{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            margin-left:-46px ;
+            display: flex;
+            justify-content: center;
+        }
+  
+        .slick-dots li{
+            list-style: none;
+            margin: 0 15px;
+        }
+  
+       .slick-dots li button{
+            position: absolute;
+            background: #adb5bd;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: none;
+            margin-top: -40px;
+            overflow: hidden;
+            font-size: 0; /*Next글자 사이즈 0으로만듬*/
+            color:transparent; /*Next글자를 투명으로 넣어준다*/
+           
+       }
+  
+       .slick-dots .slick-active button{
+           background: #4751FD;
+           border: none;
+           font-size: 0; /*글자 사이즈 0으로만듬*/
+           color:transparent; /*글자를 투명으로 넣어준다*/
+       }
+  
