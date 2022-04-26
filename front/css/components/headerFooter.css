@@ -1,32 +1,5 @@
 @charset "EUC-KR";
-@import "reset.css";
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-/* �늿�늻 font */
-@font-face {
-  font-family: 'yg-jalnan';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-ul, li, li a {
-  list-style: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
+@import "../components/styles.css";
 
 /* header */
 .header-bar-box{
@@ -236,17 +209,7 @@ button {
   visibility: hidden;
   transition: opacity .4s;
 }
-/* menu 留먰뭾�꽑紐⑥뼇 */
-/* #menu:after {
-  position: absolute;
-  top: -15px;
-  left: 95px;
-  content: "";
-  display: block;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 20px solid white;
-} */
+
 
 #menu li a {
   padding: 5px;

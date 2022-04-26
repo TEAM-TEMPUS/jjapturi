@@ -1,42 +1,12 @@
 @charset "EUC-KR";
-@import "reset.css";
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-/* �늿�늻 font */
-@font-face {
-  font-family: 'yg-jalnan';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-ul, li, li a {
-  list-style: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
+@import "../components/styles.css";
 
 /* header */
 .header-bar-box{
   box-sizing: border-box;
-  border-bottom: 1px solid #eee;
-  /* position: sticky; */
-  top: 0;
-  z-index: 1;
-  position: fixed;
-  top: 0;
+    border-bottom: 1px solid #eee;
+    z-index: 1;
+    top: 0;
 }
 
 #header-bar{
@@ -236,17 +206,7 @@ button {
   visibility: hidden;
   transition: opacity .4s;
 }
-/* menu 留먰뭾�꽑紐⑥뼇 */
-/* #menu:after {
-  position: absolute;
-  top: -15px;
-  left: 95px;
-  content: "";
-  display: block;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 20px solid white;
-} */
+
 
 #menu li a {
   padding: 5px;
@@ -276,73 +236,3 @@ button {
   width: 30px;
 }
 
-
-
-
-
-
-/* footer */
-.p-footer__inner {
-  margin: auto;
-  padding: 0;
-  box-sizing: border-box;
-  border-top: 1px solid #EBEBEB;
-  position: fixed;
-  bottom: 0;
-}
-
-.p-footer__site-group-list {
-  display: flex;
-  padding-bottom: 50px;
-  padding-top: 30px;
-  justify-content: center;
-}
-
-.p-footer__site-group {
-  width: 308px;
-  margin: 0;
-  padding: 0;
-  color: #6b7684;
-  list-style: none;
-  font-size: 15px;
-  line-height: 30px;
-  box-sizing: border-box;
-  margin-left: 6rem;
-}
-
-
-.p-footer--dark .p-footer__site-group-title{
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  color: #000000;
-
-  
-}
-
-
-.p-footer__site-group-title {
-  padding-bottom: 5px;
-  font-weight: 700;
-  
-}
-
-.p-footer__site-group-item{
-  line-height: 1.5;
-}
-
-.p-footer__site-group-item>a {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 300;	
-  font-size: 13px;
-  display: block;
-  text-decoration: none;
-  color: #787878;
-  
-}
-
-.p-footer__site-group-item>b {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 300;	
-  font-size: 13px;
-}
