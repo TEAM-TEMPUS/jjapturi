@@ -384,3 +384,7 @@ textarea::-webkit-scrollbar {
            color:transparent; /*글자를 투명으로 넣어준다*/
        }
   
+        /*이미지 슬라이드 밑에 점없어지는거*/
+       .slick-dots li:first-child:nth-last-child(1){
+        display:none
+    }

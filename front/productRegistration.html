@@ -32,23 +32,30 @@
       <div id="container">
         <main class="container__inner">
           <article clas="product-registration">
+            <!--구매/판매 전환 버튼-->
+            <div class="onofbutton">
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox"><span></span></label>
+            </div>
             <!--BEM중 block해당 헤더블럭-->
             <h2 class="product-registration__bigtitle">상품 등록</h2>
             <h2 class="product-registration-info__imgetitle">
               상품이미지 등록(필수)
             </h2>
 
+            
+
+
             <!--이미지 업로드를 위한 div부분-->
             <div class="product-registration__imagspace">
-            <img
+              <img
               alt=""
               src="img/gibon.png"
               class="product-registration__imge"
               id="product-registration__imge"
             />
-       
-        
-          </div>
+            </div>
+          
             <!-- 사진업로드 -->
             <p class="product-registration__imgselect">
               <!--이미지 다중 업로드를 위해 multiple작성 기본이미지에서 등록 이미지 변환하기 위해 onchange작성 -->
@@ -88,12 +95,12 @@
                     카테고리
                   </h2>
                   <select class="product-registration-category__info">
-                    <option>카테고리를 선택해주세요.</option>
-                    <option>심부름</option>
-                    <option>산책</option>
-                    <option>설치</option>
-                    <option>과외</option>
-                    <option>청소</option>
+                    <option >카테고리를 선택해주세요.</option>
+                    <option >심부름</option>
+                    <option >산책</option>
+                    <option >설치</option>
+                    <option >과외</option>
+                    <option >청소</option>
                   </select>
                 </li>
 
@@ -140,16 +147,12 @@
 
             <div class="product-registration-button">
               <!--버튼 부분 블럭줌-->
-              <button type="button" class="product-registration-button__button">
+              <button type="button" class="product-registration-button__button" onclick="location.href='detailPage.html'">
                 등록하기
               </button>
             </div>
 
-            <!--구매/판매 전환 버튼-->
-            <div class="onofbutton">
-              <input type="checkbox" id="checkbox" />
-              <label for="checkbox"><span></span></label>
-            </div>
+            
           </article>
         </main>
       </div>
