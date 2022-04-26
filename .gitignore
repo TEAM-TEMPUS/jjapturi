@@ -80,6 +80,9 @@ local.properties
 
 # Package Files #
 *.jar
+!cos.jar
+!json_simple.jar
+!mysql-connector-java-8.0.28.jar
 *.war
 *.nar
 *.ear
