@@ -28,7 +28,7 @@
 }
 
 .star-rating__radio:checked ~ .star-rating__star {
-  color: rgb(232, 232, 0);
+  color: rgb(255, 232, 21);
 }
 
 .star-rating__star {
