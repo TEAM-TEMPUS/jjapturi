@@ -456,3 +456,9 @@ input[type="checkbox"] {
     .slick-dots li:first-child:nth-last-child(1){
       display:none
   }
+
+  /*사진 첨부했을때 기본이미지 크기와 같게 하기*/
+  .slick-track{
+    width: 500px; 
+    height:300px;
+  }
