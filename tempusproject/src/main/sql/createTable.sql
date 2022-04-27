@@ -45,3 +45,10 @@ store_img_name VARCHAR(50),
 constraint Member_Image_FK_member_id FOREIGN KEY(member_id)REFERENCES Member(member_id) ON DELETE CASCADE,
 constraint Member_Image_UK_store_img_name UNIQUE (store_img_name)
 );
+
+create table Comment (comment_id BIGINT auto_increment primary key,
+member_id BIGINT,
+product_id BIGINT,
+text VARCHAR(2000),
+CONSTRAINT Comment_FK_member_id FOREIGN KEY (member_id) REFERENCES Member(member_id),
+CONSTRAINT Comment_FK_product_id FOREIGN KEY (product_id) REFERENCES Product(product_id));
