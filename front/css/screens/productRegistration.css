@@ -378,7 +378,7 @@ input[type="checkbox"] {
       /*이전/다음버튼 클래스명은 자동으로 생성된다 브라우저창 F12눌러서 보면된다*/
       /*visual클래스에 있는 button안 slick-prev클래스명*/
       .slick-prev{
-          left:-10px;
+          left:-100px;
           font-size: 0; /*Previous글자 사이즈 0으로만듬*/
           color:transparent; /*Previous글자를 투명으로 넣어준다*/
           /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
@@ -397,7 +397,7 @@ input[type="checkbox"] {
 
 
       .slick-next{
-          right:-30px;
+          right:-100px;
           font-size: 0; /*Next글자 사이즈 0으로만듬*/
           color:transparent; /*Next글자를 투명으로 넣어준다*/
           /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
