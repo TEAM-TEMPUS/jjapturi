@@ -24,5 +24,5 @@ member_id BIGINT,
 product_id BIGINT,
 grade TINYINT,
 CONSTRAINT Member_FK_member_id FOREIGN KEY (member_id) REFERENCES Member(member_id),
-CONSTRAINT Product_FK_product_id FOREIGN KEY (product_id) REFERENCES Product(member_id)
+CONSTRAINT Product_FK_product_id FOREIGN KEY (product_id) REFERENCES Product(product_id)
 );
