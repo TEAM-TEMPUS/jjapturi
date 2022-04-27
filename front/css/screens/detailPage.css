@@ -55,7 +55,7 @@
 }
 
 /*프로필 닉네임,등급 위치*/
-.detailpage-info__usernickname{
+.detailpage-info__mynickname{
     display: flex;
     font-family:"Noto Sans KR";
     font-size:22px;
@@ -266,7 +266,7 @@ textarea::-webkit-scrollbar {
 
 
 /*유져 이름위치*/
-.detailpage-info__username{
+.detailpage-info__usernickname{
     font-family:"Noto Sans KR";
   	font-size:20px;
   	font-weight:500; /*폰트 폭 적용*/
