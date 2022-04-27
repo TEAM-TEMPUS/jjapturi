@@ -1,5 +1,7 @@
 
 
+
+
 $('.product-registration__imagspace').slick({
     dots: true,
     infinite: true,

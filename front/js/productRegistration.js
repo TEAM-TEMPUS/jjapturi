@@ -6,7 +6,9 @@ function setDetailImage(event){
       //기본이미지를 지우고 등록된 이미지를 적용한다.
   }
 
-  
+   
+
+
       for(const image of event.target.files){
           const reader = new FileReader();
           
@@ -16,6 +18,7 @@ function setDetailImage(event){
               //document.querySelector(".slick-track").appendChild(img);
               $('.product-registration__imagspace').slick('slickAdd', img);
               //document.querySelector(".product-registration__imagspace").appendChild(img);
+           
           };
           console.log(image);
           reader.readAsDataURL(image);
