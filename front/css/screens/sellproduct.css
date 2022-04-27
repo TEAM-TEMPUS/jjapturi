@@ -1,33 +1,3 @@
-@charset "EUC-KR";
-@import "styles.css";
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-/*font */
-@font-face {
-  font-family: 'yg-jalnan';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-ul, li, li a {
-  list-style: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
-
 /* header */
 .header-bar-box{
   box-sizing: border-box;
@@ -263,63 +233,92 @@ button {
   width: 30px;
 }
 
-
 /*메인부분*/
-
-.product-list__title {
-  text-align: center;
-  font: 700 28px "Noto Sans KR", sans-serif;
-  color: #000;
-  margin: 45px 0px 70px;
-  margin-bottom: 5rem;
+#sell-list{
+  display: flex;
+  justify-content: center;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
 }
-.main-content {
-  flex: 1;
+
+.sell-list__wrap{
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.sell-title-switch__wrap{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.buy__wrap{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 60px;
+}
+
+.sell-item__wrap{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  margin: 80px auto;
 }
 
-
-
-
-.image__item{    
-    width: 200px;
-    height: 200px;
-    overflow: visible;
-    z-index: 1;
-    object-fit: cover;
-    border-radius: 20px
+.sell-item{
+ /* width: 18rem;*/
+ width: 60rem;
+  margin-bottom: 3rem
 }
 
-
-.box__item-container{
-  margin-bottom: 100px;
+.sell-item__inner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.box__image{
-  margin-left: 200px;
-}
 
-.box__information-major{
+.sell-item__img{
   position: relative;
-    width: 1500px;
-    min-height: 168px;
-    padding:14px 280px 26px 460px;
-    vertical-align: middle;
-    margin-top: -218px;
+  /*width: 100%; */
+  width: 286px;
+  height: 286px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.medal--status {
+.medal--status{
   position: absolute;
   overflow: hidden;
+  top: 0;
+  right: 10px;
   z-index: 1;
-  left: 305px;
 }
 
-.medal__img {
+.medal__img{
   width: 3.5rem;
+}
+
+.sell-list__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  transform: scale(1);
+  transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0s;
+}
+
+
+.sell-list__title {
+  text-align: center;
+  font: 700 28px "Noto Sans KR", sans-serif;
+  color: #000;
+  border-bottom: 1px solid #cacaca;
+  padding: 0 16px 3px;
+  margin-bottom: 5rem;
 }
 
 .material-symbols-rounded {
@@ -328,96 +327,19 @@ button {
   font-size: 16px;
 }
 
-.text__item{
-  font: 500 24px "Noto Sans KR", sans-serif;
-  color: #000000;
-  margin-bottom: 2px;
-}
-
-.text__addr{
-  font: 400 22px "Noto Sans KR", sans-serif;
-  color: #787878;
-  margin-bottom: 2px;
-
-}
-.text__day{
-  font: 400 22px "Noto Sans KR", sans-serif;
-  color: #000000;
-  margin-bottom: 2px;
-
-}
-
-.box__price-buy{
-  font: 700 22px "Noto Sans KR", sans-serif;
-  color: #000000;
-  margin-bottom: 2px;
-
-}
-
-.text__text{
-  font: 400 22px "Noto Sans KR", sans-serif;
-  color: #787878;
-  margin-bottom: 2px;
-
-}
-
-.btn__update{
-  background-color: #FFFFFF;
-    color: #4751fd;
-    font: 700 19px "Noto Sans KR", sans-serif;
-    border-radius: 5px;
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-    border: 1.5px solid #4751fd;
-    margin-top: 10px;
-}
-
-.btn__delete{
-  background-color: #FFFFFF;
-    color: #4751fd;
-    font: 700 19px "Noto Sans KR", sans-serif;
-    border-radius: 5px;
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-    border: 1.5px solid #4751fd;
-    margin-left: 5px;
-}
-
-
-.btn__sale{
+.btn__sale {
   background-color: #4751FD;
-    color: #FFFFFF;
-    font: 700 19px "Noto Sans KR", sans-serif;
-    border-radius: 20px;
-    width: 90px;
-    height: 30px;
-    margin-left: 10px;
-    cursor: pointer;
-    position: absolute;
-    right: 95px;
-    top: 35px;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 10%);
+  color: #FFFFFF;
+  font: 700 19px "Noto Sans KR", sans-serif;
+  border-radius: 20px;
+  width: 90px;
+  height: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 10%);
 }
 
 .btn__reserved{
-background-color: #FFFFFF;
-    color: #000000;
-    font: 700 19px "Noto Sans KR", sans-serif;
-    border-radius: 20px;
-    width: 90px;
-    height: 30px;
-    margin-left: 10px;
-    cursor: pointer;
-    position: absolute;
-    right: 95px;
-    top: 80px;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 10%);
-}
-
-
-.btn__completed{
   background-color: #FFFFFF;
       color: #000000;
       font: 700 19px "Noto Sans KR", sans-serif;
@@ -426,208 +348,95 @@ background-color: #FFFFFF;
       height: 30px;
       margin-left: 10px;
       cursor: pointer;
-      position: absolute;
-      right: 95px;
-      top: 125px;
-      box-shadow: 0 1px 8px rgb(0 0 0 / 10%);
-  }
-  
-  .btn__star {
-    background-color: #ffffff;
-      color: #000000;
-      font: 700 19px "Noto Sans KR", sans-serif;
-      border-radius: 20px;
-      width: 90px;
-      height: 30px;
-      margin-left: 10px;
-      cursor: pointer;
-      position: absolute;
-      right: 95px;
-      top: 170px;
       box-shadow: 0 1px 8px rgb(0 0 0 / 10%);
   }
 
+  .btn__completed{
+    background-color: #FFFFFF;
+        color: #000000;
+        font: 700 19px "Noto Sans KR", sans-serif;
+        border-radius: 20px;
+        width: 90px;
+        height: 30px;
+        margin-left: 10px;
+        cursor: pointer;
+        box-shadow: 0 1px 8px rgb(0 0 0 / 10%);
+    }
 
-
-/* pagenation */
-.pagenation__wrap {
+.sell-item-date__wrap{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.pagenation__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pagenation__inner a:last-child {
-  margin-right: 0;
-}
-
-.pagenation__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  margin-right: 12px;
-  border-radius: 3px;
-  color: #000;
-}
-
-.pagenation--previous,
-.pagenation--next {
-  display: inline-flex;
-  vertical-align: middle;
-}
-
-.pagenation-number {
-  font: 400 16px "Noto Sans KR", sans-serif;
-  text-align: center;
-  background: #fff;
-}
-
-.pagenation-number:hover {
-  background-color: rgba(71, 80, 253, 0.2);
-  transition: 0.3s ease 0s;
-}
-
-.pagenation-number.current {
-  color: #fff;
-  background-color: #4751fd;
-}
-
-
-
-/* product--navigation */
-.product--navigation {
-  position: fixed;
-  bottom: -11.5rem;
-  right: 7rem;
-  z-index: 2;
-}
-
-#navigation {
-  display: block;
-  width: 26px;
-}
-
-#navigation span:after,
-#navigation span:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -9px;
-}
-#navigation span:after {
-  top: 9px;
-}
-#navigation span {
   position: relative;
-  display: block;
+  align-items: center;
 }
 
-#navigation span,
-#navigation span:after,
-#navigation span:before {
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  transition: all 0.3s;
-  backface-visibility: hidden;
-  border-radius: 50px;
-  bottom: 230px;
-}
-
-/* menu_wrap 영역 cursor pointer 잡히게 */
-.menu-area {
-  position: absolute;
-  background: #4751fd;
-  height: 4rem;
-  width: 4rem;
-  top: -31px;
-  right: -18px;
-  z-index: -1;
-  cursor: pointer;
-  border-radius: 100px;
-  transition: 0.3s ease 0s;
-}
-
-.product--navigation:hover .menu-area {
-  background: #3841ec;
-}
-
-/* on activation */
-#navigation.on span {
-  background-color: transparent;
-}
-#navigation.on span:before {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-#navigation.on span:after {
-  transform: rotate(-45deg) translate(7px, -8px);
-}
-#navigation.on + #menu_wrap {
-  opacity: 1;
-  visibility: visible;
-  position: absolute;
-}
-
-/* menu_wrap appearance*/
-#menu_wrap {
-  z-index: 9999;
-  position: absolute;
-  color: #000;
-  width: 200px;
-  padding: 25px 15px;
-  bottom: 18rem;
-  right: -5.3rem;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 500;
-  text-align: center;
-  border-radius: 15px;
-  background: white;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s;
-}
-
-#menu_wrap li {
-  margin-bottom: 7px;
-}
-
-#menu_wrap li a {
-  padding: 5px;
-  color: #000;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-#menu_wrap li a:hover,
-#menu_wrap li a:focus {
-  background: #4751fd;
-  border-radius: 5px;
-  color: #fff;
-}
-
-.product-title-switch__wrap {
+.sell-text__img{
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }
+
+.box__information-reservation{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.btn__update {
+  background-color: #FFFFFF;
+  color: #4751fd;
+  font: 700 19px "Noto Sans KR", sans-serif;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+  border: 1.5px solid #4751fd;
+  margin-top: 10px;
+
+}
+
+.btn__delete {
+  background-color: #FFFFFF;
+  color: #4751fd;
+  font: 700 19px "Noto Sans KR", sans-serif;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+  border: 1.5px solid #4751fd;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+
+.sell-item__title{
+  font: 500 24px "Noto Sans KR", sans-serif;
+  color: #000000;
+}
+
+.sell-item__place{
+  font: 400 22px "Noto Sans KR", sans-serif;
+  color: #787878;
+}
+
+.date__wrap{
+  font: 400 22px "Noto Sans KR", sans-serif;
+  color: #000000;
+}
+
+.sell-item__price{
+  font: 700 22px "Noto Sans KR", sans-serif;
+  color: #000000;
+}
+
+.description__text{
+  font: 400 22px "Noto Sans KR", sans-serif;
+  color: #787878;
+}
+
 
 /*on-off-switch*/
 .on-off--switch {
   position: absolute;
   right: 16rem;
-  padding: 50px 0px 3px;
 }
-
-
-
 
 .checkbox {
   display: none;
@@ -702,6 +511,173 @@ background-color: #FFFFFF;
   display: block;
   height: 100%;
   width: 100%;
+}
+
+/* pagenation */
+.pagenation__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.pagenation__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagenation__inner a:last-child {
+  margin-right: 0;
+}
+
+.pagenation__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  border-radius: 3px;
+  color: #000;
+}
+
+.pagenation--previous,
+.pagenation--next {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.pagenation-number {
+  font: 400 16px "Noto Sans KR", sans-serif;
+  text-align: center;
+  background: #fff;
+}
+
+.pagenation-number:hover {
+  background-color: rgba(71, 80, 253, 0.2);
+  transition: 0.3s ease 0s;
+}
+
+.pagenation-number.current {
+  color: #fff;
+  background-color: #4751fd;
+}
+
+
+/* product-navigation */
+.product--navigation {
+  position: fixed;
+  bottom: 5rem;
+  right: 7rem;
+  z-index: 2;
+}
+
+#navigation {
+  display: block;
+  width: 26px;
+}
+
+#navigation span:after,
+#navigation span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+#navigation span:after {
+  top: 9px;
+}
+#navigation span {
+  position: relative;
+  display: block;
+}
+
+#navigation span,
+#navigation span:after,
+#navigation span:before {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 50px;
+}
+
+/* menu_wrap 영역 cursor pointer 잡히게 */
+.menu-area {
+  position: absolute;
+  background: #4751fd;
+  height: 4rem;
+  width: 4rem;
+  top: -31px;
+  right: -18px;
+  z-index: -1;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: 0.3s ease 0s;
+}
+
+.product--navigation:hover .menu-area {
+  background: #3841ec;
+}
+
+/* on activation */
+#navigation.on span {
+  background-color: transparent;
+}
+#navigation.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#navigation.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+#navigation.on + #menu_wrap {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+}
+
+/* menu_wrap appearance*/
+#menu_wrap {
+  z-index: 9999;
+  position: absolute;
+  color: #000;
+  width: 200px;
+  padding: 25px 15px;
+  bottom: 3rem;
+  right: -5.3rem;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s;
+}
+
+#menu_wrap li {
+  margin-bottom: 7px;
+}
+
+#menu_wrap li a {
+  padding: 5px;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+#menu_wrap li a:hover,
+#menu_wrap li a:focus {
+  background: #4751fd;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.product-title-switch__wrap {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 
