@@ -23,6 +23,6 @@ create table Trading_Info(trading_info_id BIGINT auto_increment primary key,
 member_id BIGINT,
 product_id BIGINT,
 grade TINYINT,
-CONSTRAINT Member_FK_member_id FOREIGN KEY (member_id) REFERENCES Member(member_id),
-CONSTRAINT Product_FK_product_id FOREIGN KEY (product_id) REFERENCES Product(product_id)
+CONSTRAINT Trading_Info_FK_member_id FOREIGN KEY (member_id) REFERENCES Member(member_id),
+CONSTRAINT Trading_Info_FK_product_id FOREIGN KEY (product_id) REFERENCES Product(product_id)
 );
