@@ -55,7 +55,7 @@
 }
 
 /*프로필 닉네임,등급 위치*/
-.detailpage-info__registrantname{
+.detailpage-info__usernickname{
     display: flex;
     font-family:"Noto Sans KR";
     font-size:22px;
