@@ -1,6 +1,7 @@
 package dto;
 
 public class MemberDto {
+	private Long memberId;
 	private String nickname;
 	private String id;
 	private String password;
@@ -17,6 +18,20 @@ public class MemberDto {
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 	}
+	
+	public MemberDto(Long memberId, String nickname, String id, String password, String address, String email,
+			String phoneNumber) {
+		super();
+		this.memberId = memberId;
+		this.nickname = nickname;
+		this.id = id;
+		this.password = password;
+		this.address = address;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+	}
+
+
 
 	public String getNickname() {
 		return nickname;
