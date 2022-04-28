@@ -15,7 +15,7 @@ public class MemberDao {
 		String sql = "insert into Member(id, nickname, password, address, email, phone_number) values(?, ?, ?, ?, ?, ?)";
 		Connection conn = db.getConnection();
 		PreparedStatement ps = null;
-		
+
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, member.getId());
@@ -24,6 +24,31 @@ public class MemberDao {
 			ps.setString(4, member.getAddress());
 			ps.setString(5, member.getEmail());
 			ps.setString(6, member.getPhoneNumber());
+
+			ps.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			db.dbClose(ps, conn);
+		}
+
+	}
+
+	public void update(MemberDto member) {
+		DbConnect db = new DbConnect();
+
+		String sql = "update Member set nickname=?, password=?, address=?, email=?, phone_number=? where id=?";
+		Connection conn = db.getConnection();
+		PreparedStatement ps = null;
+
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, member.getNickname());
+			ps.setString(2, member.getPassword());
+			ps.setString(3, member.getAddress());
+			ps.setString(4, member.getEmail());
+			ps.setString(5, member.getPhoneNumber());
+			ps.setString(6, member.getId());
 			
 			ps.execute();
 		} catch (SQLException e) {
@@ -31,6 +56,6 @@ public class MemberDao {
 		} finally {
 			db.dbClose(ps, conn);
 		}
-		
+
 	}
 }
