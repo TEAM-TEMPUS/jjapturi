@@ -93,31 +93,42 @@ input[type="file"]{
 
 /*나는 누구인가요? 개미/배짱이 라디오 버튼*/
 .service-registration-who{
-  text-align: center;
+
 }
 .service-registration-info__who{
+  
   font-family: "Noto Sans KR";
-	font-size:30px;
-	font-weight:400;
+	font-size:18px;
+	font-weight:500;
 }
 /*라디오 버튼 크기조정 */
-.radio-select{
-  font-family: "Noto Sans KR";
-	font-size:30px;
-	font-weight:400;
+.radio-select-ant{
+ 
+  margin-left: 20px;
+  margin-top: -10px;
+
  
 }
-.radio-select__ant{
-  width: 20px;
-  height: 20px;
+.radio-select-grasshopper{
  
-}
-.radio-select__grasshopper{
-  width: 20px;
-  height: 20px;
   margin-left: 25px;
+
 }
 
+.radio-select-antname{
+
+  font-family: "Noto Sans KR";
+	font-size:20px;
+	font-weight:400;
+
+}
+
+.radio-select-grasshoppername{
+
+  font-family: "Noto Sans KR";
+	font-size:20px;
+	font-weight:400;
+}
 
 /*상품정보입력 스타일 적용(제목)*/
 .service-registration-title__info{
@@ -131,7 +142,7 @@ input[type="file"]{
 	width:700px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 50px;
+  margin-left: 115px;
 	
 }
 
@@ -161,7 +172,7 @@ input:focus {
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 18px;
+  margin-left: 82px;
 }
 
 
@@ -197,7 +208,7 @@ select:focus{
 	width:700px; 
 	height:40px;
 	padding-left:10px;
-    margin-left: 18px;
+    margin-left: 80px;
 }
 
 /*상품정보입력 스타일 적용(날짜)*/
@@ -211,7 +222,7 @@ select:focus{
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 50px;
+  margin-left: 112px;
 	
 }
 .service-registration-item__info2{
@@ -248,7 +259,7 @@ select:focus{
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 50px;
+  margin-left: 110px;
 }
 
 /*상품정보입력 소제목*/
@@ -274,7 +285,7 @@ select:focus{
 	height:200px;
 	padding-top:10px;
 	padding-left:10px;
-  margin-left: 90px;
+  margin-left: 150px;
   margin-top: -50px;
 
 }
