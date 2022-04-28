@@ -45,13 +45,13 @@
 /*이미지등록하면 이미지나타나는 스타일 적용*/
 /*이미지 스타일 적용*/
 .service-registration__imagspace{
-   max-width: 500px; 
-    height:auto;
-    border-radius: 5px;
-    margin-left:80px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    padding-bottom: 50px;
+  max-width: 500px; 
+   height:auto;
+   border-radius: 5px;
+   margin-left:80px;
+   margin-bottom: 50px;
+   margin-top: 50px;
+   padding-bottom: 50px;
 
 }
 
@@ -93,32 +93,42 @@ input[type="file"]{
 
 /*나는 누구인가요? 개미/배짱이 라디오 버튼*/
 .service-registration-who{
-  text-align: center;
+
 }
 .service-registration-info__who{
+  
   font-family: "Noto Sans KR";
-	font-size:30px;
-	font-weight:400;
+	font-size:18px;
+	font-weight:500;
 }
 /*라디오 버튼 크기조정 */
-.radio-select{
-  font-family: "Noto Sans KR";
-	font-size:30px;
-	font-weight:400;
+.radio-select-ant{
+ 
+  margin-left: 20px;
+  margin-top: -10px;
+
  
 }
-.radio-select__ant{
-  width: 20px;
-  height: 20px;
+.radio-select-grasshopper{
  
-}
-.radio-select__grasshopper{
-  width: 20px;
-  height: 20px;
   margin-left: 25px;
+
 }
 
+.radio-select-antname{
 
+  font-family: "Noto Sans KR";
+	font-size:20px;
+	font-weight:400;
+
+}
+
+.radio-select-grasshoppername{
+
+  font-family: "Noto Sans KR";
+	font-size:20px;
+	font-weight:400;
+}
 
 /*상품정보입력 스타일 적용(제목)*/
 .service-registration-title__info{
@@ -127,13 +137,12 @@ input[type="file"]{
 	font-size:14px;
 	font-weight:400;
 	border-radius:7px ;
-	border-color:#adb5bd;
-  border:1px solid #adb5bd;
-	color:#000000;
+	border:1px solid #adb5bd;
+  color:#000000;
 	width:700px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 50px;
+  margin-left: 115px;
 	
 }
 
@@ -160,13 +169,14 @@ input:focus {
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-  border:1px solid #adb5bd;
-	color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 18px;
+  margin-left: 82px;
 }
+
+
+
 
 /*상품정보입력 카테고리 스타일 적용*/
 select option:first-child{
@@ -193,13 +203,12 @@ select:focus{
 	font-size:14px;
 	font-weight:400;
 	border-radius:7px ;
-	border-color:#adb5bd;
-  border:1px solid #adb5bd;
+	border:1px solid #adb5bd;
 	color:#000000;
 	width:700px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 18px;
+    margin-left: 80px;
 }
 
 /*상품정보입력 스타일 적용(날짜)*/
@@ -208,12 +217,12 @@ select:focus{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-  border:1px solid #adb5bd;
-	color:#adb5bd;
+	border:1px solid #adb5bd;
+  color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 50px;
+  margin-left: 112px;
 	
 }
 .service-registration-item__info2{
@@ -221,8 +230,8 @@ select:focus{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px ;
-  border:1px solid #adb5bd;
-	color:#adb5bd;
+	border:1px solid #adb5bd;
+  color:#adb5bd;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
@@ -245,12 +254,12 @@ select:focus{
 	font-weight:400; /*폰트 폭 적용*/
 	font-size:14px;
 	border-radius:7px;
-  border:1px solid #adb5bd;
-	color:#000000;
+	border:1px solid #adb5bd; 
+  color:#000000;
 	width:200px; 
 	height:40px;
 	padding-left:10px;
-  margin-left: 50px;
+  margin-left: 110px;
 }
 
 /*상품정보입력 소제목*/
@@ -276,7 +285,7 @@ select:focus{
 	height:200px;
 	padding-top:10px;
 	padding-left:10px;
-  margin-left: 90px;
+  margin-left: 150px;
   margin-top: -50px;
 
 }
@@ -383,7 +392,7 @@ block으로 바꾸어주는 것 => display: block으로 해주는 것이다*/
           /*이전/다음버튼 화살표를 넣기위해 아이콘폰트쓸것이다 xeicon쓸거다*/
           
       }
-
+/**/
       .slick-dots{
           position: absolute;
           left: 0;
