@@ -1,0 +1,59 @@
+.reservation-confirm {
+  width: 862px;
+  height: 484px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #d4d4d4;
+}
+
+.reservation-confirm__description {
+  margin-top: 126px;
+  text-align: center;
+}
+
+.reservation-confirm__description-title {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.reservation-confirm__description-content {
+  font-weight: 400;
+  font-size: 22px;
+  margin: 25px 0;
+  line-height: 45px;
+  color: #787878;
+}
+
+.reservation-confirm__buttons {
+  margin-bottom: 57px;
+}
+
+.reservation-confirm__check, 
+.reservation-confirm__cancel {
+  width: 344px;
+  height: 83px;
+  border: none;
+  font-weight: 700;
+  font-size: 27px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.reservation-confirm__check:active, 
+.reservation-confirm__cancel:active {
+  opacity: 0.7;
+}
+
+.reservation-confirm__check {
+  margin-right: 30px;
+  background-color: #EFEFEF;
+}
+
+.reservation-confirm__cancel {
+  background-color: #4751FD;
+  color: white;
+}
