@@ -10,6 +10,11 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/screens/myPage.css" />
   </head>
+  <% 
+  // 프로필 사진, 닉네임, memberId, 자기소개, 거래 건수, 평점, 회원 등급
+  // memberId, nikcname, selfIntroduction, 
+  // 조인 : memberImage, trading_Info
+  %>
   <body>
     <div id="wrap">
       <header></header>
@@ -61,11 +66,7 @@
             </div>
 
             <div class="transaction-history">
-              <div class="transaction-history__sale">
-                <a>판매내역</a>
-              </div>
-              <div class="transaction-history__purchase">
-                <a>구매내역</a>
+              <a>거래내역</a>
             </div>
           </article>
         </main>
