@@ -65,4 +65,12 @@ public class MemberDto {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+	@Override
+	public String toString() {
+		return "MemberDto [nickname=" + nickname + ", id=" + id + ", password=" + password + ", address=" + address
+				+ ", email=" + email + ", phoneNumber=" + phoneNumber + "]";
+	}
+	
+	
 }
