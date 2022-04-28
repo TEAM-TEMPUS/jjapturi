@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dto.MemberDto;
@@ -56,6 +57,37 @@ public class MemberDao {
 		} finally {
 			db.dbClose(ps, conn);
 		}
-
 	}
+	
+	public MemberDto findByMemberId(Long memberId) {
+		MemberDto member = null;
+		DbConnect db = new DbConnect();		
+		String sql = "select * from Member where member_id=?";
+		Connection conn = db.getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setLong(1, memberId);
+			rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				String nickname = rs.getString("nickname");
+				String id = rs.getString("id");
+				String password = rs.getString("password");
+				String address = rs.getString("address");
+				String email = rs.getString("email");
+				String phoneNumber = rs.getString("phone_number");
+				member = new MemberDto(nickname, id, password, address, email, phoneNumber);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			db.dbClose(ps, conn);
+		}
+		
+		return member;
+	}
+
 }
