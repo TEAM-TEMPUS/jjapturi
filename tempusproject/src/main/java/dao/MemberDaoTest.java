@@ -7,14 +7,14 @@ public class MemberDaoTest {
 	
 	public static void main(String[] args) {
 		MemberDaoTest test = new MemberDaoTest();
-//		test.save();
+		test.save();
 //		test.update();
-		test.findByMemberId(1L);
-		
+//		test.findByMemberId(1L);
+		test.findById("id");
 	}
 
 	public void save() {
-		MemberDto dto = new MemberDto("nickname", "id", "password", "address", "email", "phoneNumber");
+		MemberDto dto = new MemberDto("nickname2", "id2", "password2", "address2", "email2", "phoneNumber2");
 		dao.save(dto);
 	}
 	
@@ -25,6 +25,11 @@ public class MemberDaoTest {
 	
 	public void findByMemberId(Long memberId) {
 		MemberDto member = dao.findByMemberId(memberId);
+		System.out.println(member);
+	}
+	
+	public void findById(String id) {
+		MemberDto member = dao.findById(id);
 		System.out.println(member);
 	}
 }
