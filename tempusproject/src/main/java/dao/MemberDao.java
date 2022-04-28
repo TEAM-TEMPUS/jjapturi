@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dto.MemberDto;
+import dto.MemberProfileDto;
 import mysql.db.DbConnect;
 
 public class MemberDao {
@@ -120,4 +121,34 @@ public class MemberDao {
 		return member;
 	}
 
+	public MemberProfileDto findMemberProfileByMemberId(Long memberId) {
+		MemberProfileDto memberProfile = null;
+		DbConnect db = new DbConnect();		
+		String sql = "select m.nickname, m.self_introduction, mi.store_img_name "
+				+ "from Member m "
+				+ "INNER JOIN Member_Image mi on m.member_id = mi.member_id "
+				+ "where m.member_id = ?";
+		Connection conn = db.getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setLong(1, memberId);
+			rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				String nickname = rs.getString("nickname");
+				String selfIntroduction = rs.getString("self_introduction");
+				String storeImgName = rs.getString("store_img_name");
+				memberProfile = new MemberProfileDto(nickname, selfIntroduction, storeImgName);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			db.dbClose(ps, conn);
+		}
+		
+		return memberProfile;
+	}
 }
