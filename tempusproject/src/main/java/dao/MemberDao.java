@@ -14,7 +14,7 @@ public class MemberDao {
 	DbConnect db = new DbConnect();
 
 	public void save(MemberDto member) {
-		String sql = "insert into Member(id, nickname, password, address, email, phone_number) values(?, ?, ?, ?, ?, ?)";
+		String sql = "insert into Member values(null, ?, ?, ?, ?, ?, ?, ?)";
 		Connection conn = db.getConnection();
 		PreparedStatement ps = null;
 
@@ -23,9 +23,10 @@ public class MemberDao {
 			ps.setString(1, member.getId());
 			ps.setString(2, member.getNickname());
 			ps.setString(3, member.getPassword());
-			ps.setString(4, member.getAddress());
-			ps.setString(5, member.getEmail());
-			ps.setString(6, member.getPhoneNumber());
+			ps.setString(4, "");
+			ps.setString(5, member.getAddress());
+			ps.setString(6, member.getEmail());
+			ps.setString(7, member.getPhoneNumber());
 
 			ps.execute();
 		} catch (SQLException e) {
