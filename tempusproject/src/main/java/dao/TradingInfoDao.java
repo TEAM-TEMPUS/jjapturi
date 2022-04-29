@@ -18,7 +18,7 @@ public class TradingInfoDao {
 		DbConnect db = new DbConnect();		
 		String sql = "select ti.grade from Trading_Info ti "
 				+ "INNER JOIN Service s "
-				+ "on ti.member_id = s.member_id and s.status = 'completion' "
+				+ "on ti.service_id = s.service_id and s.status = 'completion' "
 				+ "where ti.member_id = ?";
 		Connection conn = db.getConnection();
 		PreparedStatement ps = null;
