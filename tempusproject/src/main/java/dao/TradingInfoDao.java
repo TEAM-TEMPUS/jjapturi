@@ -30,7 +30,7 @@ public class TradingInfoDao {
 			rs = ps.executeQuery();
 			
 			if (rs.next()) {
-				String grade = rs.getString("grade");
+				Integer grade = rs.getInt("grade");
 				
 				gradeList.add(new TradingInfoDto(grade));
 			}

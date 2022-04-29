@@ -1,18 +1,18 @@
 package dto;
 
 public class TradingInfoDto {
-	private String grade;
+	private Integer grade;
 
-	public TradingInfoDto(String grade) {
+	public TradingInfoDto(Integer grade) {
 		super();
 		this.grade = grade;
 	}
 
-	public String getGrade() {
+	public Integer getGrade() {
 		return grade;
 	}
 
-	public void setGrade(String grade) {
+	public void setGrade(Integer grade) {
 		this.grade = grade;
 	}
 }
