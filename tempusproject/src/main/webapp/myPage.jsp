@@ -1,3 +1,10 @@
+<%@page import="common.Grades"%>
+<%@page import="java.util.stream.Collectors"%>
+<%@page import="dto.TradingInfoDto"%>
+<%@page import="java.util.List"%>
+<%@page import="dto.MemberProfileDto"%>
+<%@page import="dao.TradingInfoDao"%>
+<%@page import="dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,10 +17,41 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/screens/myPage.css" />
   </head>
-  <% 
-  // 프로필 사진, 닉네임, memberId, 자기소개, 거래 건수, 평점, 회원 등급
-  // memberId, nikcname, selfIntroduction, 
-  // 조인 : memberImage, trading_Info
+  <%
+  MemberDao memberDao = new MemberDao();
+  TradingInfoDao tradingInfoDao = new TradingInfoDao();
+  
+  // TODO 로그인한 회원ID로 수정
+  Long memberId = Long.parseLong(request.getParameter("memberId"));  
+  
+  MemberProfileDto memberProfile =  memberDao.findMemberProfileByMemberId(memberId);
+  List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(memberId);
+  
+  int completeTradingCount = tradingInfos.size();
+  
+  double totalGrade = 0;
+  int gradeSum = 0;
+  int grantedGradeCount = 0;
+  for (TradingInfoDto tradingInfo : tradingInfos) {
+	  int grade = tradingInfo.getGrade();
+	  if (grade > 0) {
+		  gradeSum += grade;
+		  grantedGradeCount++;
+	  }
+  }
+  totalGrade = (double) gradeSum / grantedGradeCount;
+  
+  String rank;
+  if (completeTradingCount >= 100 && totalGrade >= 3.5) {
+	  rank = Grades.PLATINUM.getDescription();
+  } else if (completeTradingCount >= 50 && totalGrade >= 3.0) {
+	  rank = Grades.GOLD.getDescription();
+  } else if (completeTradingCount >= 10 && totalGrade >= 2.5) {
+	  rank = Grades.SILVER.getDescription();
+  } else {
+	  rank = Grades.BRONZE.getDescription();
+  }
+  	
   %>
   <body>
     <div id="wrap">
@@ -26,35 +64,35 @@
             <div class="my-page__profile">
               <div class="my-page-profile">
                 <img
-                  src="img/basic-profile-image.png"
+                  src="img/<%= memberProfile.getMemberImage() %>"
                   alt="프로필 사진"
                   class="my-page-profile__image"
                 />
-                <span class="my-page-profile__nickname">junjunjun</span>
+                <span class="my-page-profile__nickname"><%= memberProfile.getNickname() %></span>
               </div>
 
               <div class="my-transaction-info">
                 <ul class="my-transaction-info__list">
                   <li class="my-transaction-info__item">
                     <span class="my-transaction-info__title">거래건수</span>
-                    <span class="my-transaction-info__content">66</span>
+                    <span class="my-transaction-info__content"><%= completeTradingCount %></span>
                   </li>
 
                   <li class="my-transaction-info-item">
                     <span class="my-transaction-info__title">회원등급</span>
-                    <span class="my-transaction-info__content">골드</span>
+                    <span class="my-transaction-info__content"><%= rank %></span>
                   </li>
 
                   <li class="my-transaction-info-item">
                     <span class="my-transaction-info__title">평점</span>
-                    <span class="my-transaction-info__content">4.5</span>
+                    <span class="my-transaction-info__content"><%= totalGrade > 0 ? totalGrade : "결과 없음" %></span>
                   </li>
                 </ul>
               </div>
             </div>
 
             <p class="my-page__introduction">
-              안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!안녕하세요. junjunjun입니다~ 애용하고있어요!
+              <%= memberProfile.getSelfIntroduction()%>
             </p>
 
             <div class="my-page__edit-buttons">
