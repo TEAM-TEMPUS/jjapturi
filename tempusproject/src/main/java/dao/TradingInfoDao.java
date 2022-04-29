@@ -7,13 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import dto.TradingInfoDto;
 import mysql.db.DbConnect;
 
 public class TradingInfoDao {
 	DbConnect db = new DbConnect();
 	
-	public List<String> findCompleteTrandingsByMemberId(Long memberId) {
-		List<String> gradeList = new ArrayList<>();
+	public List<TradingInfoDto> findCompleteTradingInfosByMemberId(Long memberId) {
+		List<TradingInfoDto> gradeList = new ArrayList<>();
 		DbConnect db = new DbConnect();		
 		String sql = "select ti.grade from Trading_Info ti "
 				+ "INNER JOIN Service s "
@@ -31,7 +32,7 @@ public class TradingInfoDao {
 			if (rs.next()) {
 				String grade = rs.getString("grade");
 				
-				gradeList.add(grade);
+				gradeList.add(new TradingInfoDto(grade));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
