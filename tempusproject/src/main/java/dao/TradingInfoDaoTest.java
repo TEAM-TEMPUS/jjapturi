@@ -9,10 +9,10 @@ public class TradingInfoDaoTest {
 	
 	public static void main(String[] args) {
 		TradingInfoDaoTest test = new TradingInfoDaoTest();
-		test.findCompleteGradesByMemberId(1L);
+		test.findCompleteTradingInfosByMemberId(1L);
 	}
 	
-	public void findCompleteGradesByMemberId(Long memberId) {
+	public void findCompleteTradingInfosByMemberId(Long memberId) {
 		List<TradingInfoDto> tradingInfos = dao.findCompleteTradingInfosByMemberId(memberId);
 		for (TradingInfoDto tradingInfo : tradingInfos) {
 			System.out.println(tradingInfo.getGrade());
