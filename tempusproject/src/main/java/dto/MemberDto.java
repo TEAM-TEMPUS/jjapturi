@@ -18,7 +18,7 @@ public class MemberDto {
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 	}
-	
+
 	public MemberDto(Long memberId, String nickname, String id, String password, String address, String email,
 			String phoneNumber) {
 		super();
@@ -31,7 +31,13 @@ public class MemberDto {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public Long getMemberId() {
+		return memberId;
+	}
 
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
+	}
 
 	public String getNickname() {
 		return nickname;
@@ -86,6 +92,5 @@ public class MemberDto {
 		return "MemberDto [nickname=" + nickname + ", id=" + id + ", password=" + password + ", address=" + address
 				+ ", email=" + email + ", phoneNumber=" + phoneNumber + "]";
 	}
-	
-	
+
 }

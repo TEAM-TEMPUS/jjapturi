@@ -106,12 +106,13 @@ public class MemberDao {
 			rs = ps.executeQuery();
 			
 			if (rs.next()) {
+				Long memberId = rs.getLong("member_id");
 				String nickname = rs.getString("nickname");
 				String password = rs.getString("password");
 				String address = rs.getString("address");
 				String email = rs.getString("email");
 				String phoneNumber = rs.getString("phone_number");
-				member = new MemberDto(nickname, id, password, address, email, phoneNumber);
+				member = new MemberDto(memberId, nickname, id, password, address, email, phoneNumber);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
