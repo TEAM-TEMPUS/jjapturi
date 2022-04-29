@@ -64,7 +64,7 @@
             <div class="my-page__profile">
               <div class="my-page-profile">
                 <img
-                  src="img/<%= memberProfile.getMemberImage() %>"
+                  src="storefiles/<%= memberProfile.getMemberImage() %>"
                   alt="프로필 사진"
                   class="my-page-profile__image"
                 />
