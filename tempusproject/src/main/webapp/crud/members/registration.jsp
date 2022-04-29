@@ -1,3 +1,4 @@
+<%@page import="dao.MemberImageDao"%>
 <%@page import="dao.MemberDao"%>
 <%@page import="dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,7 +11,8 @@
 </head>
 <body>
 <% 
-MemberDao dao = new MemberDao();
+MemberDao memberDao = new MemberDao();
+MemberImageDao memberImageDao = new MemberImageDao();
 request.setCharacterEncoding("UTF-8");
 
 String nickname = request.getParameter("nickname");
@@ -22,7 +24,8 @@ String phoneNumber = request.getParameter("phoneNumber");
 
 MemberDto member = new MemberDto(nickname, id, password, address, email, phoneNumber);
 
-dao.save(member);
+memberDao.save(member);
+memberImageDao.save(memberDao.findById(id).getMemberId()); // 기본 이미지 등록
 %>
 </body>
 </html>
