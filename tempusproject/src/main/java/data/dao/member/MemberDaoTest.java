@@ -1,7 +1,7 @@
-package dao;
+package data.dao.member;
 
-import dto.MemberDto;
-import dto.MemberProfileDto;
+import data.dto.member.MemberDto;
+import data.dto.member.MemberProfileDto;
 
 public class MemberDaoTest {
 	static MemberDao dao = new MemberDao(); 

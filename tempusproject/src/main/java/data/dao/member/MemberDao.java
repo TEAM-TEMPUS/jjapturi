@@ -1,12 +1,12 @@
-package dao;
+package data.dao.member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import dto.MemberDto;
-import dto.MemberProfileDto;
+import data.dto.member.MemberDto;
+import data.dto.member.MemberProfileDto;
 import mysql.db.DbConnect;
 
 public class MemberDao {

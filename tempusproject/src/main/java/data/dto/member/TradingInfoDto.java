@@ -1,4 +1,4 @@
-package dto;
+package data.dto.member;
 
 public class TradingInfoDto {
 	private Integer grade;

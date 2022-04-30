@@ -1,4 +1,4 @@
-package data.dto;
+package data.dto.service;
 
 public class ServiceDto {
 

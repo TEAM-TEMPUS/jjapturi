@@ -1,6 +1,6 @@
-package data.dao;
+package data.dao.service;
 
-import data.dto.ServiceDto;
+import data.dto.service.ServiceDto;
 
 public class ServiceDaoTest {
 	

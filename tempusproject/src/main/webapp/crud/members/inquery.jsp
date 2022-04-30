@@ -1,7 +1,7 @@
 <%@page import="java.util.Objects"%>
 <%@page import="org.json.simple.JSONObject"%>
-<%@page import="dto.MemberDto"%>
-<%@page import="dao.MemberDao"%>
+<%@page import="data.dto.member.MemberDto"%>
+<%@page import="data.dao.member.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
