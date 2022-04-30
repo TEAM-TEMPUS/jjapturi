@@ -56,5 +56,5 @@ comment_id BIGINT auto_increment primary key,
 member_id BIGINT,
 service_id BIGINT,
 text VARCHAR(2000),
-CONSTRAINT Comment_FK_member_id FOREIGN KEY (member_id) REFERENCES Member(member_id),
-CONSTRAINT Comment_FK_service_id FOREIGN KEY (service_id) REFERENCES Service(service_id));
+CONSTRAINT Comment_FK_member_id FOREIGN KEY (member_id) REFERENCES Member(member_id) ,
+CONSTRAINT Comment_FK_service_id FOREIGN KEY (service_id) REFERENCES Service(service_id) ON DELETE CASCADE);
