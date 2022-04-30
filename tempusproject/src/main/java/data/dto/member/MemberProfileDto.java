@@ -1,4 +1,4 @@
-package dto;
+package data.dto.member;
 
 public class MemberProfileDto {
 	private String nickname;

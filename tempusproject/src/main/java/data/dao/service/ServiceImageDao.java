@@ -1,11 +1,11 @@
-package data.dao;
+package data.dao.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import data.dto.ServiceDto;
-import data.dto.ServiceImageDto;
+import data.dto.service.ServiceDto;
+import data.dto.service.ServiceImageDto;
 import mysql.db.DbConnect;
 
 public class ServiceImageDao {

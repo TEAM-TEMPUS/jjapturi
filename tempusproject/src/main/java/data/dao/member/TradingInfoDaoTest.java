@@ -1,8 +1,8 @@
-package dao;
+package data.dao.member;
 
 import java.util.List;
 
-import dto.TradingInfoDto;
+import data.dto.member.TradingInfoDto;
 
 public class TradingInfoDaoTest {
 	static TradingInfoDao dao = new TradingInfoDao();

@@ -1,4 +1,4 @@
-package dao;
+package data.dao.member;
 
 public class MemberImageDaoTest {
 	static MemberImageDao dao = new MemberImageDao();

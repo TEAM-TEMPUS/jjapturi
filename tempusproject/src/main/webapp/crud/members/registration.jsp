@@ -1,6 +1,6 @@
-<%@page import="dao.MemberImageDao"%>
-<%@page import="dao.MemberDao"%>
-<%@page import="dto.MemberDto"%>
+<%@page import="data.dao.member.MemberImageDao"%>
+<%@page import="data.dao.member.MemberDao"%>
+<%@page import="data.dto.member.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

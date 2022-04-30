@@ -1,7 +1,7 @@
-package data.dao;
+package data.dao.service;
 
-import data.dto.ServiceDto;
-import data.dto.ServiceImageDto;
+import data.dto.service.ServiceDto;
+import data.dto.service.ServiceImageDto;
 
 public class ServiceImageDaoTest {
 
