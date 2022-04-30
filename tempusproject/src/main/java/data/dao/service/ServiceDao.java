@@ -122,7 +122,7 @@ DbConnect db = new DbConnect();
 	
 	
 //	서비스 상태 수정, 테스트완료
-	public void status(ServiceDto service) {
+	public void changeStatus(ServiceDto service) {
 		DbConnect db = new DbConnect();
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;

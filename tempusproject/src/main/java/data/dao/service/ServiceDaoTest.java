@@ -11,9 +11,9 @@ public class ServiceDaoTest {
 		ServiceDaoTest test = new ServiceDaoTest();
 //		test.store();
 //		test.modify();
-		test.delete(21L);
-//		test.status();
-//		change status
+//		test.delete(21L);
+		test.changeStatus();
+
 	}
 
 	public void store() {
@@ -32,9 +32,9 @@ public class ServiceDaoTest {
 		dao.delete(serviceId);
 	}
 	
-	public void status() {
-		ServiceDto dto = new ServiceDto("basic",3L);
-		dao.status(dto);
+	public void changeStatus() {
+		ServiceDto dto = new ServiceDto("basic",6L);
+		dao.changeStatus(dto);
 	}
 	
 }
