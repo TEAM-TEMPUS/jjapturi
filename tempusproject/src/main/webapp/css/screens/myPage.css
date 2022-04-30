@@ -1,0 +1,125 @@
+.my-page {
+  width: 43vw;
+  min-width: 600px;
+  margin: 254px auto;
+  margin-bottom: 0;
+}
+
+.my-page__title {
+  font-weight: 700;
+  font-size: 38px;
+  margin-bottom: 83px;
+  text-align: center;
+}
+
+.my-page__profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.my-page-profile__image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-bottom: 45px;
+}
+
+.my-page-profile__nickname {
+  display: block;
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+}
+
+.my-transaction-info {
+  margin-top: 24px;
+  margin-right: 12px;
+  width: 23vw;
+}
+
+.my-transaction-info__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-width: 260px;
+}
+
+.my-transaction-info__title {
+  font-weight: 400;
+  font-size: 22px;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.my-transaction-info__content {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.my-page__introduction {
+  margin-top: 19px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 22px;
+  min-height: 72px;
+  max-height: 170px;
+  overflow-y: scroll;
+}
+
+.my-page__edit-buttons {
+  margin-bottom: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-profile-edit,
+.my-info-edit {
+  font-weight: 700;
+  font-size: 19px;
+  height: 57px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.my-profile-edit:active,
+.my-info-edit:active {
+  opacity: 0.7;
+}
+
+.my-profile-edit {
+  width: 27vw;
+  border: 2px solid #4751FD;
+  background-color: white;
+  color: #4751FD;
+  min-width: 310px;
+}
+
+.my-info-edit {
+  width: 13.9vw;
+  margin-right: 14px;
+  border: none;
+  background-color: #EFEFEF;
+  color: #444444;
+  min-width: 220px;
+}
+
+.transaction-history {
+  width: 100%;
+  border: 2px solid #000;
+  display: flex;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 22px;
+  height: 71px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.transaction-history:active {
+  opacity: 0.7;
+}
