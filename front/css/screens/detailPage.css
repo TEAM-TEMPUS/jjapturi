@@ -31,7 +31,7 @@
 }
 
 /*상품등록 이미지 스타일 적용*/
-.detailpage-info__productimge{
+.detailpage-info__serviceimge{
     display: block;
     width: 800px; 
     height:500px;
@@ -55,7 +55,7 @@
 }
 
 /*프로필 닉네임,등급 위치*/
-.detailpage-info__registrantname{
+.detailpage-info__mynickname{
     display: flex;
     font-family:"Noto Sans KR";
     font-size:22px;
@@ -143,7 +143,7 @@
 }
 
 /*상품정보 태그 스타일 적용*/
-.detailpage-info__productname{
+.detailpage-info__servicename{
     font-family:"Noto Sans KR";
   	font-size:26px;
   	font-weight:500; /*폰트 폭 적용*/
@@ -266,7 +266,7 @@ textarea::-webkit-scrollbar {
 
 
 /*유져 이름위치*/
-.detailpage-info__username{
+.detailpage-info__usernickname{
     font-family:"Noto Sans KR";
   	font-size:20px;
   	font-weight:500; /*폰트 폭 적용*/
@@ -311,7 +311,7 @@ textarea::-webkit-scrollbar {
         /*이전/다음버튼 클래스명은 자동으로 생성된다 브라우저창 F12눌러서 보면된다*/
         /*visual클래스에 있는 button안 slick-prev클래스명*/
         .slick-prev{
-            left:-100px;
+            left:-150px;
             font-size: 0; /*Previous글자 사이즈 0으로만듬*/
             color:transparent; /*Previous글자를 투명으로 넣어준다*/
             /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
