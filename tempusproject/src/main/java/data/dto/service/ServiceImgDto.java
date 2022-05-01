@@ -1,4 +1,4 @@
-package datadto;
+package data.dto.service;
 
 public class ServiceImgDto {
 	private Long serviceImageId;
