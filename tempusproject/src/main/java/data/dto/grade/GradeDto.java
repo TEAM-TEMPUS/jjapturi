@@ -1,4 +1,4 @@
-package datadto;
+package data.dto.grade;
 
 public class GradeDto {
 	private Long tradingInfoId;

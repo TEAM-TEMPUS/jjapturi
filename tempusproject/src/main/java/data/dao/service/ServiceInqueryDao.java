@@ -1,15 +1,15 @@
-package datadao;
+package data.dao.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import datadto.ServiceInqueryDto;
+import data.dto.service.ServiceInqueryDto;
 import mysql.db.DbConnect;
 
 public class ServiceInqueryDao {
-	DbConnect db = new DbConnect();
+DbConnect db = new DbConnect();
 	
 	public ServiceInqueryDto findInqueryServiceId(Long serviceId) {
 		ServiceInqueryDto dto = new ServiceInqueryDto();

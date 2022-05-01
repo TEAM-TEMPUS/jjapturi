@@ -1,4 +1,4 @@
-package datadto;
+package data.dto.service;
 
 import java.sql.Date;
 import java.util.List;

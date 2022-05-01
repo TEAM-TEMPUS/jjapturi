@@ -1,9 +1,8 @@
-package datadao;
+package data.dao.service;
 
-import datadto.ServiceInqueryDto;
+import data.dto.service.ServiceInqueryDto;
 
 public class ServiceInqueryDaoTest {
-
 	static ServiceInqueryDao dao = new ServiceInqueryDao();
 	
 	public static void main(String[] args) {

@@ -1,12 +1,11 @@
-package datadao;
+package data.dao.service;
 
 import java.util.List;
 
-import datadto.ServiceImgDto;
+import data.dto.service.ServiceImgDto;
 
 public class ServiceImgDaoTest {
-
-	static ServiceImageDao dao=new ServiceImageDao();
+	static ServiceImgDao dao= new ServiceImgDao();
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

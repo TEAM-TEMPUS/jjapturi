@@ -1,6 +1,6 @@
-package datadao;
+package data.dao.grade;
 
-import datadto.GradeDto;
+import data.dto.grade.GradeDto;
 
 public class GradeDaoTest {
 	static GradeDao dao=new GradeDao();
