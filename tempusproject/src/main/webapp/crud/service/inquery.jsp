@@ -1,7 +1,7 @@
 <%@page import="java.util.Objects"%>
 <%@page import="org.json.simple.JSONObject"%>
-<%@page import="datadto.ServiceInqueryDto"%>
-<%@page import="datadao.ServiceInqueryDao"%>
+<%@page import="data.dto.service.ServiceInqueryDto"%>
+<%@page import="data.dao.service.ServiceInqueryDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
