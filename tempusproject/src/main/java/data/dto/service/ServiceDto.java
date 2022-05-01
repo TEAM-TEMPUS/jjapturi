@@ -45,14 +45,30 @@ public class ServiceDto {
     	this.serviceId = serviceId;
     }
     
-    public ServiceDto(String status, Long serviceId) {
+    public ServiceDto(String types, String title, String category, String place, String startDate, String endDate,
+			int price, String description) {
+		super();
+		this.types = types;
+		this.title = title;
+		this.category = category;
+		this.place = place;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.price = price;
+		this.description = description;
+	}
 
-    	this.status = status;
-    	this.serviceId = serviceId;
-    }
-    
-    
-    
+	public ServiceDto(String status, Long serviceId) {
+		super();
+		this.status = status;
+		this.serviceId = serviceId;
+	}
+
+	public ServiceDto(Long serviceId) {
+		super();
+		this.serviceId = serviceId;
+	}
+
 	public Long getServiceId() {
 		return serviceId;
 	}
