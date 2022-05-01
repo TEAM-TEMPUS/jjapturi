@@ -24,6 +24,12 @@ public class CommentDto {
 		this.text= text;
 	}
 	
+	
+public CommentDto(Long comment_id) {
+		super();
+		this.comment_id = comment_id;
+	}
+
 ///////////////////////////////member함수///////////////////////////
 	//접근제한자도 생략가능
 	//반환값있으면 함수 없으면 생성자
