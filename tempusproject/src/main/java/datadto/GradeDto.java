@@ -6,6 +6,16 @@ public class GradeDto {
 	private Long serviceId;
 	private int grade;
 	
+
+
+	public GradeDto(Long memberId, Long serviceId, int grade) {
+		super();
+		this.memberId = memberId;
+		this.serviceId = serviceId;
+		this.grade = grade;
+	}
+
+
 	public GradeDto(Long tradingInfoId, Long memberId, Long serviceId, int grade) {
 		super();
 		this.tradingInfoId = tradingInfoId;

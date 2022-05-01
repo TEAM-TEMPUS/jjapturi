@@ -10,16 +10,16 @@ import mysql.db.DbConnect;
 public class GradeDao {
 	DbConnect db=new DbConnect();
 	
-	public void insertGrade(GradeDto dto){
+	public void insertGrade(GradeDto grade){
 		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;
 		String sql="insert into Trading_Info values(null,?,?,?)";
 	
 		try {
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setLong(1, dto.getMemberId());
-			pstmt.setLong(2, dto.getServiceId());
-			pstmt.setInt(3, dto.getGrade());
+			pstmt.setLong(1, grade.getMemberId());
+			pstmt.setLong(2, grade.getServiceId());
+			pstmt.setInt(3, grade.getGrade());
 			
 			pstmt.execute();
 			
