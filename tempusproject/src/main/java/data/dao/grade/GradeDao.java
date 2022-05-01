@@ -1,10 +1,10 @@
-package datadao;
+package data.dao.grade;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import datadto.GradeDto;
+import data.dto.grade.GradeDto;
 import mysql.db.DbConnect;
 
 public class GradeDao {
@@ -30,6 +30,5 @@ public class GradeDao {
 			db.dbClose(pstmt, conn);
 		}
 	}
-	
 	
 }
