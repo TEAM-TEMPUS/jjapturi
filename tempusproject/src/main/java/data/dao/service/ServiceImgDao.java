@@ -1,4 +1,4 @@
-package datadao;
+package data.dao.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import datadto.ServiceImgDto;
+import data.dto.service.ServiceImgDto;
 import mysql.db.DbConnect;
 
-public class ServiceImageDao {
+public class ServiceImgDao {
 	DbConnect db=new DbConnect();
 	
 	public List<ServiceImgDto> findByServiceImage(Long serviceId){
