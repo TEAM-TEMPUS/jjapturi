@@ -54,10 +54,7 @@
 			//각페이지에서 불러올 시작번호
 			offset = (currentPage - 1) * sizePerPage;
 			
-			//각페이지에서 필요한 게시글 가져오기
-			List<ServiceInqueryDto> services = dao.findAll(offset, sizePerPage);
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
 %>
 <body>
 <header id="header-bar" class="header-bar-box">
