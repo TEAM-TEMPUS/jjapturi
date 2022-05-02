@@ -179,19 +179,19 @@ public class ServiceDao {
 		return dto;
 	}
 
-	public List<ServiceInqueryDto> findAll(int offset, int limit) {
+	public List<ServiceInqueryDto> findAll(String category, int offset, int limit) {
 		List<ServiceInqueryDto> serviceList = new ArrayList<ServiceInqueryDto>();
 
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select * from Service " + "order by service_id desc " + "limit ? " + "offset ?";
-
+		String sql = "select * from Service where category = ? order by service_id desc limit ? " + "offset ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setLong(1, limit);
-			pstmt.setLong(2, offset);
+			pstmt.setString(1, category);
+			pstmt.setLong(2, limit);
+			pstmt.setLong(3, offset);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -199,7 +199,6 @@ public class ServiceDao {
 				Long memberId = rs.getLong("member_id");
 				String types = rs.getString("types");
 				String title = rs.getString("title");
-				String category = rs.getString("category");
 				String place = rs.getString("place");
 				Date startDate = rs.getDate("start_date");
 				Date endDate = rs.getDate("end_date");
@@ -219,16 +218,17 @@ public class ServiceDao {
 		return serviceList;
 	}
 	
-	public int getTotalCount() {
+	public int getTotalCountByCategory(String category) {
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select count(*) as count from Service";
+		String sql = "select count(*) as count from Service where category = ?";
 		int count = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, category);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
