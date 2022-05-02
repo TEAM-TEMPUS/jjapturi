@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="org.json.simple.JSONArray"%>
 <%@page import="data.dto.service.ServiceImageDto"%>
 <%@page import="data.dao.service.ServiceImageDao"%>
@@ -28,13 +29,13 @@ List<ServiceImageDto> list = serviceImageDao.findAllByServiceId(serviceId);
 JSONObject ob = new JSONObject();
 if(Objects.nonNull(service)){
 	
+	List<String> storeImgNames = new ArrayList<>();
 	for(int i=0; i<list.size(); i++){
 			ServiceImageDto sid = list.get(i);
-			ob.put("serviceId", list.get(i).getServiceId());
-			ob.put("serviceImageId", list.get(i).getServiceImageId());
-			ob.put("storeImgName", list.get(i).getStoreImageName());
+			sid.getStoreImageName();
 	}
 	
+	ob.put("storeImgName", storeImgNames.add("storeImgName"));
 	ob.put("types", service.getTypes());
 	ob.put("title", service.getTitle());
 	ob.put("category", service.getCategory());
