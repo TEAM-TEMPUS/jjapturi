@@ -9,6 +9,7 @@ import com.mysql.cj.protocol.Resultset;
 
 import data.dto.service.ServiceDto;
 import data.dto.service.ServiceImageDto;
+import data.dto.service.ServiceInqueryDto;
 import mysql.db.DbConnect;
 
 public class ServiceDao {
@@ -117,12 +118,11 @@ DbConnect db = new DbConnect();
 			db.dbClose(pstmt, conn);
 		}
 	}
-	
-	
-	
+		
 	
 //	서비스 상태 수정, 테스트완료
 	public void changeStatus(ServiceDto service) {
+
 		DbConnect db = new DbConnect();
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
@@ -141,5 +141,39 @@ DbConnect db = new DbConnect();
 			db.dbClose(pstmt, conn);
 		}
 		
+	}
+
+	public ServiceInqueryDto findByServiceId(Long serviceId) {
+		ServiceInqueryDto dto = new ServiceInqueryDto();
+		
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql="select * from Service where service_id=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setLong(1, serviceId);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setTypes(rs.getString("types"));
+				dto.setTitle(rs.getString("title"));
+				dto.setCategory(rs.getString("category"));
+				dto.setPlace(rs.getString("place"));
+				dto.setStartDate(rs.getDate("start_date"));
+				dto.setEndDate(rs.getDate("end_date"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setDescription(rs.getString("description"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+		
+		return dto;
 	}
 }
