@@ -1,6 +1,7 @@
 package data.dao.service;
 
 import data.dto.service.ServiceDto;
+import data.dto.service.ServiceInqueryDto;
 
 public class ServiceDaoTest {
 	
@@ -12,8 +13,8 @@ public class ServiceDaoTest {
 //		test.store();
 //		test.modify();
 //		test.delete(21L);
-		test.changeStatus();
-
+//		test.changeStatus();
+		test.findInqueryServiceId(1L);
 	}
 
 	public void store() {
@@ -37,5 +38,10 @@ public class ServiceDaoTest {
 		dao.changeStatus(dto);
 	}
 	
+	public void findInqueryServiceId(Long serviceId) {
+		ServiceInqueryDto sid=dao.findByServiceId(serviceId);
+		System.out.println(sid);
+
+	}
 }
 
