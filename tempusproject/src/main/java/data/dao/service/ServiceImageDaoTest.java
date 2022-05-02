@@ -23,9 +23,11 @@ public class ServiceImageDaoTest {
 	public void findAllByServiceId(Long serviceId) {
 		List<ServiceImageDto> list=dao.findAllByServiceId(serviceId);
 		
-		
-		for(int i=0; i<list.size(); i++) {
+		for(int i=0; i<list.size(); i++){
 			System.out.println(list.get(i));
+			System.out.println(list.get(i).getServiceId());
+			System.out.println(list.get(i).getServiceImageId());
+			System.out.println(list.get(i).getStoreImageName());
 		}
 	}
 }
