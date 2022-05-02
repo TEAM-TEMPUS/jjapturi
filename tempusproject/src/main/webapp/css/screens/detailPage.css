@@ -164,13 +164,26 @@
   	font-weight:400px; /*폰트 폭 적용*/
     line-height: 30px;  
 }
-
-/*예약버튼 스타일 적용*/
+/*예약하기버튼 스타일 적용*/
+.detailpage-info__basicbtn{
+	display: block;
+    width:180px;
+	height:50px;
+	color:#4751FD;
+	border-radius: 10px;
+	border-color:#4751FD;
+	border: 1px solid #4751FD;
+    margin:0 auto;
+    text-align: center;
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
+}
+/*예약중버튼 스타일 적용*/
 .detailpage-info__reservationbtn{
 	display: block;
     width:180px;
 	height:50px;
 	color:#4751FD;
+	background-color:#dee2e6;
 	border-radius: 10px;
 	border-color:#4751FD;
 	border: 1px solid #4751FD;
