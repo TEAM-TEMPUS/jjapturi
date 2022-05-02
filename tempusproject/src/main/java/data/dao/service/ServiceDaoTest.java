@@ -17,8 +17,8 @@ public class ServiceDaoTest {
 //		test.delete(21L);
 //		test.changeStatus();
 //		test.findInqueryServiceId(1L);
-		test.findAll(0, 3);
-		test.getTotalCount();
+		test.findAll("walk", 0, 10);
+		test.getTotalCountByCategory("walk");
 	}
 
 	public void store() {
@@ -50,14 +50,14 @@ public class ServiceDaoTest {
 
 	}
 
-	public void findAll(int offset, int size) {
-		for (ServiceInqueryDto service : dao.findAll(offset, size)) {
+	public void findAll(String category, int offset, int size) {
+		for (ServiceInqueryDto service : dao.findAll(category, offset, size)) {
 			System.out.println(service);
 		}
 	}
 	
-	public void getTotalCount() {
-		System.out.println(dao.getTotalCount());
+	public void getTotalCountByCategory(String category) {
+		System.out.println(dao.getTotalCountByCategory(category));
 	}
 
 }
