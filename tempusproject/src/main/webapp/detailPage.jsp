@@ -15,8 +15,8 @@
 <%@page import="data.dto.comment.CommentDto"%>
 <%@page import="data.dao.comment.CommentDao"%>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -24,30 +24,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>¼­ºñ½º »ó¼¼ ÆäÀÌÁö</title>
-     <!--1¹ø cdn¹æ¹ý slick¿¡¼­ css¸µÅ©°¡Á®¿È--> 
+    <title>ì„œë¹„ìŠ¤ ìƒì„¸ íŽ˜ì´ì§€</title>
+     <!--1ë²ˆ cdnë°©ë²• slickì—ì„œ cssë§í¬ê°€ì ¸ì˜´--> 
    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
      
-   <!--8¹ø xeiconÀ» °¡Á®¿Â´Ù ¹æ¹ý: xeicon»çÀÌÆ®-> ¸Þ´º¹Ù get started -> »çÀÌÆ® <head> ÅÂ±× ¾È¿¡ ¾Æ·¡ÀÇ ÄÚµå¸¦ ºÙÀÔ´Ï´Ù ¹Ø ÄÚµå º¹»ç
-       ±×´ÙÀ½ ¶óÀÌºê·¯¸®¸¦ µé¾î°¡ ¿øÇÏ´Â ¾ÆÀÌÄÜÀ» °¡Á®¿Â´Ù-->
+   <!--8ë²ˆ xeiconì„ ê°€ì ¸ì˜¨ë‹¤ ë°©ë²•: xeiconì‚¬ì´íŠ¸-> ë©”ë‰´ë°” get started -> ì‚¬ì´íŠ¸ <head> íƒœê·¸ ì•ˆì— ì•„ëž˜ì˜ ì½”ë“œë¥¼ ë¶™ìž…ë‹ˆë‹¤ ë°‘ ì½”ë“œ ë³µì‚¬
+       ê·¸ë‹¤ìŒ ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ë“¤ì–´ê°€ ì›í•˜ëŠ” ì•„ì´ì½˜ì„ ê°€ì ¸ì˜¨ë‹¤-->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
-   <!--5¹ø Á¦ÀÌÄõ¸® °¡Á®¿À±â-->
-   <!--Á¦ÀÌÄõ¸® ´Ù¿î¹æ¹ý: Á¦ÀÌÄõ¸® È¨ÆäÀÌÁö->´Ù¿î·Îµå->¸Ç¾Æ·¡ cdn¸µÅ©Å¬¸¯-> ¸ÇÀ§ minifiedÅ¬¸¯->ÄÚµå º¹»ç-->
-   <!--Á¦ÀÌÄõ¸® ½ºÅ©¸³Æ® »ðÀÔ ¹æ¹ýÀº ¶óÀÌºê·¯¸® Á¦ÀÏ ¸ÇÀ§¿¡ ¿Í¾ßÇÑ´Ù-->
-   <!--src³²°Ü³õ°í ´Ù »èÁ¦-->
+   <!--5ë²ˆ ì œì´ì¿¼ë¦¬ ê°€ì ¸ì˜¤ê¸°-->
+   <!--ì œì´ì¿¼ë¦¬ ë‹¤ìš´ë°©ë²•: ì œì´ì¿¼ë¦¬ í™ˆíŽ˜ì´ì§€->ë‹¤ìš´ë¡œë“œ->ë§¨ì•„ëž˜ cdnë§í¬í´ë¦­-> ë§¨ìœ„ minifiedí´ë¦­->ì½”ë“œ ë³µì‚¬-->
+   <!--ì œì´ì¿¼ë¦¬ ìŠ¤í¬ë¦½íŠ¸ ì‚½ìž… ë°©ë²•ì€ ë¼ì´ë¸ŒëŸ¬ë¦¬ ì œì¼ ë§¨ìœ„ì— ì™€ì•¼í•œë‹¤-->
+   <!--srcë‚¨ê²¨ë†“ê³  ë‹¤ ì‚­ì œ-->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-   <!--2¹ø cdn¹æ¹ý slick¿¡¼­ js¸µÅ©°¡Á®¿È-->
-   <!--1¹ø 2¹ø ½ÇÇà ¾ÈµÉ½Ã //cdn ¾Õ¿¡ http://³Ö¾îÁà¾ß ÇÑ´Ù.-->
+   <!--2ë²ˆ cdnë°©ë²• slickì—ì„œ jsë§í¬ê°€ì ¸ì˜´-->
+   <!--1ë²ˆ 2ë²ˆ ì‹¤í–‰ ì•ˆë ì‹œ //cdn ì•žì— http://ë„£ì–´ì¤˜ì•¼ í•œë‹¤.-->
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/screens/detailPage.css" />
-<!-- jspÀÛ¼º -->    
+<!-- jspìž‘ì„± -->    
 <%
-// Service¸¦ Á¶È¸
-// Service¿¡ µþ¸° ¿©·¯ Comment Á¶È¸
+// Serviceë¥¼ ì¡°íšŒ
+// Serviceì— ë”¸ë¦° ì—¬ëŸ¬ Comment ì¡°íšŒ
 Long serviceId = Long.parseLong(request.getParameter("serviceId"));
 Long memberId = Long.parseLong(request.getParameter("memberId"));
 
@@ -58,24 +58,46 @@ ServiceImageDao serviceImageDao = new ServiceImageDao();
 TradingInfoDao tradingInfoDao =new TradingInfoDao();
 
 HashMap<String, String> categoryMap = new HashMap<>();
-categoryMap.put("errand", "½ÉºÎ¸§");
-categoryMap.put("walk", "»êÃ¥");
-categoryMap.put("install", "¼³Ä¡");
-categoryMap.put("study", "°ú¿Ü");
-categoryMap.put("clean", "Ã»¼Ò");
-//´ñ±ÛÁ¶È¸
-//5.dao list¼±¾ð 
+categoryMap.put("errand", "ì‹¬ë¶€ë¦„");
+categoryMap.put("walk", "ì‚°ì±…");
+categoryMap.put("install", "ì„¤ì¹˜");
+categoryMap.put("study", "ê³¼ì™¸");
+categoryMap.put("clean", "ì²­ì†Œ");
+//ëŒ“ê¸€ì¡°íšŒ
+//5.dao listì„ ì–¸ 
 ServiceInqueryDto service = serviceDao.findByServiceId(serviceId);
 List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
-//ÀÌ¹ÌÁö Á¶È¸ //Å¸ÀÔÀº dto¿¡ÀÖ´Â°Å´Ù
+//ì´ë¯¸ì§€ ì¡°íšŒ //íƒ€ìž…ì€ dtoì—ìžˆëŠ”ê±°ë‹¤
 List<ServiceImageDto> images = serviceImageDao.findAllByServiceId(serviceId);
-//µî·ÏÀÚ ÇÁ·ÎÇÊ°ú ´Ð³×ÀÓ
+//ë“±ë¡ìž í”„ë¡œí•„ê³¼ ë‹‰ë„¤ìž„
 MemberProfileDto memberprofiledto = memberDao.findMemberProfileByMemberId(memberId);
-//ÇÁ·ÎÇÊ µî±Þ
-List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(memberId);
-
-//System.out.println(rank.get(0).getGrade());
-
+//í”„ë¡œí•„ ë“±ê¸‰
+List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(memberId);
+  
+  int completeTradingCount = tradingInfos.size();
+  
+  double totalGrade = 0;
+  int gradeSum = 0;
+  int grantedGradeCount = 0;
+  for (TradingInfoDto tradingInfo : tradingInfos) {
+	  int grade = tradingInfo.getGrade();
+	  if (grade > 0) {
+		  gradeSum += grade;
+		  grantedGradeCount++;
+	  }
+  }
+  totalGrade = (double) gradeSum / grantedGradeCount;
+  
+  String rank;
+  if (completeTradingCount >= 100 && totalGrade >= 3.5) {
+	  rank = "rank_platinum.png";
+  } else if (completeTradingCount >= 50 && totalGrade >= 3.0) {
+	  rank = "rank_gold.png";
+  } else if (completeTradingCount >= 10 && totalGrade >= 2.5) {
+	  rank = "rank_silver.png";
+  } else {
+	  rank = "rank_bronze.png";
+  }
 %>   
   </head>
   <body>
@@ -85,9 +107,9 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
       <div id="container">
         <main class="container__inner">
           <article class="detailpage-info">
-            <!--Á¦¸ñ-->
+            <!--ì œëª©-->
             <h2 class="detailpage-info__categorytitle"><%= categoryMap.get(service.getCategory()) %></h2>
-            <!--µî·ÏÀÌ¹ÌÁö-->
+            <!--ë“±ë¡ì´ë¯¸ì§€-->
             <div class="detailpage-info__serviceimgespace">
             <%for(ServiceImageDto image : images) {%>
             <img
@@ -99,7 +121,7 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
           </div>
             <div>
               <ul class="detailpage-info__list">
-                <!--µî·ÏÀÚ Á¤º¸-->
+                <!--ë“±ë¡ìž ì •ë³´-->
                 <li class="detailpage-info__item detailpage-publisher-info">
                   <img
                     alt=""
@@ -113,26 +135,26 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
                   <span class="detailpage-info__rank"
                     ><img
                       alt=""
-                      src="img/bronze-badge.png"
+                      src="img/<%=rank%>"
                       class="detailpage-info__rankinfo"
                   /></span>
                 </li>
 
-                <!--µî·ÏÁ¦¸ñ-->
+                <!--ë“±ë¡ì œëª©-->
                 <li class="detailpage-info__item">
                   <h2 class="detailpage-info__title">
                     <%=service.getTitle() %>
                   </h2>
                 </li>
 
-                <!--°Å·¡Áö¿ª-->
+                <!--ê±°ëž˜ì§€ì—­-->
                 <li class="detailpage-info__item">
                   <h2 class="detailpage-info__addr">
                     <%=service.getPlace() %>
                   </h2>
                 </li>
 
-                <!--³¯Â¥-->
+                <!--ë‚ ì§œ-->
                 <li class="detailpage-info__item">
                   <img
                     alt=""
@@ -144,24 +166,24 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
                   >
                 </li>
 
-                <!--¿¹¾àÁß°ú °¡°Ý-->
+                <!--ì˜ˆì•½ì¤‘ê³¼ ê°€ê²©-->
                 <li class="detailpage-info__item">
                   <img
                     alt=""
                     src="img/status_reserved.png"
                     class="detailpage-info__reservationimge"
                   />
-                  <!--¿¹¾àÁß ¿·¿¡ °¡°Ý Á¤º¸-->
+                  <!--ì˜ˆì•½ì¤‘ ì˜†ì— ê°€ê²© ì •ë³´-->
                   <span class="detailpage-info__priceinfo"><%=service.getPrice() %></span>
                 </li>
               </ul>
             </div>
 
-            <!-- ¼³¸íÁ¤º¸ µî·Ï -->
+            <!-- ì„¤ëª…ì •ë³´ ë“±ë¡ -->
             <div class="detailpage-info_service">
-              <h5 class="detailpage-info__servicename">¼­ºñ½º Á¤º¸</h5>
+              <h5 class="detailpage-info__servicename">ì„œë¹„ìŠ¤ ì •ë³´</h5>
 
-              <!-- ¼±±ß±â -->
+              <!-- ì„ ê¸‹ê¸° -->
               <hr class="detailpage-info__line" />
 
               <p class="detailpage-info__contents">
@@ -169,28 +191,31 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
               </p>
             </div>
 
-            <!-- ¿¹¾à¹öÆ° -->
+            <!-- ì˜ˆì•½ë²„íŠ¼ -->
             <div class="detailpage-info__reservation">
               <button type="button" class="detailpage-info__reservationbtn">
-                ¿¹¾àÁß
+                ì˜ˆì•½í•˜ê¸°
               </button>
             </div>
-
-            <!-- »óÇ°¹®ÀÇ ³»¿ëÀû±â -->
+<form action="crud/comments/registration.jsp" method="post">
+            <!-- ìƒí’ˆë¬¸ì˜ ë‚´ìš©ì ê¸° -->
+            <input type="hidden" name="memberId" value="<%=memberId%>">
+            <input type="hidden" name="serviceId" value="<%=serviceId%>">
             <div class="detailpage-info__inquiry">
-              <h5 class="detailpage-info__inquirys">¼­ºñ½º ¹®ÀÇ</h5>
-              <textarea class="detailpage-info__comment"></textarea>
+              <h5 class="detailpage-info__inquirys">ì„œë¹„ìŠ¤ ë¬¸ì˜</h5>
+              <textarea name="text" class="detailpage-info__comment"></textarea>
             </div>
 
-            <!-- »óÇ°¹®ÀÇ µî·Ï ¹öÆ° -->
+            <!-- ìƒí’ˆë¬¸ì˜ ë“±ë¡ ë²„íŠ¼ -->
             <div class="detailpage-info__inquirybtn">
-              <button type="submit" class="detailpage-info__inquirybtns">µî·Ï</button>
+              <button type="submit" class="detailpage-info__inquirybtns">ë“±ë¡</button>
             </div>
-
+          
+</form>
             <hr class="detailpage-info__line" />
 
 
-             <!-- ´ñ±Û ÀÛ¼º Á¤º¸1 -->
+             <!-- ëŒ“ê¸€ ìž‘ì„± ì •ë³´1 -->
            <%for(CommentInqueryDto comment: comments){%>
           
             <div class="detailpage-info__comments">
@@ -205,6 +230,7 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
                   <p class="detailpage-info__usercomment">
                     <%=comment.getText()%>
                   </p>
+                  <br>
                   <hr class="detailpage-info__commentline" />
                 </li>
               </ul>
@@ -225,17 +251,17 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
                   
                   <img
                     src="img/basic-profile-image.png"
-                    alt="ÇÁ·ÎÇÊ »çÁø"
+                    alt="í”„ë¡œí•„ ì‚¬ì§„"
                     class="profile__image"
                   />
 
                   <img
                     src="img/bronze-badge.png"
-                    alt="È¸¿ø µî±Þ"
+                    alt="íšŒì› ë“±ê¸‰"
                     class="profile__badge"
                   />
 
-                  <span class="profile__nickname">Â÷¸¦³Ê¹«»ç¶ûÇØ</span>
+                  <span class="profile__nickname">ì°¨ë¥¼ë„ˆë¬´ì‚¬ëž‘í•´</span>
 
                   <div class="profile__phone-number-wrap">
                     <i class="fas fa-phone-alt profile__phone-icon"></i>
@@ -246,42 +272,42 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
                 <div class="transaction-info">
                   <ul class="transaction-info__list">
                     <li class="transaction-info__item">
-                      <span class="transaction-info__title">°Å·¡°Ç¼ö</span
+                      <span class="transaction-info__title">ê±°ëž˜ê±´ìˆ˜</span
                       ><br />
                       <span class="transaction-info__content">4</span>
                     </li>
 
                     <li class="transaction-info__item">
-                      <span class="transaction-info__title">È¸¿øµî±Þ</span
+                      <span class="transaction-info__title">íšŒì›ë“±ê¸‰</span
                       ><br />
-                      <span class="transaction-info__content">ºê·ÐÁî</span>
+                      <span class="transaction-info__content">ë¸Œë¡ ì¦ˆ</span>
                     </li>
 
                     <li class="transaction-info__item">
-                      <span class="transaction-info__title">ÆòÁ¡</span><br />
+                      <span class="transaction-info__title">í‰ì </span><br />
                       <span class="transaction-info__content">5.0</span>
                     </li>
                   </ul>
                 </div>
 
                 <div class="profile__introduction">
-                  <h1 class="profile__introduction__title">ÀÚ±â ¼Ò°³</h1>
+                  <h1 class="profile__introduction__title">ìžê¸° ì†Œê°œ</h1>
 
                   <p class="profile__introduction__content">
-                    ¾È³çÇÏ¼¼¿ä~ °³ÀÎ ÃâÀå ¼¼Â÷¸¦ ÇÏ°í ÀÖ½À´Ï´Ù. ¹Ï°í ¸Ã°ÜÁÖ½Ã¸é
-                    °¨»çÇÏ°Ú½À´Ï´Ù :) ¾È³çÇÏ¼¼¿ä~ °³ÀÎ ÃâÀå ¼¼Â÷¸¦ ÇÏ°í
-                    ÀÖ½À´Ï´Ù. ¹Ï°í ¸Ã°ÜÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù :)¾È³çÇÏ¼¼¿ä~ °³ÀÎ
-                    ÃâÀå ¼¼Â÷¸¦ ÇÏ°í ÀÖ½À´Ï´Ù. ¹Ï°í ¸Ã°ÜÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù
-                    :)¾È³çÇÏ¼¼¿ä~ °³ÀÎ ÃâÀå ¼¼Â÷¸¦ ÇÏ°í ÀÖ½À´Ï´Ù. ¹Ï°í
-                    ¸Ã°ÜÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù :)¾È³çÇÏ¼¼¿ä~ °³ÀÎ ÃâÀå ¼¼Â÷¸¦
-                    ÇÏ°í ÀÖ½À´Ï´Ù. ¹Ï°í ¸Ã°ÜÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù :)¾È³çÇÏ¼¼¿ä~
-                    °³ÀÎ ÃâÀå ¼¼Â÷¸¦ ÇÏ°í ÀÖ½À´Ï´Ù. ¹Ï°í ¸Ã°ÜÁÖ½Ã¸é
-                    °¨»çÇÏ°Ú½À´Ï´Ù :)¾È³çÇÏ¼¼¿ä~ °³ÀÎ ÃâÀå ¼¼Â÷¸¦ ÇÏ°í ÀÖ½À´Ï´Ù.
-                    ¹Ï°í ¸Ã°ÜÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù :)¾È³çÇÏ¼¼¿ä~ °³ÀÎ ÃâÀå
-                    ¼¼Â÷¸¦ ÇÏ°í ÀÖ½À´Ï´Ù. ¹Ï°í ¸Ã°ÜÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù
-                    :)¾È³çÇÏ¼¼¿ä~ °³ÀÎ ÃâÀå ¼¼Â÷¸¦ ÇÏ°í ÀÖ½À´Ï´Ù. ¹Ï°í
-                    ¸Ã°ÜÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù :)¾È³çÇÏ¼¼¿ä~ °³ÀÎ ÃâÀå ¼¼Â÷¸¦
-                    ÇÏ°í ÀÖ½À´Ï´Ù. ¹Ï°í ¸Ã°ÜÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù :)
+                    ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸ ì¶œìž¥ ì„¸ì°¨ë¥¼ í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³  ë§¡ê²¨ì£¼ì‹œë©´
+                    ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤ :) ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸ ì¶œìž¥ ì„¸ì°¨ë¥¼ í•˜ê³ 
+                    ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³  ë§¡ê²¨ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤ :)ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸
+                    ì¶œìž¥ ì„¸ì°¨ë¥¼ í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³  ë§¡ê²¨ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤
+                    :)ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸ ì¶œìž¥ ì„¸ì°¨ë¥¼ í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³ 
+                    ë§¡ê²¨ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤ :)ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸ ì¶œìž¥ ì„¸ì°¨ë¥¼
+                    í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³  ë§¡ê²¨ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤ :)ì•ˆë…•í•˜ì„¸ìš”~
+                    ê°œì¸ ì¶œìž¥ ì„¸ì°¨ë¥¼ í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³  ë§¡ê²¨ì£¼ì‹œë©´
+                    ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤ :)ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸ ì¶œìž¥ ì„¸ì°¨ë¥¼ í•˜ê³  ìžˆìŠµë‹ˆë‹¤.
+                    ë¯¿ê³  ë§¡ê²¨ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤ :)ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸ ì¶œìž¥
+                    ì„¸ì°¨ë¥¼ í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³  ë§¡ê²¨ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤
+                    :)ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸ ì¶œìž¥ ì„¸ì°¨ë¥¼ í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³ 
+                    ë§¡ê²¨ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤ :)ì•ˆë…•í•˜ì„¸ìš”~ ê°œì¸ ì¶œìž¥ ì„¸ì°¨ë¥¼
+                    í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ë¯¿ê³  ë§¡ê²¨ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤ :)
                   </p>
                 </div>
               </div>
@@ -293,24 +319,24 @@ List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(me
               <div class="reservation-confirm">
                 <div class="reservation-confirm__description">
                   <h1 class="reservation-confirm__description-title">
-                    ¿¹¾àÇÏ½Ã°Ú½À´Ï±î?
+                    ì˜ˆì•½í•˜ì‹œê² ìŠµë‹ˆê¹Œ?
                   </h1>
 
                   <p class="reservation-confirm__description-content">
-                    È®ÀÎÀ» ´©¸£½Ã¸é
+                    í™•ì¸ì„ ëˆ„ë¥´ì‹œë©´
                     <span class="reservation-confirm__nickname">junjun</span
-                    >´Ô°ú ¿¬°áµË´Ï´Ù.<br />
-                    ÀÌÈÄ Ã¤ÆÃÀ» ÅëÇØ¼­ ÁøÇàÇØÁÖ¼¼¿ä.
+                    >ë‹˜ê³¼ ì—°ê²°ë©ë‹ˆë‹¤.<br />
+                    ì´í›„ ì±„íŒ…ì„ í†µí•´ì„œ ì§„í–‰í•´ì£¼ì„¸ìš”.
                   </p>
                 </div>
 
                 <div class="reservation-confirm__buttons">
                   <button type="button" class="reservation-confirm__check">
-                    È®ÀÎ
+                    í™•ì¸
                   </button>
 
                   <button type="button" class="reservation-confirm__cancel">
-                    Ãë¼Ò
+                    ì·¨ì†Œ
                   </button>
                 </div>
               </div>
