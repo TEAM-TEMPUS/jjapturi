@@ -1,3 +1,4 @@
+<%@page import="java.util.HashMap"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="data.dto.service.ServiceInqueryDto"%>
 <%@page import="java.util.List"%>
@@ -25,6 +26,14 @@
 </head>
 </head>
 <%
+	String category = request.getParameter("category");
+	HashMap<String, String> categoryMap = new HashMap<>();
+	categoryMap.put("errand", "심부름");
+	categoryMap.put("walk", "산책");
+	categoryMap.put("install", "설치");
+	categoryMap.put("study", "과외");
+	categoryMap.put("clean", "청소");
+	
 	ServiceDao dao = new ServiceDao();
 	
 	int totalCount; //총 서비스 수
@@ -37,7 +46,7 @@
 	int currentPage; //현재페이지
 	
 	//총갯수
-	totalCount = dao.getTotalCount();
+	totalCount = dao.getTotalCountByCategory("category");
 	
 	//현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
 	if (request.getParameter("currentPage") == null)
@@ -62,7 +71,7 @@
 	offset = (currentPage - 1) * sizePerPage;
 	
 	//각페이지에서 필요한 게시글 가져오기
-	List<ServiceInqueryDto> services = dao.findAll(offset, sizePerPage);
+	List<ServiceInqueryDto> services = dao.findAll(category, offset, sizePerPage);
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 %>
@@ -94,7 +103,7 @@
             />
             <label for="toggle-off" class="btn">베짱이</label>
           </div>
-          <h2 class="service-list__title">청소</h2>
+          <h2 class="service-list__title"><%= categoryMap.get(category)%></h2>
         </div>
         <div class="service__wrap">
           <div class="service-item__wrap">
