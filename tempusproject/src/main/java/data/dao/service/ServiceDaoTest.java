@@ -18,6 +18,7 @@ public class ServiceDaoTest {
 //		test.changeStatus();
 //		test.findInqueryServiceId(1L);
 		test.findAll(0, 3);
+		test.getTotalCount();
 	}
 
 	public void store() {
@@ -53,6 +54,10 @@ public class ServiceDaoTest {
 		for (ServiceInqueryDto service : dao.findAll(offset, size)) {
 			System.out.println(service);
 		}
+	}
+	
+	public void getTotalCount() {
+		System.out.println(dao.getTotalCount());
 	}
 
 }
