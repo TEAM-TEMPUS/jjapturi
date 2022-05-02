@@ -21,6 +21,11 @@ String text = request.getParameter("text");
 CommentDto dto = new CommentDto(memberId,serviceId,text);
 dao.insertComment(dto);
 
+
+
+//메인으로 이
+response.sendRedirect("../../detailPage.jsp?serviceId="+serviceId+"&memberId="+memberId);
+
 %>
 </body>
 </html>
