@@ -1,6 +1,12 @@
-<%@page import="java.util.HashMap"%>
+<%@page import="data.dto.member.TradingInfoDto"%>
+<%@page import="data.dao.member.TradingInfoDao"%>
+<%@page import="data.dto.member.MemberProfileDto"%>
+<%@page import="data.dto.service.ServiceDto"%>
+<%@page import="data.dto.service.ServiceImageDto"%>
+<%@page import="data.dao.service.ServiceImageDao"%>
 <%@page import="data.dto.comment.CommentInqueryDto"%>
 <%@page import="data.dto.service.ServiceInqueryDto"%>
+<%@page import="java.util.HashMap"%>
 <%@page import="data.dao.service.ServiceDao"%>
 <%@page import="java.util.Vector"%>
 <%@page import="java.util.List"%>
@@ -39,33 +45,17 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/screens/detailPage.css" />
 <!-- jsp작성 -->    
- <%
- //등록된 서비스고유번호를 가져와야한다
- //Long serviceId = Long.parseLong(request.getParameter("serviceId"));
- //등록된 댓글고유번호를 가져와야한다
- /* Long commentId = Long.parseLong(request.getParameter("commentId"));
- //등록된 멤버고유번호를 가져와야한다
- Long memberId = Long.parseLong(request.getParameter("memberId"));
- //등록된 문의내용, 멤버, 닉네임과 프로필 사진을 가져온다
- String text = request.getParameter("text");
- String nickname = request.getParameter("nickname");
- String store_img_name = request.getParameter("store_img_name");
- //dao선언  DAO란? 데이터베이스의 데이터에 접근하기 위한 객체
-CommentDao dao = new CommentDao();
-MemberDao memberdao = new MemberDao();
- //dto 선언 DTO란? 계층사이에서 데이터를 교환하기 위해 생성하는 객체 즉 값객체/Create(생성)Read(읽기)Update(수정)Delete(삭제)
-CommentDto commentdto =new CommentDto(); //댓글
-//댓글 목록
-CommentListDao commentlistdao = new CommentListDao();
-CommentListDto commentlistdto = new CommentListDto();
-List<CommentListDto> commentlist=commentlistdao.findcommentlist(serviceId); */
-
+<%
 // Service를 조회
 // Service에 딸린 여러 Comment 조회
 Long serviceId = Long.parseLong(request.getParameter("serviceId"));
+Long memberId = Long.parseLong(request.getParameter("memberId"));
 
+MemberDao memberDao = new MemberDao();
 ServiceDao serviceDao = new ServiceDao();
 CommentDao commentDao = new CommentDao();
+ServiceImageDao serviceImageDao = new ServiceImageDao();
+TradingInfoDao tradingInfoDao =new TradingInfoDao();
 
 HashMap<String, String> categoryMap = new HashMap<>();
 categoryMap.put("errand", "심부름");
@@ -73,10 +63,20 @@ categoryMap.put("walk", "산책");
 categoryMap.put("install", "설치");
 categoryMap.put("study", "과외");
 categoryMap.put("clean", "청소");
-
+//댓글조회
+//5.dao list선언 
 ServiceInqueryDto service = serviceDao.findByServiceId(serviceId);
 List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
- %>   
+//이미지 조회 //타입은 dto에있는거다
+List<ServiceImageDto> images = serviceImageDao.findAllByServiceId(serviceId);
+//등록자 프로필과 닉네임
+MemberProfileDto memberprofiledto = memberDao.findMemberProfileByMemberId(memberId);
+//프로필 등급
+List<TradingInfoDto> rank = tradingInfoDao.findCompleteTradingInfosByMemberId(memberId);
+
+//System.out.println(rank.get(0).getGrade());
+
+%>   
   </head>
   <body>
     <div id="wrap">
@@ -89,26 +89,13 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
             <h2 class="detailpage-info__categorytitle"><%= categoryMap.get(service.getCategory()) %></h2>
             <!--등록이미지-->
             <div class="detailpage-info__serviceimgespace">
+            <%for(ServiceImageDto image : images) {%>
             <img
               alt=""
-              src="img/clean1.png"
+              src="img/<%=image.getStoreImageName() %>"
               class="detailpage-info__serviceimge"
             />
-            <img
-              alt=""
-              src="img/clean2.png"
-              class="detailpage-info__serviceimge"
-            />
-            <img
-              alt=""
-              src="img/clean1.png"
-              class="detailpage-info__serviceimge"
-            />
-            <img
-              alt=""
-              src="img/clean2.png"
-              class="detailpage-info__serviceimge"
-            />
+            <%} %>
           </div>
             <div>
               <ul class="detailpage-info__list">
@@ -116,12 +103,12 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
                 <li class="detailpage-info__item detailpage-publisher-info">
                   <img
                     alt=""
-                    src="img/icon_mypage.png"
+                    src="img/<%=memberprofiledto.getMemberImage() %>"
                     class="detailpage-info__registrantimge"
                   />
                   <span class="detailpage-info__mynickname"
 
-                    >차를너무사랑해</span
+                    ><%=memberprofiledto.getNickname() %></span
                   >
                   <span class="detailpage-info__rank"
                     ><img
@@ -134,14 +121,14 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
                 <!--등록제목-->
                 <li class="detailpage-info__item">
                   <h2 class="detailpage-info__title">
-                    깨끗~하게 출장세차 해드려요
+                    <%=service.getTitle() %>
                   </h2>
                 </li>
 
                 <!--거래지역-->
                 <li class="detailpage-info__item">
                   <h2 class="detailpage-info__addr">
-                    대구광역시 달서구 송형1동
+                    <%=service.getPlace() %>
                   </h2>
                 </li>
 
@@ -153,7 +140,7 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
                     class="detailpage-info__dateimge"
                   />
                   <span class="detailpage-info_dateinfo"
-                    >2022-04-23 ~ 2022-05-20</span
+                    ><%=service.getStartDate() %>~ <%=service.getEndDate() %></span
                   >
                 </li>
 
@@ -165,7 +152,7 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
                     class="detailpage-info__reservationimge"
                   />
                   <!--예약중 옆에 가격 정보-->
-                  <span class="detailpage-info__priceinfo">30,000원</span>
+                  <span class="detailpage-info__priceinfo"><%=service.getPrice() %></span>
                 </li>
               </ul>
             </div>
@@ -178,14 +165,7 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
               <hr class="detailpage-info__line" />
 
               <p class="detailpage-info__contents">
-                깨끗하게 세차해드립니다~ 시간으로 계산하는게 아닙니다. 아래
-                가격표 보시고 문의주세요! 일반세차 경/소형 30,000원 준중, 중형
-                40,000원 준대, 준대형 50,000원 SUV 60,000원 디테일링세차 경/소형
-                90,000원 준중, 중형 100,000원 준대, 준대형 110,000원 SUV
-                120,000원 *차종에 따라 가격변동 될수있음* 실내세차까지 원할 시
-                30,000원 추가 디테일링 소요시간 3시간 (차 오염도에 따라
-                달라집니다.) 디테일링은 엔진룸까지 포함입니다. (업체 아니고
-                개인입니다!)
+                <%=service.getDescription() %>
               </p>
             </div>
 
@@ -211,45 +191,25 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
 
 
              <!-- 댓글 작성 정보1 -->
+           <%for(CommentInqueryDto comment: comments){%>
+          
             <div class="detailpage-info__comments">
               <ul class="detailpage-info__user">
                 <li class="detailpage-info__useritem">
                   <img
                     alt=""
-                    src="img/icon_mypage.png"
+                    src="img/<%=comment.getStoreImgName() %>"
                     class="detailpage-info__userimg"
                   />
-                  <p class="detailpage-info__usernickname"><%-- <%=commentlistdto.getNickname() %> --%></p>
+                  <p class="detailpage-info__usernickname"><%=comment.getNickname()%></p>
                   <p class="detailpage-info__usercomment">
-                    <%-- <%=commentlistdto.getText() %> --%>
+                    <%=comment.getText()%>
                   </p>
                   <hr class="detailpage-info__commentline" />
                 </li>
               </ul>
             </div>
-            
-
-            <br /><br /><br /><!--댓글 사이간격-->
-
-            <!-- 댓글 작성 정보2 -->
-            <div class="detailpage-info__comments">
-              <ul class="detailpage-info__user">
-                <li class="detailpage-info__useritem">
-                  <img
-                    alt=""
-                    src="img/icon_mypage.png"
-                    class="detailpage-info__userimg"
-                  />
-                  <p class="detailpage-info__usernickname">문어야문여</p>
-                  <p class="detailpage-info__usercomment">
-                    저 표에 있는 가격말고는 추가로 들어가는 비용은 없는게
-                    확실하죠?
-                  </p>
-
-                  <hr class="detailpage-info__commentline" />
-                </li>
-              </ul>
-            </div>
+      	<%}%>
           </article>
         </main>
 
