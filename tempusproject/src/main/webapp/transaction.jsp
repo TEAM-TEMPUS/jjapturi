@@ -1,25 +1,24 @@
 <%@page import="data.dao.service.ServiceDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-	<!-- google Material Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+<!-- google Material Icons -->
+<link rel="stylesheet"
+	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-	<link rel="stylesheet" type="text/css" href="css/styles.css"/>
-	<link rel="stylesheet" type="text/css" href="css/screens/transaction.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/screens/transaction.css" />
 
 </head>
 <%
 	ServiceDao dao = new ServiceDao();
-
+	
 	int totalCount; //총 서비스 수
 	int totalPage; //총 페이지수
 	int startPage; //각 블럭의 시작페이지
@@ -29,35 +28,32 @@
 	int sizePerBlock = 5; //한 블럭당 보여지는 페이지 개수
 	int currentPage; //현재페이지
 	
+	//현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
+	if (request.getParameter("currentPage") == null)
+		currentPage = 1;
+	else
+		currentPage = Integer.parseInt(request.getParameter("currentPage"));
 	
-
+	//총페이지 개수구하기
+	totalPage = totalCount / sizePerPage + (totalCount % sizePerPage == 0 ? 0 : 1);
 	
-			//현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
-			if (request.getParameter("currentPage") == null)
-				currentPage = 1;
-			else
-				currentPage = Integer.parseInt(request.getParameter("currentPage"));
-			
-			//총페이지 개수구하기
-			totalPage = totalCount / sizePerPage + (totalCount % sizePerPage == 0 ? 0 : 1);
-			
-			//각블럭의 시작페이지
-			//예:현재페이지가 3인경우 startpage=1,endpage= 5
-			//현재페이지가 6인경우 startpage=6,endpage= 10
-			startPage = (currentPage - 1) / sizePerBlock * sizePerBlock + 1;
-			endPage = startPage + sizePerPage - 1;
-			
-			//만약 총페이지가 8 -2번째블럭: 6-10 ..이럴경우는 endpage가 8로 수정되어야함
-			if (endPage > totalPage)
-				endPage = totalPage;
-			
-			//각페이지에서 불러올 시작번호
-			offset = (currentPage - 1) * sizePerPage;
-			
-			//각페이지에서 필요한 게시글 가져오기
-			List<ServiceInqueryDto> services = dao.findAll(offset, sizePerPage);
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	//각블럭의 시작페이지
+	//예:현재페이지가 3인경우 startpage=1,endpage= 5
+	//현재페이지가 6인경우 startpage=6,endpage= 10
+	startPage = (currentPage - 1) / sizePerBlock * sizePerBlock + 1;
+	endPage = startPage + sizePerPage - 1;
+	
+	//만약 총페이지가 8 -2번째블럭: 6-10 ..이럴경우는 endpage가 8로 수정되어야함
+	if (endPage > totalPage)
+		endPage = totalPage;
+	
+	//각페이지에서 불러올 시작번호
+	offset = (currentPage - 1) * sizePerPage;
+	
+	//각페이지에서 필요한 게시글 가져오기
+	List<ServiceInqueryDto> services = dao.findAll(offset, sizePerPage);
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 %>
 <body>
 <header id="header-bar" class="header-bar-box">
