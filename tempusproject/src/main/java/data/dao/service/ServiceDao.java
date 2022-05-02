@@ -199,13 +199,14 @@ public class ServiceDao {
 				Long memberId = rs.getLong("member_id");
 				String types = rs.getString("types");
 				String title = rs.getString("title");
+				String status = rs.getString("status");
 				String place = rs.getString("place");
 				Date startDate = rs.getDate("start_date");
 				Date endDate = rs.getDate("end_date");
 				Integer price = rs.getInt("price");
 				String description = rs.getString("description");
 
-				serviceList.add(new ServiceInqueryDto(serviceId, memberId, types, title, category, place, startDate,
+				serviceList.add(new ServiceInqueryDto(serviceId, memberId, types, title, category, status, place, startDate,
 						endDate, price, description));
 			}
 		} catch (SQLException e) {
@@ -242,5 +243,26 @@ public class ServiceDao {
 		}
 
 		return count;
+	}
+	
+	public void getStatus(Long serviceId) {
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select status from Service where service_id = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, serviceId);
+			rs = pstmt.executeQuery();
+
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+
 	}
 }

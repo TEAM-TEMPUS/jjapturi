@@ -152,13 +152,17 @@
   align-items: center;
 }
 
-.list__transaction-status.complete {
+.list__transaction-status img.basic {
+  display: none;
+}
+
+.list__transaction-status img.completion {
   vertical-align: middle;
   width: 62px;
   margin-right: 8px;
 }
 
-.list__transaction-status.reserved {
+.list__transaction-status img.reservation {
   vertical-align: middle;
   width: 62px;
   margin-right: 8px;

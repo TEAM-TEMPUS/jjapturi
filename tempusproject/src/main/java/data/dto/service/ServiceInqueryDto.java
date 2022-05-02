@@ -9,6 +9,7 @@ public class ServiceInqueryDto {
 	private String types;
 	private String title;
 	private String category;
+	private String status;
 	private String place;
 	private Date startDate;
 	private Date endDate;
@@ -18,14 +19,15 @@ public class ServiceInqueryDto {
 	public ServiceInqueryDto() {
 	}
 
-	public ServiceInqueryDto(Long serviceId, Long memberId, String types, String title, String category, String place,
-			Date startDate, Date endDate, int price, String description) {
+	public ServiceInqueryDto(Long serviceId, Long memberId, String types, String title, String category, String status, 
+			String place, Date startDate, Date endDate, int price, String description) {
 		super();
 		this.serviceId = serviceId;
 		this.memberId = memberId;
 		this.types = types;
 		this.title = title;
 		this.category = category;
+		this.status = status;
 		this.place = place;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -55,6 +57,14 @@ public class ServiceInqueryDto {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getPlace() {
@@ -100,7 +110,7 @@ public class ServiceInqueryDto {
 	@Override
 	public String toString() {
 		return "ServiceInqueryDto [types=" + types + ", title=" + title + ", category=" + category + ", place=" + place
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", price=" + price + ", description="
+				+ ", status = " + status + ",startDate=" + startDate + ", endDate=" + endDate + ", price=" + price + ", description="
 				+ description + "]";
 	}
 

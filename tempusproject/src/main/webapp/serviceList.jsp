@@ -1,3 +1,5 @@
+<%@page import="data.dto.service.ServiceImageDto"%>
+<%@page import="data.dao.service.ServiceImageDao"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -76,6 +78,9 @@
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	DecimalFormat decimalFormat = new DecimalFormat("###,###");
+	
+	//상품 이미지 불러오기
+	ServiceImageDao si = new ServiceImageDao();
 %>
 <body>
     <!-- header -->
@@ -116,11 +121,7 @@
                   <span class="medal--status">
                     <img src="img/medal-gold.svg" alt="" class="medal__img" />
                   </span>
-                  <img
-                    class="service-list__test-img img-hover--scale"
-                    src="img/service-list__test-img-1.jpg"
-                    alt=""
-                  />
+                  <img class="service-list__test-img img-hover--scale" src="img/service-list__test-img-1.jpg" alt=""/>
                 </div>
                 <div class="service-item-txt__wrap">
                   <div class="service-item__title">
@@ -139,8 +140,10 @@
                   </div>
                   <div class="service-item__status">
                     <!-- item 거래 상태 표시 -->
-                    <span class="list__transaction-status complete">
-                      <img src="img/status-complete.svg" alt="" />
+                    <% String status = service.getStatus(); %>
+                    <span class="list__transaction-status">
+<%--                       <img src="img/status_<%= status %>.svg" alt="" /> --%>
+                      <img src="img/status_<%= status %>.svg" alt="" class="<%= status %>">
                     </span>
                     <div class="service-item__price"><%= decimalFormat.format(service.getPrice())%></div>
                   </div>
