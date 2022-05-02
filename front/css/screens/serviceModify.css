@@ -1,0 +1,439 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+/*전체 선택자로 리셋*/
+* {
+  margin:0;   /* 마진 리셋 */
+  padding:0;   /* 패딩 리셋 */
+}
+
+/*본문 중앙배치*/
+.container__inner {
+    margin:0 auto;  /* 화면 중앙에 배치 */
+    width:900px;    /* 너비 */    
+    background-color: #fff;
+  }
+
+/*상품등록 타이틀 스타일 적용*/
+.service-registration__bigtitle{
+    font-family:"Noto Sans KR";
+    font-size:38px;
+    font-weight:700; /*폰트 폭 적용*/
+    text-align: center; /*텍스트 가운데 정렬해줌*/
+    margin:50px auto;
+    line-height: 2.5;
+
+}
+
+/*이미지 제목*/
+.service-registration-info__imgetitle{
+    font-family:"Noto Sans KR";
+    font-weight:500; /*폰트 폭 적용*/
+    font-size:18px;
+}
+
+/*소제목 타이틀 스타일 적용*/
+.service-registration-info__smalltitle{ 
+    display: inline-block;
+    font-family:"Noto Sans KR";
+    font-weight:500; /*폰트 폭 적용*/
+    font-size:18px;
+}
+
+/*이미지등록하면 이미지나타나는 스타일 적용*/
+/*이미지 스타일 적용*/
+.service-registration__imagspace{
+  max-width: 500px; 
+   height:auto;
+   border-radius: 5px;
+   margin-left:80px;
+   margin-bottom: 50px;
+   margin-top: 50px;
+   padding-bottom: 50px;
+
+}
+
+
+/*사진선택 스타일 적용*/
+
+input[type="file"]{
+    display: none;
+  }
+  label{
+    display: block;
+    text-align: center;
+    width:100px;
+    height:40px;    
+    background-color:#4751FD;
+    border:#ffffff;
+    color:#ffffff;
+    border-radius: 5px;
+    margin-left: -5px;
+    margin-top: 30px;
+    padding-top: 12px;
+    
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
+
+  }
+ 
+  /*사진선택 위치 적용*/
+.service-registration__imgselect{
+    margin-top: -50px;
+    margin-left: 85px;
+    margin-bottom: 50px;
+}
+
+/*상품정보입력 ul스타일 적용*/
+.service-registration-info__list{
+    list-style: none;
+    line-height:90px;
+}
+
+/*나는 누구인가요? 개미/배짱이 라디오 버튼*/
+.service-registration-who{
+
+}
+.service-registration-info__who{
+  font-family: "Noto Sans KR";
+  font-size:18px;
+	font-weight:500;
+}
+/*라디오 버튼 크기조정 */
+.radio-select-ant{
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+.radio-select-grasshopper{
+
+  margin-left: 25px;
+
+}
+
+.radio-select-antname{
+
+  font-family: "Noto Sans KR";
+	font-size:20px;
+	font-weight:400;
+
+}
+
+.radio-select-grasshoppername{
+
+  font-family: "Noto Sans KR";
+	font-size:20px;
+	font-weight:400;
+}
+
+/*상품정보입력 스타일 적용(제목)*/
+.service-registration-title__info{
+
+  font-family: "Noto Sans KR";
+	font-size:14px;
+	font-weight:400;
+	border-radius:7px ;
+	border:1px solid #adb5bd;
+  color:#000000;
+	width:700px; 
+	height:40px;
+	padding-left:10px;
+  margin-left: 115px;
+	
+}
+
+/*placeholder 색상 주기*/
+input::placeholder{
+    color:#adb5bd;
+}
+
+textarea::placeholder{
+    color:#adb5bd;
+}
+
+/*input 내용 선택했을시 보더 생상변화*/
+input:focus {
+    outline:1px solid #4751FD;
+    background-color:rgba(71,81,253,0.1);
+  }
+
+
+
+/*상품정보입력 스타일 적용(카테고리)*/
+.service-registration-category__info{
+  font-family: "Noto Sans KR";
+	font-weight:400; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+  margin-left: 82px;
+}
+
+/*카테고리안 고민*/
+
+
+/*상품정보입력 카테고리 스타일 적용*/
+select option:first-child{
+    color: #adb5bd;
+}
+
+select option:nth-child(2),
+select option:nth-child(3),
+select option:nth-child(4),
+select option:nth-child(5),
+select option:nth-child(6){
+    color: #000000;
+}
+
+/*상품정보입력 카테고리 선택했을때 보더변환*/
+select:focus{
+    outline:1px solid #4751FD;
+    background-color:rgba(71,81,253,0.1);
+  }  
+
+/*상품정보입력 스타일 적용(거래지역)*/
+.service-registration-addr_info{
+  font-family: "Noto Sans KR";
+	font-size:14px;
+	font-weight:400;
+	border-radius:7px ;
+	border:1px solid #adb5bd;
+	color:#000000;
+	width:700px; 
+	height:40px;
+	padding-left:10px;
+  margin-left: 80px;
+}
+
+/*상품정보입력 스타일 적용(날짜)*/
+.service-registration-item__info1{
+  font-family: "Noto Sans KR";
+	font-weight:400; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	border:1px solid #adb5bd;
+  color:#adb5bd;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+  margin-left: 112px;
+	
+}
+.service-registration-item__info2{
+  font-family: "Noto Sans KR";
+	font-weight:400; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	border:1px solid #adb5bd;
+  color:#adb5bd;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+  margin-left: 20px;
+}
+
+
+/*날짜 물결표시*/
+.service-registration-item__flow{
+  font-family: "Noto Sans KR";
+	font-weight:500; /*폰트 폭 적용*/
+	font-size:24px;
+  margin-left:20px;
+}
+
+
+/*상품정보입력 스타일 적용(가격)*/
+.service-registration-price__info{
+  font-family: "Noto Sans KR";
+	font-weight:400; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px;
+	border:1px solid #adb5bd; 
+  color:#000000;
+	width:200px; 
+	height:40px;
+	padding-left:10px;
+  margin-left: 110px;
+}
+
+/*상품정보입력 소제목*/
+.service-registration-explanation__smalltitle{
+ 
+    font-family:"Noto Sans KR";
+    font-weight:500; /*폰트 폭 적용*/
+    font-size:18px;
+    margin-top: 20px;
+    line-height:60px;
+
+}
+
+/*상품정보입력 스타일 적용(설명)*/
+.service-registration-explanation__explain{
+  resize:none; /*창 늘리고 줄이는거 없앰*/
+  font-family: "Noto Sans KR";
+	font-weight:400; /*폰트 폭 적용*/
+	font-size:14px;
+	border-radius:7px ;
+	color:#000000;
+	width:700px; 
+	height:200px;
+	padding-top:10px;
+	padding-left:10px;
+  margin-left: 150px;
+  margin-top: -50px;
+
+}
+
+/*상품설명 스코롤바*/
+textarea::-webkit-scrollbar {
+    width: 10px;
+  }
+  textarea::-webkit-scrollbar-thumb {
+    background-color: #4751FD;
+    border-radius: 10px;
+  }
+  textarea::-webkit-scrollbar-track {
+    background-color: rgba(71,81,253,0.1);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+
+
+
+/*상품정보입력 선택했을시 보더 변환*/
+textarea:focus{
+    outline:1px solid #4751FD;
+    background-color:rgba(71,81,253,0.1);
+  }  
+
+
+
+/*등록하기 버튼*/
+/*margin:0 auto했는데 버튼이 중앙으로 가지않는다면
+ inline이 기본인 button을 
+block으로 바꾸어주는 것 => display: block으로 해주는 것이다*/
+.service-registration-button__button{
+     display: block;
+     text-align: center;
+     width:200px;
+     height:50px;    
+     border-radius: 10px;
+     background-color:#4751FD;
+     border:#ffffff;
+     color:#ffffff;
+     margin:0 auto;
+     margin-top: 50px;
+     cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
+}
+
+
+
+  /*slick슬라이드 적용*/
+ 
+/*한꺼번에 묶어서 이전/다음버튼 설정해준다*/
+        /*이렇게 해줘야 글자를 투명해졌던게 화살표만 나타내줄수 있다*/
+        .slick-prev:before{
+          font-family: 'xeicon';
+          color:#fff;
+          font-size: 45px;
+          content: "\e93d"; /*왼쪽 아이콘 원래 content값을 브라우저에서 확인후 넣어준다.*/
+          font-family: 'xeicon'; /*넣어줘야 적용된다*/
+      }
+
+      .slick-next:before{
+          font-family: 'xeicon';
+          color:#fff;
+          font-size: 45px;
+          content: "\e940"; /*오른쪽 아이콘 원래 content값을 브라우저에서 확인후 넣어준다.*/
+          font-family: 'xeicon'; /*넣어줘야 적용된다*/
+      }
+      /*이전/다음버튼 클래스명은 자동으로 생성된다 브라우저창 F12눌러서 보면된다*/
+      /*visual클래스에 있는 button안 slick-prev클래스명*/
+      .slick-prev{
+          left:-100px;
+          font-size: 0; /*Previous글자 사이즈 0으로만듬*/
+          color:transparent; /*Previous글자를 투명으로 넣어준다*/
+          /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
+          position: absolute;
+          z-index: 10;
+          top:50%;
+          transform: translateY(-50%); /*버튼들이 Y축으로 가운데로 온다.*/
+          /*이전/다음 버튼 모양 조정*/
+          width: 71px;
+          height: 71px;
+          border-radius: 100%;
+          background: rgba(0,0,0,.5);
+          border: none;
+          /*이전/다음버튼 화살표를 넣기위해 아이콘폰트쓸것이다 xeicon쓸거다*/
+      }
+
+
+      .slick-next{
+          right:-100px;
+          font-size: 0; /*Next글자 사이즈 0으로만듬*/
+          color:transparent; /*Next글자를 투명으로 넣어준다*/
+          /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
+          position: absolute;
+          z-index: 10;
+          top:50%;
+          transform: translateY(-50%); /*버튼들이 Y축으로 가운데로 온다.*/
+          /*이전/다음 버튼 모양 조정*/
+          width: 71px;
+          height: 71px;
+          border-radius: 100%;
+          background: rgba(0,0,0,.5);
+          border: none;
+          /*이전/다음버튼 화살표를 넣기위해 아이콘폰트쓸것이다 xeicon쓸거다*/
+          
+      }
+/**/
+      .slick-dots{
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 100%;
+          margin-left:-46px ;
+          display: flex;
+          justify-content: center;
+      }
+
+      .slick-dots li{
+          list-style: none;
+          margin: 0 15px;
+      }
+
+     .slick-dots li button{
+          position: absolute;
+          background: #adb5bd;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: none;
+          margin-top: -40px;
+          overflow: hidden;
+          font-size: 0; /*Next글자 사이즈 0으로만듬*/
+          color:transparent; /*Next글자를 투명으로 넣어준다*/
+         
+     }
+
+     .slick-dots .slick-active button{
+         background: #4751FD;
+         border: none;
+         font-size: 0; /*글자 사이즈 0으로만듬*/
+         color:transparent; /*글자를 투명으로 넣어준다*/
+     }
+
+     /*이미지 슬라이드 밑에 점없어지는거*/
+
+    .slick-dots li:first-child:nth-last-child(1){
+      display:none
+  }
+
+  /*사진 첨부했을때 기본이미지 크기와 같게 하기*/
+  .slick-track{
+    width: 500px; 
+    height:300px;
+  }
