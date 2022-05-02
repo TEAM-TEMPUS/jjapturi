@@ -1,9 +1,12 @@
 package data.dao.service;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mysql.cj.protocol.Resultset;
 
@@ -176,4 +179,51 @@ DbConnect db = new DbConnect();
 		
 		return dto;
 	}
+	
+	
+	//전체출력...페이지에서 필요한 만큼만 리턴
+	List<ServiceInqueryDto> findAll(int offset, int limit){
+		List<ServiceInqueryDto> serviceList = new ArrayList<ServiceInqueryDto>();
+		
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select * from Service " + "order by service_id desc " + "limit ? " + "offset ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, limit);
+			pstmt.setLong(2, offset);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Long serviceId = rs.getLong("service_id");
+				Long memberId = rs.getLong("member_id");
+				String types = rs.getString("types");
+				String title = rs.getString("title");
+				String category = rs.getString("category");
+				String place = rs.getString("place");
+				Date startDate = rs.getDate("start_date");
+				Date endDate = rs.getDate("end_date");
+				Integer price = rs.getInt("price");
+				String description = rs.getString("description");
+
+				serviceList.add(new ServiceInqueryDto(serviceId, memberId, types, title, category, place, startDate,
+						endDate, price, description));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+
+		return serviceList;
+	}
+	
+
+	
 }
+
+
