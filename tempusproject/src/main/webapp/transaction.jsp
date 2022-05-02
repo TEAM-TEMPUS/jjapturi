@@ -1,36 +1,95 @@
+<%@page import="data.dao.service.ServiceDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- favicon -->
-<link rel="icon" type="image/png" sizes="32x32"
-	href="../img/favicon-32x32.png">
+<meta charset="UTF-8">
+<title>Insert title here</title>
 
-<title>짭투리</title>
+<!-- google Material Icons -->
+<link rel="stylesheet"
+	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-
-	<!-- google Material Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-
-	<link rel="stylesheet" type="text/css" href="css/styles.css"/>
-	<link rel="stylesheet" type="text/css" href="css/screens/transaction.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/screens/transaction.css" />
 
 </head>
-<body>
+<%
+	ServiceDao dao = new ServiceDao();
+	
+	int totalCount; //총 서비스 수
+	int totalPage; //총 페이지수
+	int startPage; //각 블럭의 시작페이지
+	int endPage; //각 블럭의 끝페이지
+	int offset; //각 페이지의 시작번호
+	int sizePerPage = 5; //한 페이지에 보여질 글 갯수
+	int sizePerBlock = 5; //한 블럭당 보여지는 페이지 개수
+	int currentPage; //현재페이지
+	
+	//현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
+	if (request.getParameter("currentPage") == null)
+		currentPage = 1;
+	else
+		currentPage = Integer.parseInt(request.getParameter("currentPage"));
+	
+	//총페이지 개수구하기
+	totalPage = totalCount / sizePerPage + (totalCount % sizePerPage == 0 ? 0 : 1);
+	
+<<<<<<< HEAD
+			//현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
+			if (request.getParameter("currentPage") == null)
+				currentPage = 1;
+			else
+				currentPage = Integer.parseInt(request.getParameter("currentPage"));
+			
+			//총페이지 개수구하기
+			totalPage = totalCount / sizePerPage + (totalCount % sizePerPage == 0 ? 0 : 1);
+			
+			//각블럭의 시작페이지
+			//예:현재페이지가 3인경우 startpage=1,endpage= 5
+			//현재페이지가 6인경우 startpage=6,endpage= 10
+			startPage = (currentPage - 1) / sizePerBlock * sizePerBlock + 1;
+			endPage = startPage + sizePerPage - 1;
+			
+			//만약 총페이지가 8 -2번째블럭: 6-10 ..이럴경우는 endpage가 8로 수정되어야함
+			if (endPage > totalPage)
+				endPage = totalPage;
+			
+			//각페이지에서 불러올 시작번호
+			offset = (currentPage - 1) * sizePerPage;
+			
 
-	<header id="header-bar" class="header-bar-box">
+=======
+	//각블럭의 시작페이지
+	//예:현재페이지가 3인경우 startpage=1,endpage= 5
+	//현재페이지가 6인경우 startpage=6,endpage= 10
+	startPage = (currentPage - 1) / sizePerBlock * sizePerBlock + 1;
+	endPage = startPage + sizePerPage - 1;
+	
+	//만약 총페이지가 8 -2번째블럭: 6-10 ..이럴경우는 endpage가 8로 수정되어야함
+	if (endPage > totalPage)
+		endPage = totalPage;
+	
+	//각페이지에서 불러올 시작번호
+	offset = (currentPage - 1) * sizePerPage;
+	
+	//각페이지에서 필요한 게시글 가져오기
+	List<ServiceInqueryDto> services = dao.findAll(offset, sizePerPage);
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+>>>>>>> 46322a36c07608fc387261767576a4e3b447a65a
+%>
+<body>
+<header id="header-bar" class="header-bar-box">
 	
 	
 		<div class="header-bar-box__wrap">
 			<div class="header-logo-box">
 				<a href="#" class="header-logo-box__link">
 					<div class="logo-box">
-						<img src="../img/logo_200.png" alt="타임마켓" class="header-logo">
+						<img src="img/logo.svg" alt="타임마켓" class="header-logo">
 						<p class="logo">짭투리</p>
 					</div>
 				</a>
@@ -42,7 +101,7 @@
 					<input type="text" id="header-search-input"
 						class="search__input" placeholder="서비스명, 지역명 입력">
 					<button class="search__button">
-						<a href="#"> <img src="../img/icon_search.png" alt="search"
+						<a href="#"> <img src="img/icon-search.svg" alt="search"
 							class="search__icon" width="20">
 						</a>
 					</button>
@@ -70,7 +129,7 @@
 				
 				<div class="info-box">
 					<a href="#" class="info-box__link"> <img
-						src="../img/icon_mypage.png" alt="" class="info-box__img">
+						src="img/icon-mypage.svg" alt="" class="info-box__img">
 					</a>
 				</div>
 			</div>
@@ -92,9 +151,9 @@
                             <div class="transaction-text__img">
                                 <div class="transaction-item__img">
                                     <span class="medal--status">
-                                        <img src="../img/medal_gold.png" alt="메달이미지" class="medal__img">
+                                        <img src="img/medal-gold.svg" alt="메달이미지" class="medal__img">
                                       </span>
-                                      <img class="transaction-list__img" src="../img/image_clock.png" alt="이미지">
+                                      <img class="transaction-list__img" src="img/image_clock.png" alt="이미지">
                                 </div>
                                 <div class="transaction-item-text__wrap">
                                     <div class="transaction-item__title">
@@ -142,9 +201,9 @@
                             <div class="transaction-text__img">
                                 <div class="transaction-item__img">
                                     <span class="medal--status">
-                                        <img src="../img/medal_gold.png" alt="메달이미지" class="medal__img">
+                                        <img src="img/medal_silver.png" alt="메달이미지" class="medal__img">
                                       </span>
-                                      <img class="transaction-list__img" src="../img/image_clock.png" alt="이미지">
+                                      <img class="transaction-list__img" src="img/image_clock.png" alt="이미지">
                                 </div>
                                 <div class="transaction-item-text__wrap">
                                     <div class="transaction-item__title">
@@ -185,9 +244,9 @@
                             <div class="transaction-text__img">
                                 <div class="transaction-item__img">
                                     <span class="medal--status">
-                                        <img src="../img/medal_gold.png" alt="메달이미지" class="medal__img">
+                                        <img src="img/medal-gold.svg" alt="메달이미지" class="medal__img">
                                       </span>
-                                      <img class="transaction-list__img" src="../img/image_clock.png" alt="이미지">
+                                      <img class="transaction-list__img" src="img/image_clock.png" alt="이미지">
                                 </div>
                                 <div class="transaction-item-text__wrap">
                                     <div class="transaction-item__title">
@@ -235,9 +294,9 @@
                             <div class="transaction-text__img">
                                 <div class="transaction-item__img">
                                     <span class="medal--status">
-                                        <img src="../img/medal_gold.png" alt="메달이미지" class="medal__img">
+                                        <img src="img/medal-platinum.svg" alt="메달이미지" class="medal__img">
                                       </span>
-                                      <img class="transaction-list__img" src="../img/image_clock.png" alt="이미지">
+                                      <img class="transaction-list__img" src="img/image_clock.png" alt="이미지">
                                 </div>
                                 <div class="transaction-item-text__wrap">
                                     <div class="transaction-item__title">
