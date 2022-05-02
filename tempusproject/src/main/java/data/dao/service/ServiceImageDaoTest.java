@@ -2,9 +2,7 @@ package data.dao.service;
 
 import java.util.List;
 
-import data.dto.service.ServiceDto;
 import data.dto.service.ServiceImageDto;
-import data.dto.service.ServiceImgDto;
 
 public class ServiceImageDaoTest {
 
@@ -23,7 +21,7 @@ public class ServiceImageDaoTest {
 	}
 	
 	public void findAllByServiceId(Long serviceId) {
-		List<ServiceImgDto> list=dao.findAllByServiceId(serviceId);
+		List<ServiceImageDto> list=dao.findAllByServiceId(serviceId);
 		
 		
 		for(int i=0; i<list.size(); i++) {
