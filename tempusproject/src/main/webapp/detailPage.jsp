@@ -38,7 +38,6 @@
     <link rel="stylesheet" type="text/css" href="css/screens/detailPage.css" />
 <!-- jsp작성 -->    
  <%
-
  //등록된 서비스고유번호를 가져와야한다
  //Long serviceId = Long.parseLong(request.getParameter("serviceId"));
  //등록된 댓글고유번호를 가져와야한다

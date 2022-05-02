@@ -1,5 +1,6 @@
-<%@page import="data.dto.grade.GradeDto"%>
 <%@page import="data.dao.grade.GradeDao"%>
+<%@page import="data.dto.grade.GradeDto"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
