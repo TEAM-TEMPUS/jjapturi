@@ -170,10 +170,10 @@
 	display: block;
     width:180px;
 	height:50px;
-	background-color: #dee2e6;
 	color:#4751FD;
 	border-radius: 10px;
 	border-color:#4751FD;
+	border: 1px solid #4751FD;
     margin:0 auto;
     text-align: center;
     cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
