@@ -1,22 +1,21 @@
-/* styles */
-@import "../styles.css";
+@charset "UTF-8";
 
-/* product-list */
-#product-list {
+/* service-list */
+#service-list {
   display: flex;
   justify-content: center;
   padding-top: 7rem;
   padding-bottom: 5rem;
 }
 
-.product-list__wrap {
+.service-list__wrap {
   max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.product-list__title {
+.service-list__title {
   text-align: center;
   font: 700 28px "Noto Sans KR", sans-serif;
   color: #000;
@@ -25,15 +24,15 @@
   margin-bottom: 5rem;
 }
 
-.product__wrap {
+.service__wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   margin-bottom: 60px;
 }
 
-/* product-item */
-.product-item__wrap {
+/* service-item */
+.service-item__wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -42,23 +41,23 @@
   justify-content: center;
 }
 
-.product-item {
+.service-item {
   width: 18rem;
   margin-bottom: 3rem;
 }
 
-.product-item__inner {
+.service-item__inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.product-item__inner:hover .img-hover--scale {
+.service-item__inner:hover .img-hover--scale {
   transform: scale(1.05);
 }
 
-.product-item__inner:hover .img-hover--color::after {
+.service-item__inner:hover .img-hover--color::after {
   content: "";
   position: absolute;
   top: 0;
@@ -68,7 +67,7 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.product-item__img {
+.service-item__img {
   position: relative;
   width: 100%;
   height: 286px;
@@ -76,7 +75,7 @@
   overflow: hidden;
 }
 
-.product-list__test-img {
+.service-list__test-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -97,46 +96,46 @@
   width: 3.5rem;
 }
 
-.product-item-txt__wrap {
+.service-item-txt__wrap {
   width: 85%;
   padding-top: 24px;
   font: 400 16px "Noto Sans KR", sans-serif;
   color: #000;
 }
 
-.product-item-txt__wrap div {
+.service-item-txt__wrap div {
   margin-bottom: 4px;
 }
 
-.product-item-txt__wrap div:nth-child(5) {
+.service-item-txt__wrap div:nth-child(5) {
   margin-bottom: 0;
 }
 
 /* 해당 블록을 벗어나면 글자수 제한으로 ...로 보이게 */
-.product-item__title,
-.product-item__description {
+.service-item__title,
+.service-item__description {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.product-item__title {
+.service-item__title {
   font-weight: 500;
   font-size: 18px;
 }
 
-.product-item__place,
-.product-item__description {
+.service-item__place,
+.service-item__description {
   color: #787878;
 }
 
-.product-item-date__wrap {
+.service-item-date__wrap {
   display: flex;
   position: relative;
   align-items: center;
 }
 
-.product-item-date__icon {
+.service-item-date__icon {
   display: inline-flex;
   vertical-align: middle;
   margin-right: 4px;
@@ -148,7 +147,7 @@
   font-size: 16px;
 }
 
-.product-item__status {
+.service-item__status {
   display: flex;
   align-items: center;
 }
@@ -165,12 +164,12 @@
   margin-right: 8px;
 }
 
-.product-item__price {
+.service-item__price {
   font-weight: 700;
   padding-bottom: 3px;
 }
 
-.product-item__price::after {
+.service-item__price::after {
   content: "원";
 }
 
@@ -225,8 +224,8 @@
   background-color: #4751fd;
 }
 
-/* product-navigation */
-.product--navigation {
+/* service-navigation */
+.service--navigation {
   position: fixed;
   bottom: 5rem;
   right: 7rem;
@@ -278,7 +277,7 @@
   transition: 0.3s ease 0s;
 }
 
-.product--navigation:hover .menu-area {
+.service--navigation:hover .menu-area {
   background: #3841ec;
 }
 
@@ -335,88 +334,66 @@
   color: #fff;
 }
 
-.product-title-switch__wrap {
+.service-title-switch__wrap {
   display: flex;
   flex-direction: row-reverse;
 }
 
-/*on-off-switch*/
-.on-off--switch {
+/*switch*/
+.switch__wrap {
   position: absolute;
   right: 16rem;
 }
 
-.checkbox {
+.btn {
+  border: 2px solid #1a1a1a;
+  display: inline-block;
+  height: 45px;
+  padding: 10px;
+  position: relative;
+  font: 700 14px "Noto Sans KR", sans-serif;
+  text-align: center;
+  transition: background 600ms ease, color 600ms ease;
+}
+
+input[type="radio"].toggle {
   display: none;
 }
-
-.switch {
-  align-items: center;
-  background-color: gray;
-  border-radius: 500px;
+input[type="radio"].toggle + label {
   cursor: pointer;
-  display: flex;
-  height: 40px;
-  justify-content: space-between;
-  padding: 0 10px;
-  position: relative;
-  user-select: none;
-  width: 80px;
+  min-width: 60px;
 }
-
-.checkbox:checked ~ .switch {
-  background: linear-gradient(to right, #2948ff, #396afc);
+input[type="radio"].toggle + label:hover {
+  background: none;
+  color: #1a1a1a;
 }
-
-.checkbox:not(:checked) ~ .switch {
-  background: linear-gradient(to right, #f00000, #dc281e);
-}
-
-.switch__left,
-.switch__right {
-  color: #fff;
-  font: 500 14px "Noto Sans KR", sans-serif;
-  text-transform: uppercase;
-}
-
-.switch__left {
-  padding-left: 3px;
-}
-
-.switch__right {
-  padding-right: 3px;
-}
-
-.checkbox:checked ~ .switch .switch__left {
-  visibility: hidden;
-}
-
-.checkbox:not(:checked) ~ .switch .switch__right {
-  visibility: hidden;
-}
-
-.switch__circle {
-  height: 40px;
-  padding: 5px;
-  position: absolute;
-  transition: all 0.13s cubic-bezier(0.4, 0, 1, 1);
-  width: 40px;
-}
-
-.checkbox:checked ~ .switch .switch__circle {
-  left: 0;
-  right: calc(100% - 40px);
-}
-
-.checkbox:not(:checked) ~ .switch .switch__circle {
-  left: calc(100% - 40px);
-  right: 0;
-}
-
-.switch__circle-inner {
-  background-color: white;
-  border-radius: 50%;
-  display: block;
+input[type="radio"].toggle + label:after {
+  background: #1a1a1a;
+  content: "";
   height: 100%;
+  position: absolute;
+  top: 0;
+  transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
   width: 100%;
+  z-index: -1;
+}
+input[type="radio"].toggle.toggle-left + label {
+  border-right: 0;
+}
+input[type="radio"].toggle.toggle-left + label:after {
+  left: 100%;
+}
+input[type="radio"].toggle.toggle-right + label {
+  margin-left: -5px;
+}
+input[type="radio"].toggle.toggle-right + label:after {
+  left: -100%;
+}
+input[type="radio"].toggle:checked + label {
+  cursor: default;
+  color: #fff;
+  transition: color 200ms;
+}
+input[type="radio"].toggle:checked + label:after {
+  left: 0;
 }
