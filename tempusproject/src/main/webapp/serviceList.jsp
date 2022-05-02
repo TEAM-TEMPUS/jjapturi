@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="data.dto.service.ServiceInqueryDto"%>
@@ -46,7 +47,7 @@
 	int currentPage; //현재페이지
 	
 	//총갯수
-	totalCount = dao.getTotalCountByCategory("category");
+	totalCount = dao.getTotalCountByCategory(category);
 	
 	//현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
 	if (request.getParameter("currentPage") == null)
@@ -74,6 +75,7 @@
 	List<ServiceInqueryDto> services = dao.findAll(category, offset, sizePerPage);
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	DecimalFormat decimalFormat = new DecimalFormat("###,###");
 %>
 <body>
     <!-- header -->
@@ -107,6 +109,7 @@
         </div>
         <div class="service__wrap">
           <div class="service-item__wrap">
+          <%for (ServiceInqueryDto service : services) { %>
             <div class="service-item">
               <a href="#" class="service-item__inner">
                 <div class="service-item__img img-hover--color">
@@ -121,9 +124,9 @@
                 </div>
                 <div class="service-item-txt__wrap">
                   <div class="service-item__title">
-                    입주청소 해주실 분 찾습니다!
+                    <%= service.getTitle() %>
                   </div>
-                  <div class="service-item__place">대구 수성구 범어2동</div>
+                  <div class="service-item__place"><%= service.getPlace() %></div>
                   <div class="service-item-date__wrap">
                     <div class="service-item-date__icon">
                       <span class="material-symbols-rounded">
@@ -131,7 +134,7 @@
                       </span>
                     </div>
                     <div class="date__wrap">
-                      <span>2022-04-22 ~ 2022-04-30</span>
+                      <span><%= sdf.format(service.getStartDate()) %> ~ <%= sdf.format(service.getEndDate())%></span>
                     </div>
                   </div>
                   <div class="service-item__status">
@@ -139,18 +142,18 @@
                     <span class="list__transaction-status complete">
                       <img src="img/status-complete.svg" alt="" />
                     </span>
-                    <div class="service-item__price">70,000</div>
+                    <div class="service-item__price"><%= decimalFormat.format(service.getPrice())%></div>
                   </div>
                   <div class="service-item__description">
                     <span class="item-description__txt">
-                      입주 청소 해주실 분을 찾습니다! 아주 깔끔하게
-                      청소해주실분~
+                      <%= service.getDescription() %>
                     </span>
                   </div>
                 </div>
               </a>
             </div>
 
+		  <% } %>
           </div>
         </div>
 
