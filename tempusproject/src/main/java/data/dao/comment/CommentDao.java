@@ -40,7 +40,7 @@ public class CommentDao {
 	}
 
 	// 조회[Vector는 저장순서를 유지하고 중복을 허용한다]
-	// List타입은 CommentDto이다
+	// 반환값은 list형태로 반환이된다  List타입은 CommentInqueryDto이다
 	public List<CommentInqueryDto> findAllByServiceId(Long serviceId) {
 
 		List<CommentInqueryDto> comments = new Vector<CommentInqueryDto>();
