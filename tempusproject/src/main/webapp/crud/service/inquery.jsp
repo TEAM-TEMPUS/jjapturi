@@ -1,7 +1,9 @@
+<%@page import="java.util.List"%>
+<%@page import="data.dao.service.ServiceDao"%>
 <%@page import="java.util.Objects"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="data.dto.service.ServiceInqueryDto"%>
-<%@page import="data.dao.service.ServiceInqueryDao"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,11 +14,11 @@
 </head>
 <body>
 <%
-ServiceInqueryDao dao= new ServiceInqueryDao();
+ServiceDao dao= new ServiceDao();
 request.setCharacterEncoding("utf-8");
 
 Long serviceId = Long.parseLong(request.getParameter("serviceId"));
-ServiceInqueryDto service = dao.findInqueryServiceId(serviceId);
+ServiceInqueryDto service = dao.findByServiceId(serviceId);
 
 JSONObject ob = new JSONObject();
 if(Objects.nonNull(service)){
