@@ -98,6 +98,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
   } else {
 	  rank = "rank_bronze.png";
   }
+  
 %>   
   </head>
   <body>
@@ -168,11 +169,15 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
 
                 <!--예약중과 가격-->
                 <li class="detailpage-info__item">
+                  
+                 <%if(service.getStatus().equals("reservation")){%>        		
+                  
                   <img
                     alt=""
                     src="img/status_reserved.png"
                     class="detailpage-info__reservationimge"
                   />
+                  <%}%> 
                   <!--예약중 옆에 가격 정보-->
                   <span class="detailpage-info__priceinfo"><%=service.getPrice() %></span>
                 </li>
@@ -193,11 +198,19 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
 
             <!-- 예약버튼 -->
             <div class="detailpage-info__reservation">
-              <button type="button" class="detailpage-info__reservationbtn">
-                예약하기
-              </button>
+              
+              <%if(service.getStatus().equals("reservation")){%>
+                <button type="button" class="detailpage-info__reservationbtn">
+               예약중
+               </button>
+               <%}else{%> 
+               <button type="button" class="detailpage-info__basicbtn">
+               예약하기
+               </button>
+               <%}%> 
+              
             </div>
-<form action="crud/comments/registration.jsp" method="post">
+			<form action="crud/comments/registration.jsp" method="post">
             <!-- 상품문의 내용적기 -->
             <input type="hidden" name="memberId" value="<%=memberId%>">
             <input type="hidden" name="serviceId" value="<%=serviceId%>">
