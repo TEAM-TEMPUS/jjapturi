@@ -1,6 +1,8 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="data.dto.comment.CommentInqueryDto"%>
+<%@page import="data.dto.service.ServiceInqueryDto"%>
+<%@page import="data.dao.service.ServiceDao"%>
 <%@page import="java.util.Vector"%>
-<%@page import="data.dto.comment.CommentListDto"%>
-<%@page import="data.dao.comment.CommentListDao"%>
 <%@page import="java.util.List"%>
 <%@page import="data.dao.member.MemberDao"%>
 <%@page import="data.dto.member.MemberDto"%>
@@ -57,6 +59,23 @@ CommentDto commentdto =new CommentDto(); //댓글
 CommentListDao commentlistdao = new CommentListDao();
 CommentListDto commentlistdto = new CommentListDto();
 List<CommentListDto> commentlist=commentlistdao.findcommentlist(serviceId); */
+
+// Service를 조회
+// Service에 딸린 여러 Comment 조회
+Long serviceId = Long.parseLong(request.getParameter("serviceId"));
+
+ServiceDao serviceDao = new ServiceDao();
+CommentDao commentDao = new CommentDao();
+
+HashMap<String, String> categoryMap = new HashMap<>();
+categoryMap.put("errand", "심부름");
+categoryMap.put("walk", "산책");
+categoryMap.put("install", "설치");
+categoryMap.put("study", "과외");
+categoryMap.put("clean", "청소");
+
+ServiceInqueryDto service = serviceDao.findByServiceId(serviceId);
+List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
  %>   
   </head>
   <body>
@@ -67,7 +86,7 @@ List<CommentListDto> commentlist=commentlistdao.findcommentlist(serviceId); */
         <main class="container__inner">
           <article class="detailpage-info">
             <!--제목-->
-            <h2 class="detailpage-info__categorytitle">청소</h2>
+            <h2 class="detailpage-info__categorytitle"><%= categoryMap.get(service.getCategory()) %></h2>
             <!--등록이미지-->
             <div class="detailpage-info__serviceimgespace">
             <img

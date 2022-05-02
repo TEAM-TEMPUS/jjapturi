@@ -14,7 +14,7 @@ public class ServiceDaoTest {
 //		test.modify();
 //		test.delete(21L);
 //		test.changeStatus();
-		test.findInqueryServiceId(1L);
+		test.findInqueryServiceId(3L);
 	}
 
 	public void store() {
