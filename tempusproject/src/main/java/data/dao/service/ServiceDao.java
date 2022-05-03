@@ -8,11 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.protocol.Resultset;
-
 import data.dto.service.ServiceDto;
-import data.dto.service.ServiceImageDto;
 import data.dto.service.ServiceInqueryDto;
+import data.dto.service.MyServiceDto;
 import mysql.db.DbConnect;
 
 public class ServiceDao {
@@ -149,7 +147,7 @@ public class ServiceDao {
 
 	}
 
-	//서비스 조회 (수정 페이지) 
+	// 서비스 조회 (수정 페이지)
 	public ServiceInqueryDto findByServiceId(Long serviceId) {
 		ServiceInqueryDto dto = new ServiceInqueryDto();
 
@@ -184,41 +182,57 @@ public class ServiceDao {
 
 		return dto;
 	}
-	
-	
-	//totalCount
-		public int getTotalCount()
-		{
-			int n=0;
-			
-			Connection conn=db.getConnection();
-			PreparedStatement pstmt=null;
-			ResultSet rs=null;
-			
-			String sql="select count(*) from ";
-			
-			try {
-				pstmt=conn.prepareStatement(sql);
-				rs=pstmt.executeQuery();
-				
-				if(rs.next())
-					n=rs.getInt(1);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}finally {
-				db.dbClose(rs, pstmt, conn);
-			}
-			
-			
-			return n;
-		}
-	
-	
 
+	public List<MyServiceDto> findMyServicesByMemberId(Long memberId, int offset, int limit) {
+		List<MyServiceDto> list = new ArrayList<MyServiceDto>();
+
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql =  
+				"select s.service_id, s.member_id, s.title, s.status, s.place, s.start_date, s.end_date, s.price, s.description, ti.types "
+				+ "from Service as s "
+				+ "inner join Trading_Info as ti "
+				+ "on ti.service_id = s.service_id "
+				+ "where ti.member_id = ? "
+				+ "order by ti.trading_info_id desc "
+				+ "limit ? offset ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, memberId);
+			pstmt.setLong(2, limit);
+			pstmt.setLong(3, offset);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Long serviceId = rs.getLong("service_id");
+				Long ownerId = rs.getLong("member_id");
+				String title = rs.getString("title");
+				String status = rs.getString("status");
+				String place = rs.getString("place");
+				Date startDate = rs.getDate("start_date");
+				Date endDate = rs.getDate("end_date");
+				Long price = rs.getLong("price");
+				String description = rs.getString("description");
+				String types = rs.getString("types");
+
+				list.add(new MyServiceDto(serviceId, ownerId, title, status, place, startDate, endDate, price,
+						description, types));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+
+		return list;
+	}
+	
 //	여기에 types를 추가하는게 맞는지 확실하지는 않지만 넣어보기
 	public List<ServiceInqueryDto> findAll(String category, String types, int offset, int limit) {
-
 
 		List<ServiceInqueryDto> serviceList = new ArrayList<ServiceInqueryDto>();
 

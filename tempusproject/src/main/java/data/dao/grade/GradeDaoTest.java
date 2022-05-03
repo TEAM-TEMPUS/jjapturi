@@ -1,6 +1,6 @@
 package data.dao.grade;
 
-import data.dto.grade.GradeDto;
+import data.dto.tradinginfo.TradingInfoDto;
 
 public class GradeDaoTest {
 	static GradeDao dao=new GradeDao();
@@ -11,7 +11,7 @@ public class GradeDaoTest {
 		
 	}
 	public void insertGrade() {
-		GradeDto dto=new GradeDto(1L,1L,1L,3);
+		TradingInfoDto dto=new TradingInfoDto(1L,1L,1L,3);
 		dao.insertGrade(dto);
 	}
 }

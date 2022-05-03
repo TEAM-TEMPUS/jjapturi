@@ -2,12 +2,8 @@
 .header-bar-box{
   box-sizing: border-box;
   border-bottom: 1px solid #eee;
-  z-index: 1;
-  top: 0;
   width: 100%;
   background-color: #fff;
-  position: fixed;
-  top: 0;
 }
 
 .header-bar-box__wrap {

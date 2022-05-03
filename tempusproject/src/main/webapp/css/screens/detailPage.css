@@ -275,6 +275,9 @@ textarea::-webkit-scrollbar {
     width:80px;
 	height:80px;
 	border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 50px;
+
 }
 
 
@@ -284,7 +287,9 @@ textarea::-webkit-scrollbar {
     font-family:"Noto Sans KR";
   	font-size:20px;
   	font-weight:500; /*폰트 폭 적용*/
-    
+    margin-top: -130px;
+    margin-left: 100px;
+
 }
 
 /*유저 댓글 내용 위치*/
@@ -296,6 +301,8 @@ textarea::-webkit-scrollbar {
     color:#adb5bd;
     margin-top: 5px;
     margin-bottom: 10px;
+    margin-left: 100px;
+    margin-top: 5px;
 }
 
 /*선 긋기*/
@@ -416,7 +423,6 @@ textarea::-webkit-scrollbar {
     .detailpage-info__updatebtn{
     	margin: 0 auto;
     	margin-top:-80px;
-    	
     	cursor: pointer 마우스 포인터 손모양으로 바꿈
     
     }
@@ -430,8 +436,11 @@ textarea::-webkit-scrollbar {
     /*댓글 부분 라인 조정*/
     .detailpage-info__comments{
     line-height:200%;
+
     margin-bottom: 40px;
     }
+
+   
 
     /**/
     .detailpage-publisher-info{
@@ -446,13 +455,11 @@ textarea::-webkit-scrollbar {
     margin-left:20px;
     margin-top:10px;
     border-bottom: 0.75px solid #adb5bd;
-    
     }
-    
+
     .nickname-btn__wrap{
     display: flex;
     flex-direction: row;
     gap: 20px;
     }
- 
-  
+

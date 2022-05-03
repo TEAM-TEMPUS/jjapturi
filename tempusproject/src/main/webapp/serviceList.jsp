@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="data.dao.member.MemberDao"%>
 <%@page import="common.Grades"%>
-<%@page import="data.dao.member.TradingInfoDao"%>
+<%@page import="data.dao.tradinginfo.TradingInfoDao"%>
 <%@page import="data.dto.member.TradingInfoDto"%>
 <%@page import="data.dto.service.ServiceImageDto"%>
 <%@page import="data.dao.service.ServiceImageDao"%>
@@ -257,9 +257,9 @@
           </a>
           <div id="menu_wrap">
             <ul>
-              <li><a href="#">등록하기</a></li>
-              <li><a href="#">거래내역</a></li>
-              <li><a href="#">마이페이지</a></li>
+              <li><a href="index.jsp?home=serviceRegistration.jsp">등록하기</a></li>
+              <li><a href="index.jsp?home=transaction.jsp">거래내역</a></li>
+              <li><a href="index.jsp?home=myPage.jsp">마이페이지</a></li>
             </ul>
           </div>
         </div>

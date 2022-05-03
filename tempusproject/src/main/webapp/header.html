@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<header id="header-bar" class="header-bar-box">
+	
+	
+		<div class="header-bar-box__wrap">
+			<div class="header-logo-box">
+				<a href="index.jsp" class="header-logo-box__link">
+					<div class="logo-box">
+						<img src="img/logo.svg" alt="짭투리" class="header-logo">
+						<p class="logo">짭투리</p>
+					</div>
+				</a>
+			</div>
+			
+			
+			<section class="header-search">
+				<div class="search">
+					<input type="text" id="header-search-input"
+						class="search__input" placeholder="서비스명, 지역명 입력">
+					<button class="search__button">
+					<!-- 서치부분 링크연결 ********************************** -->
+						<a href="#"> <img src="img/icon-search.svg" alt="search"
+							class="search__icon" width="20">
+						</a>
+					</button>
+				</div>
+			</section>
+			
+			
+			<div class="menu-bar-info-box">
+				<div class="menu-bar">
+					<a href="#menu" id="toggle">
+					<span>
+						<div class="test"></div>
+					</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="index.jsp?home=serviceList.jsp?category=clean&types=ant">청소</a></li>
+							<li><a href="index.jsp?home=serviceList.jsp?category=errand&types=ant">심부름</a></li>
+							<li><a href="index.jsp?home=serviceList.jsp?category=walk&types=ant">산책</a></li>
+							<li><a href="index.jsp?home=serviceList.jsp?category=install&types=ant">설치</a></li>
+							<li><a href="index.jsp?home=serviceList.jsp?category=study&types=ant">과외</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				
+				<div class="info-box">
+					<a href="index.jsp?home=myPage.jsp" class="info-box__link"> <img
+						src="img/icon-mypage.svg"" class="info-box__img">
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</body>
+</html>
