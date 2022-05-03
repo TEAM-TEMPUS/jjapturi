@@ -260,7 +260,7 @@
               <li><a href="index.jsp?home=../serviceRegistration.jsp">등록하기</a></li>
               <li><a href="index.jsp?home=../transaction.jsp">거래내역</a></li>
              	<!-- 링크연결해야함 ************** -->
-              <li><a href="#">마이페이지</a></li>
+              <li><a href="myPage.jsp">마이페이지</a></li>
             </ul>
           </div>
         </div>
