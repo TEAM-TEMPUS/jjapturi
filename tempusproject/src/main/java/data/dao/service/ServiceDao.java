@@ -179,25 +179,66 @@ public class ServiceDao {
 		return dto;
 	}
 
-	public List<ServiceInqueryDto> findAll(String category, int offset, int limit) {
+//	public List<ServiceInqueryDto> findAll(String category, int offset, int limit) {
+//		List<ServiceInqueryDto> serviceList = new ArrayList<ServiceInqueryDto>();
+//
+//		Connection conn = db.getConnection();
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//
+//		String sql = "select * from Service where category = ? order by service_id desc limit ? " + "offset ?";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setString(1, category);
+//			pstmt.setLong(2, limit);
+//			pstmt.setLong(3, offset);
+//			rs = pstmt.executeQuery();
+//
+//			while (rs.next()) {
+//				Long serviceId = rs.getLong("service_id");
+//				Long memberId = rs.getLong("member_id");
+//				String types = rs.getString("types");
+//				String title = rs.getString("title");
+//				String status = rs.getString("status");
+//				String place = rs.getString("place");
+//				Date startDate = rs.getDate("start_date");
+//				Date endDate = rs.getDate("end_date");
+//				Integer price = rs.getInt("price");
+//				String description = rs.getString("description");
+//
+//				serviceList.add(new ServiceInqueryDto(serviceId, memberId, types, title, category, status, place, startDate,
+//						endDate, price, description));
+//			}
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} finally {
+//			db.dbClose(rs, pstmt, conn);
+//		}
+//
+//		return serviceList;
+//	}
+	
+//	여기에 types를 추가하는게 맞는지 확실하지는 않지만 넣어보기
+	public List<ServiceInqueryDto> findAll(String category, String types , int offset, int limit) {
 		List<ServiceInqueryDto> serviceList = new ArrayList<ServiceInqueryDto>();
 
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select * from Service where category = ? order by service_id desc limit ? " + "offset ?";
+		String sql = "select * from Service where category = ? and types = ? order by service_id desc limit ? " + "offset ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, category);
-			pstmt.setLong(2, limit);
-			pstmt.setLong(3, offset);
+			pstmt.setString(2, types);
+			pstmt.setLong(3, limit);
+			pstmt.setLong(4, offset);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 				Long serviceId = rs.getLong("service_id");
 				Long memberId = rs.getLong("member_id");
-				String types = rs.getString("types");
 				String title = rs.getString("title");
 				String status = rs.getString("status");
 				String place = rs.getString("place");
@@ -206,7 +247,7 @@ public class ServiceDao {
 				Integer price = rs.getInt("price");
 				String description = rs.getString("description");
 
-				serviceList.add(new ServiceInqueryDto(serviceId, memberId, types, title, category, status, place, startDate,
+				serviceList.add(new ServiceInqueryDto(serviceId, memberId, title, category, status, place, startDate,
 						endDate, price, description));
 			}
 		} catch (SQLException e) {
@@ -219,17 +260,44 @@ public class ServiceDao {
 		return serviceList;
 	}
 	
-	public int getTotalCountByCategory(String category) {
+//	public int getTotalCountByCategory(String category) {
+//		Connection conn = db.getConnection();
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//
+//		String sql = "select count(*) as count from Service where category = ?";
+//		int count = 0;
+//		
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setString(1, category);
+//			rs = pstmt.executeQuery();
+//
+//			if (rs.next()) {
+//				count = rs.getInt("count");
+//			}
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} finally {
+//			db.dbClose(rs, pstmt, conn);
+//		}
+//
+//		return count;
+//	}
+	
+	public int getTotalCountByCategory(String category, String types) {
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select count(*) as count from Service where category = ?";
+		String sql = "select count(*) as count from Service where category = ? AND types = ?";
 		int count = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, category);
+			pstmt.setString(2, types);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
