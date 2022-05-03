@@ -39,7 +39,7 @@ int totalPage; //총 페이지수
 int startPage; //각 블럭의 시작페이지
 int endPage; //각 블럭의 끝페이지
 int offset; //각 페이지의 시작번호
-int sizePerPage = 5; //한 페이지에 보여질 글 갯수
+int sizePerPage = 10; //한 페이지에 보여질 글 갯수
 int sizePerBlock = 5; //한 블럭당 보여지는 페이지 개수
 int currentPage; //현재페이지
 
@@ -233,14 +233,26 @@ for (MyServiceDto myService : myServices) {
 							</div>
 
 							<div class="box__information-reservation">
-							<%String status = myService.getStatus(); %>
-							
-				
-								<button type="submit" class="btn__sale">판매중</button>
-								<button type="submit" class="btn__reserved">예약중</button>
-								<button type="submit" class="btn__completed">거래완료</button>
+							<%String status = myService.getStatus(); 
+							  String types = myService.getTypes();
+							%>
+							<%if (types.equals("owner")) {%>
+								<button type="submit" class="btn__sale <%=status.equals("basic") ? " btn--selected" : ""%>">판매중</button>
+								<button type="submit" class="btn__reserved <%=status.equals("reservation") ? " btn--selected" : ""%>">예약중</button>
+								<button type="submit" class="btn__completed <%=status.equals("completion") ? " btn--selected" : ""%>">거래완료</button>
+								<%if (status.equals("completion")) { %>
 								<button type="submit" class="btn__star">리뷰</button>
-								<button type="submit" class="btn__cancle">예약취소</button>
+								<%} %>
+								
+							<%} else { // custom인 경우%>
+								<button type="submit" class="btn__cancle <%=status.equals("reservation") ? " btn--selected" : ""%>">예약취소</button>
+								<button type="submit" class="btn__completed <%=status.equals("completion") ? " btn--selected" : ""%>">거래완료</button>
+								<%if (status.equals("completion")) { %>
+								<button type="submit" class="btn__star">리뷰</button>
+								<%} %>
+							<%} %>
+							
+							<% %>
 							</div>
 						</a>
 					</div>
@@ -302,10 +314,6 @@ for (MyServiceDto myService : myServices) {
 			</div>
 		</div>
 
-
-
-
-
 		<!-- service-navigation -->
 		<div class="service--navigation">
 			<div class="menu-bar">
@@ -324,12 +332,6 @@ for (MyServiceDto myService : myServices) {
 			</div>
 		</div>
 	</section>
-
-
-
-
-
-
 
 	<footer class="p-footer p-footer--dark">
 		<div class="p-footer__inner">
