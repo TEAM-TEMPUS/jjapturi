@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+
+    <title>짭투리</title>
+
+    <link rel="stylesheet" type="text/css" href="css/screens/login.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header></header>
+
+    <!-- sign-in -->
+    <div class="sign-in">
+      <form
+        class="sign-in__wrap"
+        id="join"
+        action="crud/members/signIn.jsp"
+        method="post"
+        name="joinform"
+      >
+        <h2 class="sign-in__title">로그인</h2>
+
+        <!-- id -->
+        <div class="id-form__wrap">
+          <label for="id">아이디</label>
+          <br />
+          <div class="id-form">
+            <input
+              type="text"
+              id="id"
+              name="id"
+              class="id-form__input"
+              placeholder="아이디"
+              required=""
+            />
+          </div>
+        </div>
+
+        <!-- password -->
+        <div class="password-form__wrap form--margin">
+          <label for="password">비밀번호</label>
+          <br />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="ps-form__input form--margin-top"
+            placeholder="비밀번호"
+            required=""
+          />
+        </div>
+
+        <!-- btn -->
+        <button type="submit" class="btn__wrap btn-default">
+          <p class="sign-in__btn">로그인</p>
+        </button>
+
+        <!-- sign-in-info__list -->
+        <ul class="sign-in-info__list">
+          <div>
+            <li>
+              <a href="#">회원가입</a>
+            </li>
+          </div>
+          <div class="forgot-id-ps__list">
+            <li>
+              <a href="#">아이디 찾기</a>
+            </li>
+            <li>
+              <a href="#">비밀번호 찾기</a>
+            </li>
+          </div>
+        </ul>
+      </form>
+    </div>
+  </body>
+</html>
