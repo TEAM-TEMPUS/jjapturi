@@ -15,12 +15,12 @@ public class ServiceInqueryDto {
 	private Date endDate;
 	private int price;
 	private String description;
-	
+
 	public ServiceInqueryDto() {
 	}
-	
-	public ServiceInqueryDto(Long serviceId, Long memberId, String types, String title, String category, String status,
-			Date startDate, Date endDate, int price, String description) {
+
+	public ServiceInqueryDto(Long serviceId, Long memberId, String types, String title, String category, String status, 
+			String place, Date startDate, Date endDate, int price, String description) {
 		super();
 		this.serviceId = serviceId;
 		this.memberId = memberId;
@@ -34,77 +34,84 @@ public class ServiceInqueryDto {
 		this.price = price;
 		this.description = description;
 	}
-	
-	public Long getServiceId() {
-		return serviceId;
-	}
-	public void setServiceId(Long serviceId) {
-		this.serviceId = serviceId;
-	}
-	public Long getMemberId() {
-		return memberId;
-	}
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
-	}
+
 	public String getTypes() {
 		return types;
 	}
+
 	public void setTypes(String types) {
 		this.types = types;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getCategory() {
 		return category;
 	}
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public String getPlace() {
 		return place;
 	}
+
 	public void setPlace(String place) {
 		this.place = place;
 	}
+
 	public Date getStartDate() {
 		return startDate;
 	}
+
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
+
 	public Date getEndDate() {
 		return endDate;
 	}
+
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+
 	public int getPrice() {
 		return price;
 	}
+
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "ServiceInqueryDto [types=" + types + ", title=" + title + ", category=" + category + ", place=" + place
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", price=" + price + ", description="
+				+ ", status = " + status + ",startDate=" + startDate + ", endDate=" + endDate + ", price=" + price + ", description="
 				+ description + "]";
 	}
 
-
-	
-	
 }
