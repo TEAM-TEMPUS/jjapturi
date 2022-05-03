@@ -2,6 +2,7 @@ package data.dao.service;
 
 import java.util.List;
 
+import data.dto.service.MyServiceDto;
 import data.dto.service.ServiceDto;
 import data.dto.service.ServiceInqueryDto;
 
@@ -17,9 +18,10 @@ public class ServiceDaoTest {
 //		test.delete(21L);
 //		test.changeStatus();
 //		test.findInqueryServiceId(1L);
-		test.findAll("walk","grasshopper", 0, 10);
-		test.getTotalCountByCategory("walk","grasshopper");
+//		test.findAll("walk","grasshopper", 0, 10);
+//		test.getTotalCountByCategory("walk","grasshopper");
 
+		test.findMyServicesByMemberId(1L, 0, 10);
 	}
 
 	public void store() {
@@ -62,4 +64,10 @@ public class ServiceDaoTest {
 		System.out.println(dao.getTotalCountByCategory(category, types));
 	}
 
+	public void findMyServicesByMemberId(Long memberId, int offset, int limit) {
+		for (MyServiceDto myService : dao.findMyServicesByMemberId(memberId, offset, limit)) {
+			System.out.println(myService);
+		}
+	}
+	
 }
