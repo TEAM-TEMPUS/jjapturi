@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="common.Grades"%>
 <%@page import="data.dto.member.TradingInfoDto"%>
 <%@page import="data.dao.member.TradingInfoDao"%>
@@ -89,20 +90,25 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
 		  grantedGradeCount++;
 	  }
   }
+  
   totalGrade = (double) gradeSum / grantedGradeCount;
   
   String rank;
+  String rankImageName;
   if (completeTradingCount >= 100 && totalGrade >= 3.5) {
-	  rank = Grades.PLATINUM.getImagePath();
+	  rank = Grades.PLATINUM.getDescription();
+	  rankImageName = Grades.PLATINUM.getImagePath();
   } else if (completeTradingCount >= 50 && totalGrade >= 3.0) {
-	  rank = Grades.GOLD.getImagePath();;
+	  rank = Grades.GOLD.getDescription();
+	  rankImageName = Grades.GOLD.getImagePath();;
   } else if (completeTradingCount >= 10 && totalGrade >= 2.5) {
-	  rank = Grades.SILVER.getImagePath();
+	  rank = Grades.SILVER.getDescription();
+	  rankImageName = Grades.SILVER.getImagePath();
   } else {
-	  rank = Grades.BRONZE.getImagePath();
+	  rank = Grades.BRONZE.getDescription();
+	  rankImageName = Grades.BRONZE.getImagePath();
   }
-  
-  
+
 %>   
   </head>
   <body>
@@ -140,7 +146,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                   <span class="detailpage-info__rank"
                     ><img
                       alt=""
-                      src="img/rank-<%=rank%>.svg"
+                      src="img/rank-<%=rankImageName%>.svg"
                       class="detailpage-info__rankinfo"
                   /></span>
                 </li>
@@ -274,22 +280,22 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                 <div class="profile">
                   
                   <img
-                    src="img/basic-profile-image.png"
+                    src="img/<%= memberprofiledto.getMemberImage() %>"
                     alt="프로필 사진"
                     class="profile__image"
                   />
 
                   <img
-                    src="img/rank-bronze.svg"
+                    src="img/rank-<%=rankImageName %>.svg"
                     alt="회원 등급"
                     class="profile__badge"
                   />
 
-                  <span class="profile__nickname">차를너무사랑해</span>
+                  <span class="profile__nickname"><%= memberprofiledto.getNickname() %></span>
 
                   <div class="profile__phone-number-wrap">
                     <i class="fas fa-phone-alt profile__phone-icon"></i>
-                    <span class="profile__phone-number">010-1234-1234</span>
+                    <span class="profile__phone-number"><%= memberprofiledto.getPhoneNumber() %></span>
                   </div>
                 </div>
 
@@ -298,18 +304,18 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                     <li class="transaction-info__item">
                       <span class="transaction-info__title">거래건수</span
                       ><br />
-                      <span class="transaction-info__content">4</span>
+                      <span class="transaction-info__content"><%= completeTradingCount %></span>
                     </li>
 
                     <li class="transaction-info__item">
                       <span class="transaction-info__title">회원등급</span
                       ><br />
-                      <span class="transaction-info__content">브론즈</span>
+                      <span class="transaction-info__content"><%=rank %></span>
                     </li>
 
                     <li class="transaction-info__item">
                       <span class="transaction-info__title">평점</span><br />
-                      <span class="transaction-info__content">5.0</span>
+                      <span class="transaction-info__content"><%= totalGrade > 0 ? totalGrade : "없음" %></span>
                     </li>
                   </ul>
                 </div>
@@ -318,20 +324,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                   <h1 class="profile__introduction__title">자기 소개</h1>
 
                   <p class="profile__introduction__content">
-                    안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
-                    감사하겠습니다 :) 안녕하세요~ 개인 출장 세차를 하고
-                    있습니다. 믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인
-                    출장 세차를 하고 있습니다. 믿고 맡겨주시면 감사하겠습니다
-                    :)안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고
-                    맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장 세차를
-                    하고 있습니다. 믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~
-                    개인 출장 세차를 하고 있습니다. 믿고 맡겨주시면
-                    감사하겠습니다 :)안녕하세요~ 개인 출장 세차를 하고 있습니다.
-                    믿고 맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장
-                    세차를 하고 있습니다. 믿고 맡겨주시면 감사하겠습니다
-                    :)안녕하세요~ 개인 출장 세차를 하고 있습니다. 믿고
-                    맡겨주시면 감사하겠습니다 :)안녕하세요~ 개인 출장 세차를
-                    하고 있습니다. 믿고 맡겨주시면 감사하겠습니다 :)
+                    <%= memberprofiledto.getSelfIntroduction() %>
                   </p>
                 </div>
               </div>
