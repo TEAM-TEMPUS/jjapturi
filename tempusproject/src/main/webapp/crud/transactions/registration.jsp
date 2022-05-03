@@ -1,5 +1,5 @@
 <%@page import="data.dao.grade.GradeDao"%>
-<%@page import="data.dto.grade.GradeDto"%>
+<%@page import="data.dto.tradinginfo.TradingInfoDto"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -18,10 +18,9 @@ Long memberId = Long.parseLong("memberId");
 Long serviceId = Long.parseLong("serviceId");
 int price=Integer.parseInt("price");
 
-GradeDto grade = new GradeDto(memberId, serviceId, price);
+TradingInfoDto grade = new TradingInfoDto(memberId, serviceId, price);
 
 gradeDao.insertGrade(grade);
-
 %>
 </body>
 </html>

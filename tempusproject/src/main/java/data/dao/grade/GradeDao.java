@@ -3,14 +3,15 @@ package data.dao.grade;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
-import data.dto.grade.GradeDto;
+import data.dto.tradinginfo.TradingInfoDto;
 import mysql.db.DbConnect;
 
 public class GradeDao {
 	DbConnect db=new DbConnect();
 	
-	public void insertGrade(GradeDto grade){
+	public void insertGrade(TradingInfoDto grade){
 		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;
 		String sql="insert into Trading_Info values(null,?,?,?)";
@@ -30,5 +31,4 @@ public class GradeDao {
 			db.dbClose(pstmt, conn);
 		}
 	}
-	
 }

@@ -1,6 +1,6 @@
-package data.dto.grade;
+package data.dto.tradinginfo;
 
-public class GradeDto {
+public class TradingInfoDto {
 	private Long tradingInfoId;
 	private Long memberId;
 	private Long serviceId;
@@ -8,7 +8,7 @@ public class GradeDto {
 	
 
 
-	public GradeDto(Long memberId, Long serviceId, int grade) {
+	public TradingInfoDto(Long memberId, Long serviceId, int grade) {
 		super();
 		this.memberId = memberId;
 		this.serviceId = serviceId;
@@ -16,7 +16,7 @@ public class GradeDto {
 	}
 
 
-	public GradeDto(Long tradingInfoId, Long memberId, Long serviceId, int grade) {
+	public TradingInfoDto(Long tradingInfoId, Long memberId, Long serviceId, int grade) {
 		super();
 		this.tradingInfoId = tradingInfoId;
 		this.memberId = memberId;
