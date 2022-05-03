@@ -8,11 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.protocol.Resultset;
-
 import data.dto.service.ServiceDto;
-import data.dto.service.ServiceImageDto;
 import data.dto.service.ServiceInqueryDto;
+import data.dto.service.MyServiceDto;
 import mysql.db.DbConnect;
 
 public class ServiceDao {
@@ -211,33 +209,42 @@ public class ServiceDao {
 		return n;
 	}
 
-	public List<ServiceInqueryDto> getList(int offset, int limit) {
-		List<ServiceInqueryDto> list = new ArrayList<ServiceInqueryDto>();
+	public List<MyServiceDto> findMyServicesByMemberId(Long memberId, int offset, int limit) {
+		List<MyServiceDto> list = new ArrayList<MyServiceDto>();
 
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select * from Service order by service_id desc limit ? " + "offset ?";
+		String sql =  
+				"select s.service_id, s.title, s.status, s.place, s.start_date, s.end_date, s.price, s.description, ti.types "
+				+ "from Service as s "
+				+ "inner join Trading_Info as ti "
+				+ "on ti.service_id = s.service_id "
+				+ "where ti.member_id = ? "
+				+ "order by ti.trading_info_id desc "
+				+ "limit ? offset ?";
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setLong(1, limit);
-			pstmt.setLong(2, offset);
+			pstmt.setLong(1, memberId);
+			pstmt.setLong(2, limit);
+			pstmt.setLong(3, offset);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 				Long serviceId = rs.getLong("service_id");
-				Long memberId = rs.getLong("member_id");
 				String title = rs.getString("title");
 				String status = rs.getString("status");
 				String place = rs.getString("place");
 				Date startDate = rs.getDate("start_date");
 				Date endDate = rs.getDate("end_date");
-				Integer price = rs.getInt("price");
+				Long price = rs.getLong("price");
 				String description = rs.getString("description");
+				String types = rs.getString("types");
 
-				list.add(new ServiceInqueryDto(serviceId, memberId, title, status, place, startDate, endDate, price,
-						description));
+				list.add(new MyServiceDto(serviceId, title, status, place, startDate, endDate, price,
+						description, types));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
