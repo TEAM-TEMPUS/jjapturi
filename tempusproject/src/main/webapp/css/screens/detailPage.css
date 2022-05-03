@@ -46,9 +46,9 @@
 
 /*등록자 프로필*/
 .detailpage-info__registrantimge{
-    width:50px;
-	height:50px;
-	border-radius: 20px;
+    width:80px;
+	height:80px;
+	border-radius: 50%;
     margin-top:40px;
     margin-left: 10px;
 
@@ -60,8 +60,8 @@
     font-family:"Noto Sans KR";
     font-size:22px;
     font-weight:400; /*폰트 폭 적용*/
-    margin-top: -55px;
-    margin-left: 70px;
+    margin-top: -68px;
+    margin-left: 110px;
 
 }
 
@@ -74,8 +74,8 @@
 /*등급 이미지*/
 .detailpage-info__rankinfo{
     width:60px;
-	height:20px;
-    margin-left: 70px;
+	height:25px;
+    margin-left: 110px;
     margin-top: 10px;
 }
 
@@ -85,7 +85,7 @@
     font-family:"Noto Sans KR";
     font-size:32px;
     font-weight:700; /*폰트 폭 적용*/
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 /*제품등록 정보 주소 적용*/
@@ -100,9 +100,9 @@
 
 /*날짜 캘린더이미지 스타일*/
 .detailpage-info__dateimge{
-	width:30px;
-	height:30px;
-    margin-top: 20px;
+	width:20px;
+	height:20px;
+    margin-top: 25px;
 }
 
 
@@ -128,6 +128,7 @@
    position: absolute;
    height: 50px;
    padding-top: 5px;
+   margin-left:20px;
 
 }
 
@@ -139,7 +140,7 @@
   	font-size:32px;
   	font-weight:700; /*폰트 폭 적용*/
     margin-top: 10px;
-    margin-left: 10px;
+    
 }
 
 /*상품정보 태그 스타일 적용*/
@@ -147,7 +148,7 @@
     font-family:"Noto Sans KR";
   	font-size:26px;
   	font-weight:500; /*폰트 폭 적용*/
-    margin-top: 50px;  
+    margin-top: 80px;  
 }
 
 /*상품정보 박스 설정*/
@@ -167,12 +168,12 @@
 /*예약하기버튼 스타일 적용*/
 .detailpage-info__basicbtn{
 	display: block;
-    width:180px;
-	height:50px;
+    width:200px;
+	height:60px;
 	color:#4751FD;
 	border-radius: 10px;
 	border-color:#4751FD;
-	border: 1px solid #4751FD;
+	border: 3px solid #4751FD;
     margin:0 auto;
     text-align: center;
     cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
@@ -207,10 +208,10 @@
 .detailpage-info__comment{
 	resize:none; /*창 늘리고 줄이는거 없앰*/
     width:780px; 
-	height:100px;
+	height:160px;
 	border-radius: 10px;
-	border-color: #4751FD;
-	border-width: 2px 2px 2px 2px;
+	border-color: #E2E2E2;
+	border-width: 3px 3px 3px 3px;
 	padding-top: 10px;
 	padding-left: 10px;
     margin-top: 80px;
@@ -258,7 +259,7 @@ textarea::-webkit-scrollbar {
     border: solid 0.75px #ADADAD;
     width: 70%;
     margin-left: 70px;
-    
+    size:o.75px;
 }
 
 
@@ -270,9 +271,9 @@ textarea::-webkit-scrollbar {
 /*댓글 사용자 프로필 이미지 */
 .detailpage-info__userimg{
     
-    width:50px;
-	height:50px;
-	border-radius: 20px;
+    width:80px;
+	height:80px;
+	border-radius: 50%;
     margin-top: 10px;
     margin-bottom: 50px;
 }
@@ -283,8 +284,8 @@ textarea::-webkit-scrollbar {
     font-family:"Noto Sans KR";
   	font-size:20px;
   	font-weight:500; /*폰트 폭 적용*/
-    margin-top: -100px;
-    margin-left: 70px;
+    margin-top: -130px;
+    margin-left: 100px;
 }
 
 /*유저 댓글 내용 위치*/
@@ -292,17 +293,28 @@ textarea::-webkit-scrollbar {
     font-family:"Noto Sans KR";
   	font-size:18px;
   	font-weight:400; /*폰트 폭 적용*/
+    width:85%;
     color:#adb5bd;
-    margin-left: 70px;
-    margin-top: 10px;
+    margin-left: 100px;
+    margin-top: 5px;
 }
 
 /*선 긋기*/
 .detailpage-info__line{
+    width:97.5%;
     margin-top: 30px;
     margin-bottom: 30px;
+    
 }
 
+
+/*댓글 입력 내용 밑선*/
+.detailpage-info__commentline{
+	width:85%;
+	margin-top:-20px;
+	margin-left:100px;
+	color:#E2E2E2;
+}
 /*slcik*/
 /*한꺼번에 묶어서 이전/다음버튼 설정해준다*/
         /*이렇게 해줘야 글자를 투명해졌던게 화살표만 나타내줄수 있다*/
@@ -324,7 +336,7 @@ textarea::-webkit-scrollbar {
         /*이전/다음버튼 클래스명은 자동으로 생성된다 브라우저창 F12눌러서 보면된다*/
         /*visual클래스에 있는 button안 slick-prev클래스명*/
         .slick-prev{
-            left:-150px;
+            left:-100px;
             font-size: 0; /*Previous글자 사이즈 0으로만듬*/
             color:transparent; /*Previous글자를 투명으로 넣어준다*/
             /*폰트와 컬러를 위처럼 지정해주면 글자가 안보인다.*/
@@ -400,4 +412,43 @@ textarea::-webkit-scrollbar {
         /*이미지 슬라이드 밑에 점없어지는거*/
        .slick-dots li:first-child:nth-last-child(1){
         display:none
+    }
+   
+    /*수정 버튼 */
+    .detailpage-info__updatebtn{
+	
+
+    }
+    /*삭제 버튼*/
+    .detailpage-info__deletebtn{
+    
+    }
+    
+    .bi-pencil{
+    position:absolute;
+    margin-top:-33px;
+    margin-left:220px;
+    
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
+    }
+    
+    .bi-trash{
+    position:absolute;
+    margin-top:-33px;
+    margin-left:250px;
+    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
+    }
+    
+    /*댓글 부분 라인 조정*/
+    .detailpage-info__comments{
+    line-height:200%;
+    }
+    /*서비스 정보내용 스타일조정*/
+    .detailpage-info__contents{
+    width:97.5%; 
+    }
+    /**/
+    .detailpage-publisher-info{
+    width:250px;
+    height:120px;
     }
