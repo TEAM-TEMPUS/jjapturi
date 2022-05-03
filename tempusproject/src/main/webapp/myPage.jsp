@@ -22,11 +22,10 @@
   MemberDao memberDao = new MemberDao();
   TradingInfoDao tradingInfoDao = new TradingInfoDao();
   
-  // TODO 로그인한 회원ID로 수정
-  Long memberId = Long.parseLong(request.getParameter("memberId"));  
+  Long singInMemberId = (Long)session.getAttribute("signInMemberId");
   
-  MemberProfileDto memberProfile =  memberDao.findMemberProfileByMemberId(memberId);
-  List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(memberId);
+  MemberProfileDto memberProfile =  memberDao.findMemberProfileByMemberId(singInMemberId);
+  List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(singInMemberId);
   
   int completeTradingCount = tradingInfos.size();
   
