@@ -182,18 +182,18 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                  <%if(service.getStatus().equals("reservation")){%>        		
                   <img
                     alt=""
-                    src="img/status-reserved.svg"
+                    src="img/status_reservation.svg"
                     class="detailpage-info__reservationimge"
                   />
                   <%} else if (service.getStatus().equals("completion")) {%>
                   <img
                     alt=""
-                    src="img/status-complete.svg"
+                    src="img/status_completion.svg"
                     class="detailpage-info__reservationimge"
                   />
                   <%} %> 
                   <!--예약중 옆에 가격 정보-->
-                  <span class="detailpage-info__priceinfo"><%=service.getPrice() %></span>
+                  <span class="detailpage-info__priceinfo"><%=service.getPrice() %>원</span>
                 </li>
               </ul>
             </div>
