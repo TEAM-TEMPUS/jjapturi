@@ -287,7 +287,8 @@ textarea::-webkit-scrollbar {
     font-family:"Noto Sans KR";
   	font-size:20px;
   	font-weight:500; /*폰트 폭 적용*/
-  
+    margin-top: -130px;
+    margin-left: 100px;
 
 }
 
@@ -298,7 +299,10 @@ textarea::-webkit-scrollbar {
   	font-weight:400; /*폰트 폭 적용*/
     width:85%;
     color:#adb5bd;
+    margin-top: 5px;
     margin-bottom: 10px;
+    margin-left: 100px;
+    margin-top: 5px;
 }
 
 /*선 긋기*/
