@@ -256,18 +256,19 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                     class="detailpage-info__userimg"
                   />
                   <div class="detailpage-comment">
-                  <div>
+                  <div class="nickname-btn__wrap">
                   <span class="detailpage-info__usernickname"><%=comment.getNickname()%></span>
                   <% if (memberId == comment.getMemberId()) { %>
-                  
+                  <a href="" class="">
                   	<i class="bi bi-pencil">
                   	<button type="button" class="detailpage-info__updatebtn" style= "cursor: pointer;">수정</button>
                   	</i>
-                  	
+                  </a>
+                  <a href="" class="">
                   	<i class="bi bi-trash">
                   	<button type="button" class="detailpage-info__delete" style= "cursor: pointer;">삭제</button>
                   	</i>
-                  	
+                  </a>
                   <% } %>
                   </div>
                   
