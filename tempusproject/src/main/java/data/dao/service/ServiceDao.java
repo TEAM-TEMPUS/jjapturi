@@ -149,7 +149,7 @@ public class ServiceDao {
 
 	}
 
-	//서비스 조회 (수정 페이지) 
+	// 서비스 조회 (수정 페이지)
 	public ServiceInqueryDto findByServiceId(Long serviceId) {
 		ServiceInqueryDto dto = new ServiceInqueryDto();
 
@@ -184,78 +184,73 @@ public class ServiceDao {
 
 		return dto;
 	}
-	
-	
-	//totalCount
-		public int getTotalCount()
-		{
-			int n=0;
-			
-			Connection conn=db.getConnection();
-			PreparedStatement pstmt=null;
-			ResultSet rs=null;
-			
-			String sql="select count(*) from ";
-			
-			try {
-				pstmt=conn.prepareStatement(sql);
-				rs=pstmt.executeQuery();
-				
-				if(rs.next())
-					n=rs.getInt(1);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}finally {
-				db.dbClose(rs, pstmt, conn);
-			}
-			
-			
-			return n;
+
+	// totalCount
+	public int getTotalCount() {
+		int n = 0;
+
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select count(*) from ";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			if (rs.next())
+				n = rs.getInt(1);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(rs, pstmt, conn);
 		}
-	
-	
-		public List<ServiceInqueryDto> getList(int offset, int limit) {
-			List<ServiceInqueryDto> list = new ArrayList<ServiceInqueryDto>();
 
-			Connection conn = db.getConnection();
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
+		return n;
+	}
 
-			String sql = "select * from Service order by service_id desc limit ? " + "offset ?";
-			try {
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setLong(1, limit);
-				pstmt.setLong(2, offset);
-				rs = pstmt.executeQuery();
+	public List<ServiceInqueryDto> getList(int offset, int limit) {
+		List<ServiceInqueryDto> list = new ArrayList<ServiceInqueryDto>();
 
-				while (rs.next()) {
-					Long serviceId = rs.getLong("service_id");
-					Long memberId = rs.getLong("member_id");
-					String title = rs.getString("title");
-					String status = rs.getString("status");
-					String place = rs.getString("place");
-					Date startDate = rs.getDate("start_date");
-					Date endDate = rs.getDate("end_date");
-					Integer price = rs.getInt("price");
-					String description = rs.getString("description");
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
-					list.add(new ServiceInqueryDto(serviceId, memberId, title, status, place, startDate,
-							endDate, price, description));
-				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} finally {
-				db.dbClose(rs, pstmt, conn);
+		String sql = "select * from Service order by service_id desc limit ? " + "offset ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, limit);
+			pstmt.setLong(2, offset);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Long serviceId = rs.getLong("service_id");
+				Long memberId = rs.getLong("member_id");
+				String title = rs.getString("title");
+				String status = rs.getString("status");
+				String place = rs.getString("place");
+				Date startDate = rs.getDate("start_date");
+				Date endDate = rs.getDate("end_date");
+				Integer price = rs.getInt("price");
+				String description = rs.getString("description");
+
+				list.add(new ServiceInqueryDto(serviceId, memberId, title, status, place, startDate, endDate, price,
+						description));
 			}
-
-			return list;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(rs, pstmt, conn);
 		}
-		
+
+		return list;
+	}
+
 //	여기에 types를 추가하는게 맞는지 확실하지는 않지만 넣어보기
 	public List<ServiceInqueryDto> findAll(String category, String types, int offset, int limit) {
-
 
 		List<ServiceInqueryDto> serviceList = new ArrayList<ServiceInqueryDto>();
 
