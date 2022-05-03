@@ -100,6 +100,7 @@
 	ServiceImageDao serviceImageDao = new ServiceImageDao();
 	
 	List<List<ServiceImageDto>> serviceImagesList = new ArrayList<>();
+	List<String> medalImageNames = new ArrayList<>();
 	for (ServiceInqueryDto service : services) {
 		serviceImagesList.add(serviceImageDao.findAllByServiceId(service.getServiceId()));
 	}
@@ -107,36 +108,39 @@
 	//서비스 거래 상태에 따라서 나오는 회원 등급
 	MemberDao memberDao = new MemberDao();
  	TradingInfoDao tradingInfoDao = new TradingInfoDao();
- 	
-	Long memberId = Long.parseLong(request.getParameter("memberId"));
-	List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(memberId);
-  
-  	int completeTradingCount = tradingInfos.size();
-  
-  	double totalGrade = 0;
-  	int gradeSum = 0;
-  	int grantedGradeCount = 0;
-  	for (TradingInfoDto tradingInfo : tradingInfos) {
-	  int grade = tradingInfo.getGrade();
-	  if (grade > 0) {
-		  gradeSum += grade;
-		  grantedGradeCount++;
-	  }
- 	}
-  	
-  	totalGrade = (double) gradeSum / grantedGradeCount;
-  
-  	String rank;
-  	if (completeTradingCount >= 100 && totalGrade >= 3.5) {
-	 	 rank = Grades.PLATINUM.getImagePath();
-  	} else if (completeTradingCount >= 50 && totalGrade >= 3.0) {
-		  rank = Grades.GOLD.getImagePath();
- 	} else if (completeTradingCount >= 10 && totalGrade >= 2.5) {
-		  rank = Grades.SILVER.getImagePath();
- 	} else {
-		  rank = Grades.BRONZE.getImagePath();
-  	}
 
+  	for (ServiceInqueryDto service : services) {
+  		List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(service.getMemberId());
+  	  
+  	  	int completeTradingCount = tradingInfos.size();
+  	  
+  	  	double totalGrade = 0;
+  	  	int gradeSum = 0;
+  	  	int grantedGradeCount = 0;
+  	  	for (TradingInfoDto tradingInfo : tradingInfos) {
+  		  int grade = tradingInfo.getGrade();
+  		  if (grade > 0) {
+  			  gradeSum += grade;
+  			  grantedGradeCount++;
+  		  }
+  	 	}
+  	  	
+  	  	totalGrade = (double) gradeSum / grantedGradeCount;
+  	  
+  	  	String medalImageName;
+  	  	if (completeTradingCount >= 100 && totalGrade >= 3.5) {
+  	  	  medalImageName = Grades.PLATINUM.getImagePath();
+  	  	} else if (completeTradingCount >= 50 && totalGrade >= 3.0) {
+  	  	  medalImageName = Grades.GOLD.getImagePath();
+  	 	} else if (completeTradingCount >= 10 && totalGrade >= 2.5) {
+  	 	  medalImageName = Grades.SILVER.getImagePath();
+  	 	} else {
+  	 	  medalImageName = Grades.BRONZE.getImagePath();
+  	  	}
+  	  	
+  		medalImageNames.add(medalImageName);
+  		
+	}
 %>
 <body>
     <!-- header -->
@@ -180,7 +184,7 @@
               <a href="#" class="service-item__inner">
                 <div class="service-item__img img-hover--color">
                   <span class="medal--status">
-                    <img src="img/medal_<%= rank %>.svg" alt="" class="medal__img <%= rank %>" />
+                    <img src="img/medal-<%= medalImageNames.get(i) %>.svg" alt="" class="medal__img <%= medalImageNames.get(i) %>" />
                   </span>
                   <%for (ServiceImageDto serviceImage : serviceImagesList.get(i)) { %>
                   	<img class="service-list__test-img img-hover--scale" src="img/<%= serviceImage.getStoreImageName() %>" alt=""/>
