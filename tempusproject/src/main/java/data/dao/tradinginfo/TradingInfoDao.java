@@ -41,4 +41,31 @@ public class TradingInfoDao {
 		
 		return gradeList;
 	}
+	
+	public int getTotalCountByMemberId(Long memberId) {
+		int n = 0;
+
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select count(*) as count from Trading_Info where member_id = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, memberId);
+			rs = pstmt.executeQuery();
+
+			if (rs.next())
+				n = rs.getInt("count");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+
+		return n;
+	}	
+
 }
