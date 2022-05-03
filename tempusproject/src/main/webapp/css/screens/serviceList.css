@@ -376,6 +376,7 @@
   transition: background 600ms ease, color 600ms ease;
 }
 
+
 input[type="radio"].toggle {
   display: none;
 }
@@ -417,3 +418,4 @@ input[type="radio"].toggle:checked + label {
 input[type="radio"].toggle:checked + label:after {
   left: 0;
 }
+

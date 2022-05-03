@@ -147,20 +147,21 @@
               name="toggle"
               value="false"
               type="radio"
-              checked
-              OnClick=""
+              <%= types.equals("ant") ? "checked" : ""%>
+              OnClick="location.href='/tempusproject/serviceList.jsp?category=<%=category %>&types=ant'"
             />
 <!--             개미, 베짱이 해야함 -->
-            <label for="toggle-on" class="btn">개미</label>
+            <label for="toggle-on" class="btn" >개미</label>
             <input
               id="toggle-off"
               class="toggle toggle-right"
               name="toggle"
               value="true"
               type="radio"
-              OnClick=""
+              <%= types.equals("grasshopper") ? "checked" : ""%>
+              OnClick="location.href='/tempusproject/serviceList.jsp?category=<%=category %>&types=grasshopper'"
             />
-            <label for="toggle-off" class="btn">베짱이</label>
+            <label for="toggle-off" class="btn" >베짱이</label>
           </div>
           <h2 class="service-list__title"><%= categoryMap.get(category)%></h2>
         </div>
@@ -178,7 +179,6 @@
                   <%for (ServiceImageDto serviceImage : serviceImagesList.get(i)) { %>
                   	<img class="service-list__test-img img-hover--scale" src="img/<%= serviceImage.getStoreImageName() %>" alt=""/>
                   <%} %>
-                  <!-- <img class="service-list__test-img img-hover--scale" src="img/service-list__test-img-1.jpg" alt=""/> -->
                 </div>
                 <div class="service-item-txt__wrap">
                   <div class="service-item__title">
@@ -224,13 +224,13 @@
               <span class="material-symbols-rounded"> arrow_back_ios_new </span>
             </a>
             <%} else {%>
-            <a href="/tempusproject/serviceList.jsp?category=walk&types=ant&currentPage=<%= startPage -1 %>" class="pagenation__item pagenation--previous" tabindex="-1" aria-disabled="true">
+            <a href="/tempusproject/serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= startPage -1 %>" class="pagenation__item pagenation--previous" tabindex="-1" aria-disabled="true">
               <span class="material-symbols-rounded"> arrow_back_ios_new </span>
             </a>
             <%} %>
             <% for (int i = startPage; i<= endPage; i++) {%>
             
-            <a href="/tempusproject/serviceList.jsp?category=walk&types=ant&currentPage=<%= i %>" class="pagenation__item pagenation-number <%= i == currentPage ? "current" : ""%>"><%= i %></a>
+            <a href="/tempusproject/serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= i %>" class="pagenation__item pagenation-number <%= i == currentPage ? "current" : ""%>"><%= i %></a>
             <%} %>
             <%
             if (totalPage == endPage){
@@ -239,7 +239,7 @@
               <span class="material-symbols-rounded"> arrow_forward_ios </span>
             </a>
             <%} else {%>
-            <a href="/tempusproject/serviceList.jsp?category=walk&types=ant&currentPage=<%= endPage + 1 %>" class="pagenation__item pagenation--next">
+            <a href="/tempusproject/serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= endPage + 1 %>" class="pagenation__item pagenation--next">
               <span class="material-symbols-rounded"> arrow_forward_ios </span>
             </a>
             <%} %>
