@@ -267,6 +267,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                   </p>
                   <br>
                   <hr class="detailpage-info__commentline" />
+                  <br>
                 </li>
               </ul>
             </div>
