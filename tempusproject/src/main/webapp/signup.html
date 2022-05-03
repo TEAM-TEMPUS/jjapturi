@@ -15,7 +15,7 @@
     <title>짭투리</title>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="css/screens/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/screens/signup.css" />
   </head>
   <body>
     <header id="header-bar" class="header-bar-box">
@@ -31,72 +31,120 @@
       </div>
     </header>
 
-    <!-- sign-in -->
-    <div class="sign-in">
+    <div class="main-content">
+      <h2 class="member-title text-center">회원가입</h2>
+
+      <!-- Form 시작 -->
       <form
-        class="sign-in__wrap"
+        class="form-signup"
         id="join"
-        action="crud/members/signIn.jsp"
+        action="join"
         method="post"
         name="joinform"
       >
-        <h2 class="sign-in__title">로그인</h2>
+        <!-- 닉네임 -->
+        <div class="form-label-group">
+          <label for="nickname">닉네임</label>
+          <br />
+          <div class="form-input-box">
+            <input
+              type="text"
+              id="nickname"
+              name="nickname"
+              class="form-control"
+              placeholder="닉네임"
+              required=""
+            />
+            <button type="submit" class="btn btn-info btn-sm">중복확인</button>
+          </div>
+        </div>
 
-        <!-- id -->
-        <div class="id-form__wrap">
+        <!-- 아이디 -->
+        <div class="form-label-group">
           <label for="id">아이디</label>
           <br />
-          <div class="id-form">
+          <div class="form-input-box">
             <input
               type="text"
               id="id"
               name="id"
-              class="id-form__input"
+              class="form-control"
               placeholder="아이디"
               required=""
             />
+            <button type="submit" class="btn btn-info btn-sm">중복확인</button>
           </div>
         </div>
 
-        <!-- password -->
-        <div class="password-form__wrap form--margin">
-          <label for="password">비밀번호</label>
+        <!-- 비밀번호 -->
+        <div class="form-label-group">
+          <label for="pwd">비밀번호</label>
           <br />
           <input
             type="password"
-            id="password"
-            name="password"
-            class="ps-form__input form--margin-top"
+            id="pwd"
+            name="pwd"
+            class="form-control form-margin-top"
             placeholder="비밀번호"
             required=""
           />
         </div>
 
-        <!-- btn -->
-        <button type="submit" class="btn__wrap btn-default">
-          <p class="sign-in__btn">로그인</p>
-        </button>
+        <div class="form-label-group">
+          <label for="pwdcheck">비밀번호 재확인</label>
+          <br />
+          <input
+            type="password"
+            id="pwdcheck"
+            name="pwdcheck"
+            class="form-control form-margin-top"
+            placeholder="비밀번호 재확인"
+            required=""
+          />
+        </div>
 
-        <!-- sign-in-info__list -->
-        <ul class="sign-in-info__list">
-          <div>
-            <li>
-              <a href="signup.html">회원가입</a>
-            </li>
-          </div>
-          <div class="forgot-id-ps__list">
-            <li>
-              <a href="#">아이디 찾기</a>
-            </li>
-            <div class="forgot-id-ps__list-divider"></div>
-            <li>
-              <a href="#">비밀번호 찾기</a>
-            </li>
-          </div>
-        </ul>
+        <div class="form-label-group">
+          <label for="addr">주소</label>
+          <br />
+          <input
+            type="text"
+            name="addr"
+            class="form-control form-margin-top"
+            placeholder="주소"
+          />
+        </div>
+
+        <!-- 문제의 input 부분 -->
+        <div class="form-label-group">
+          <label for="email">이메일</label>
+          <br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control form-margin-top"
+            placeholder="이메일"
+          />
+        </div>
+
+        <div class="form-label-group btn-sign-up-margin">
+          <label for="phone">휴대전화</label>
+          <br />
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            class="form-control form-margin-top"
+            placeholder="휴대전화"
+            required=""
+          />
+        </div>
+
+        <button type="submit" class="btn btn-default">
+          <p class="btn-sign-up">가입하기</p>
+        </button>
       </form>
     </div>
-
     <footer class="p-footer p-footer--dark">
       <div class="p-footer__inner">
         <div class="p-footer__site-group-list">

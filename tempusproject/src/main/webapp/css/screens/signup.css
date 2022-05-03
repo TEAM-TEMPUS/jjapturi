@@ -1,51 +1,6 @@
-/* header */
-.header-bar-box {
-  box-sizing: border-box;
-  border-bottom: 1px solid #eee;
-  /* position: sticky; */
-  top: 0;
-  z-index: 1;
-}
-
-#header-bar {
-  width: 100%;
-  background-color: #fff;
-}
-
-.header-bar-box__wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 22px 0;
-}
-
-.header-logo-box__link {
-  display: inline-block;
-  margin-left: 100px;
-}
-
-.header-logo-box {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.logo-box {
-  display: flex;
-  align-items: center;
-}
-
-.header-logo {
-  width: 30px;
-  margin-bottom: 5px;
-  margin-right: 10px;
-  vertical-align: text-bottom;
-}
-
-.logo {
-  font-family: "yg-jalnan";
-  font-size: 18px;
-}
+/* styles */
+@import "../components/header.css";
+@import "../components/footer.css";
 
 /*폼*/
 .text-center {
@@ -119,6 +74,7 @@
   width: 26%;
   margin-left: 10px;
   cursor: pointer;
+  height: 34px;
 }
 
 .btn-info:hover {
@@ -162,70 +118,12 @@
   background-color: #3c44da;
 }
 
-/*퓨터*/
-
-.p-footer__inner {
-  margin: auto;
-  padding: 0;
-  box-sizing: border-box;
-  border-top: 1px solid #ebebeb;
-}
-
-.p-footer__site-group-list {
-  display: flex;
-  padding-bottom: 50px;
-  padding-top: 30px;
-  padding-bottom: 50px;
-  justify-content: center;
-}
-
-.p-footer__site-group {
-  width: 308px;
-  margin: 0;
-  padding: 0;
-  color: #6b7684;
-  list-style: none;
-  font-size: 15px;
-  line-height: 30px;
-  box-sizing: border-box;
-  margin-left: 6rem;
-}
-
-.p-footer--dark .p-footer__site-group-title {
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  color: #000000;
-}
-
-.p-footer__site-group-title {
-  padding-bottom: 5px;
-  font-weight: 700;
-}
-
-
-.p-footer__site-group-item > a {
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  display: block;
-  text-decoration: none;
-  color: #787878;
-}
-
-.p-footer__site-group-item > b {
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-}
-
-
-
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 80px auto;
+  margin-top: 160px;
+  margin-bottom: 80px;
 }
