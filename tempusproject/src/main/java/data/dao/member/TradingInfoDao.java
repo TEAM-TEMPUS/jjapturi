@@ -29,9 +29,8 @@ public class TradingInfoDao {
 			ps.setLong(1, memberId);
 			rs = ps.executeQuery();
 			
-			if (rs.next()) {
+			while (rs.next()) {
 				Integer grade = rs.getInt("grade");
-				
 				gradeList.add(new TradingInfoDto(grade));
 			}
 		} catch (SQLException e) {

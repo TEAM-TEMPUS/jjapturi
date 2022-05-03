@@ -1,10 +1,11 @@
+<%@page import="data.dao.member.MemberDao"%>
 <%@page import="common.Grades"%>
 <%@page import="java.util.stream.Collectors"%>
 <%@page import="data.dto.member.TradingInfoDto"%>
 <%@page import="java.util.List"%>
 <%@page import="data.dto.member.MemberProfileDto"%>
 <%@page import="data.dao.member.TradingInfoDao"%>
-<%@page import="data.dao.member.MemberDao"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

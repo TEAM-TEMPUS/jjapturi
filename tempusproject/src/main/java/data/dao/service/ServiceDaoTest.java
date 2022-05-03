@@ -14,7 +14,7 @@ public class ServiceDaoTest {
 //		test.modify();
 //		test.delete(21L);
 //		test.changeStatus();
-		test.findInqueryServiceId(1L);
+		test.findByServiceId(1L);
 	}
 
 	public void store() {
@@ -38,7 +38,7 @@ public class ServiceDaoTest {
 		dao.changeStatus(dto);
 	}
 	
-	public void findInqueryServiceId(Long serviceId) {
+	public void findByServiceId(Long serviceId) {
 		ServiceInqueryDto sid=dao.findByServiceId(serviceId);
 		System.out.println(sid);
 

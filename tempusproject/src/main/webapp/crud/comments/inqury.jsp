@@ -1,5 +1,5 @@
-<%@page import="data.dto.comment.CommentDto"%>
-<%@page import="data.dao.comment.CommentDao"%>
+<%@page import="data.dto.comment.CommentListDto"%>
+<%@page import="data.dao.comment.CommentListDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -10,22 +10,17 @@
 </head>
 <body>
 <%
-CommentDao dao = new CommentDao();
-
+CommentListDao dao = new CommentListDao();
 request.setCharacterEncoding("UTF-8");
 
+Long commentId = Long.parseLong(request.getParameter("commentId"));
 Long memberId = Long.parseLong(request.getParameter("memberId"));
 Long serviceId = Long.parseLong(request.getParameter("serviceId"));
 String text = request.getParameter("text");
-
-CommentDto dto = new CommentDto(memberId,serviceId,text);
-dao.insertComment(dto);
-
-
-
-//¸ÞÀÎÀ¸·Î ÀÌ
-response.sendRedirect("../../detailPage.jsp?serviceId="+serviceId+"&memberId="+memberId);
-
+String nickname =  request.getParameter("nickname");
+String store_img_name =  request.getParameter("store_img_name");
+//´ñ±Û Á¶ÀÎÇÑ Å×ÀÌºí daoÅëÇØ ´ñ±Û Á¤º¸ dtoÈ¹µæ
+//CommentListDto dto = dao.findcommentlist(dto);
 %>
 </body>
 </html>
