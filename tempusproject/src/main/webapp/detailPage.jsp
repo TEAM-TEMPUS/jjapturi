@@ -346,7 +346,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
 
                   <p class="reservation-confirm__description-content">
                     확인을 누르시면
-                    <span class="reservation-confirm__nickname">junjun</span
+                    <span class="reservation-confirm__nickname"><%=memberprofiledto.getNickname() %></span
                     >님과 연결됩니다.<br />
                     이후 채팅을 통해서 진행해주세요.
                   </p>
