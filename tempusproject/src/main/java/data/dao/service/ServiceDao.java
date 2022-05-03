@@ -183,32 +183,6 @@ public class ServiceDao {
 		return dto;
 	}
 
-	// totalCount
-	public int getTotalCount() {
-		int n = 0;
-
-		Connection conn = db.getConnection();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		String sql = "select count(*) from ";
-
-		try {
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-
-			if (rs.next())
-				n = rs.getInt(1);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			db.dbClose(rs, pstmt, conn);
-		}
-
-		return n;
-	}
-
 	public List<MyServiceDto> findMyServicesByMemberId(Long memberId, int offset, int limit) {
 		List<MyServiceDto> list = new ArrayList<MyServiceDto>();
 
@@ -255,7 +229,7 @@ public class ServiceDao {
 
 		return list;
 	}
-
+	
 //	여기에 types를 추가하는게 맞는지 확실하지는 않지만 넣어보기
 	public List<ServiceInqueryDto> findAll(String category, String types, int offset, int limit) {
 
