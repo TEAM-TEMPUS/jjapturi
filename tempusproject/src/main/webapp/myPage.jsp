@@ -4,7 +4,7 @@
 <%@page import="data.dto.member.TradingInfoDto"%>
 <%@page import="java.util.List"%>
 <%@page import="data.dto.member.MemberProfileDto"%>
-<%@page import="data.dao.member.TradingInfoDao"%>
+<%@page import="data.dao.tradinginfo.TradingInfoDao"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

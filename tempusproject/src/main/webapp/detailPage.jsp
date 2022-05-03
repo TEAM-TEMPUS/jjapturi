@@ -1,7 +1,7 @@
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="common.Grades"%>
 <%@page import="data.dto.member.TradingInfoDto"%>
-<%@page import="data.dao.member.TradingInfoDao"%>
+<%@page import="data.dao.tradinginfo.TradingInfoDao"%>
 <%@page import="data.dto.member.MemberProfileDto"%>
 <%@page import="data.dto.service.ServiceDto"%>
 <%@page import="data.dto.service.ServiceImageDto"%>

@@ -1,4 +1,4 @@
-package data.dao.member;
+package data.dao.tradinginfo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,4 +1,4 @@
-package data.dao.member;
+package data.dao.tradinginfo;
 
 import java.util.List;
 
