@@ -26,6 +26,8 @@ MemberDto member = new MemberDto(nickname, id, password, address, email, phoneNu
 
 memberDao.save(member);
 memberImageDao.save(memberDao.findById(id).getMemberId()); // 기본 이미지 등록
+
+response.sendRedirect("../../login.html");
 %>
 </body>
 </html>
