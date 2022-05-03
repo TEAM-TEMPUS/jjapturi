@@ -256,6 +256,11 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                     src="img/<%=comment.getStoreImgName() %>"
                     class="detailpage-info__userimg"
                   />
+                  
+                  <% if (memberId == comment.getMemberId()) { %>
+                  	<button type="button">수정</button>
+                  	<button type="button">삭제</button>
+                  <% } %>
                   <p class="detailpage-info__usernickname"><%=comment.getNickname()%></p>
                   <p class="detailpage-info__usercomment">
                     <%=comment.getText()%>
