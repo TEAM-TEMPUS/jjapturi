@@ -49,6 +49,8 @@
 // Service를 조회
 // Service에 딸린 여러 Comment 조회
 Long serviceId = Long.parseLong(request.getParameter("serviceId"));
+
+// TODO 로그인 처리 하면, 로그인한 회원 ID로 변경하기
 Long memberId = Long.parseLong(request.getParameter("memberId"));
 
 MemberDao memberDao = new MemberDao();
@@ -169,15 +171,19 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
 
                 <!--예약중과 가격-->
                 <li class="detailpage-info__item">
-                  
                  <%if(service.getStatus().equals("reservation")){%>        		
-                  
                   <img
                     alt=""
-                    src="img/status_reserved.png"
+                    src="img/status-reserved.svg"
                     class="detailpage-info__reservationimge"
                   />
-                  <%}%> 
+                  <%} else if (service.getStatus().equals("completion")) {%>
+                  <img
+                    alt=""
+                    src="img/status-complete.svg"
+                    class="detailpage-info__reservationimge"
+                  />
+                  <%} %> 
                   <!--예약중 옆에 가격 정보-->
                   <span class="detailpage-info__priceinfo"><%=service.getPrice() %></span>
                 </li>
@@ -203,12 +209,15 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                 <button type="button" class="detailpage-info__reservationbtn">
                예약중
                </button>
-               <%}else{%> 
+               <%}else if (service.getStatus().equals("basic")){%> 
                <button type="button" class="detailpage-info__basicbtn">
                예약하기
                </button>
-               <%}%> 
-              
+               <%} else if (service.getStatus().equals("completion")) {%> 
+               <button type="button" class="detailpage-info__reservationbtn">
+               거래 완료
+               </button>
+              <%}%> 
             </div>
 			<form action="crud/comments/registration.jsp" method="post">
             <!-- 상품문의 내용적기 -->
