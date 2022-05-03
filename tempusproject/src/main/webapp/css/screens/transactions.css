@@ -344,7 +344,9 @@ button {
 	box-shadow: 0 1px 8px rgb(0 0 0/ 10%);
 }
 
-.btn__reserved {
+.btn__reserved,
+.btn__completed,
+.btn__cancle {
 	background-color: #FFFFFF;
 	color: #000000;
 	font: 700 19px "Noto Sans KR", sans-serif;
@@ -356,28 +358,9 @@ button {
 	box-shadow: 0 1px 8px rgb(0 0 0/ 10%);
 }
 
-.btn__cancle {
-	background-color: #ffffff;
-	color: #000000;
-	font: 700 19px "Noto Sans KR", sans-serif;
-	border-radius: 20px;
-	width: 90px;
-	height: 30px;
-	margin-left: 10px;
-	cursor: pointer;
-	box-shadow: 0 1px 8px rgb(0 0 0/ 10%);
-}
-
-.btn__completed {
+.btn--selected {
 	background-color: #f93232;
 	color: #ffffff;
-	font: 700 19px "Noto Sans KR", sans-serif;
-	border-radius: 20px;
-	width: 90px;
-	height: 30px;
-	margin-left: 10px;
-	cursor: pointer;
-	box-shadow: 0 1px 8px rgb(0 0 0/ 10%);
 }
 
 .btn__star {
