@@ -53,7 +53,7 @@
 	categoryMap.put("study", "과외");
 	categoryMap.put("clean", "청소");
 	
-	ServiceDao dao = new ServiceDao();
+	ServiceDao serviceDao = new ServiceDao();
 	
 	int totalCount; //총 서비스 수
 	int totalPage; //총 페이지수
@@ -65,7 +65,7 @@
 	int currentPage; //현재페이지
 	
 	//총갯수
-	totalCount = dao.getTotalCountByCategory(category, types);
+	totalCount = serviceDao.getTotalCountByCategory(category, types);
 	
 	//현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
 	if (request.getParameter("currentPage") == null)
@@ -91,7 +91,7 @@
 	
 	//각페이지에서 필요한 게시글 가져오기, 여기에 types를 추가하는게 맞는지는 모르겠지만 해보기
 // 	List<ServiceInqueryDto> services = dao.findAll(category, offset, sizePerPage);
-	List<ServiceInqueryDto> services = dao.findAll(category, types, offset, sizePerPage);
+	List<ServiceInqueryDto> services = serviceDao.findAll(category, types, offset, sizePerPage);
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	DecimalFormat decimalFormat = new DecimalFormat("###,###");
