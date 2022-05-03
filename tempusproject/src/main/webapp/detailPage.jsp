@@ -33,7 +33,6 @@
    <!--8번 xeicon을 가져온다 방법: xeicon사이트-> 메뉴바 get started -> 사이트 <head> 태그 안에 아래의 코드를 붙입니다 밑 코드 복사
        그다음 라이브러리를 들어가 원하는 아이콘을 가져온다-->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-
    <!--5번 제이쿼리 가져오기-->
    <!--제이쿼리 다운방법: 제이쿼리 홈페이지->다운로드->맨아래 cdn링크클릭-> 맨위 minified클릭->코드 복사-->
    <!--제이쿼리 스크립트 삽입 방법은 라이브러리 제일 맨위에 와야한다-->
@@ -43,7 +42,7 @@
    <!--2번 cdn방법 slick에서 js링크가져옴-->
    <!--1번 2번 실행 안될시 //cdn 앞에 http://넣어줘야 한다.-->
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/screens/detailPage.css" />
 <!-- jsp작성 -->    
@@ -182,18 +181,18 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                  <%if(service.getStatus().equals("reservation")){%>        		
                   <img
                     alt=""
-                    src="img/status-reserved.svg"
+                    src="img/status_reservation.svg"
                     class="detailpage-info__reservationimge"
                   />
                   <%} else if (service.getStatus().equals("completion")) {%>
                   <img
                     alt=""
-                    src="img/status-complete.svg"
+                    src="img/status_completion.svg"
                     class="detailpage-info__reservationimge"
                   />
                   <%} %> 
                   <!--예약중 옆에 가격 정보-->
-                  <span class="detailpage-info__priceinfo"><%=service.getPrice() %></span>
+                  <span class="detailpage-info__priceinfo"><%=service.getPrice() %>원</span>
                 </li>
               </ul>
             </div>
@@ -256,17 +255,31 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                     src="img/<%=comment.getStoreImgName() %>"
                     class="detailpage-info__userimg"
                   />
-                  
+                  <div class="detailpage-comment">
+                  <div class="nickname-btn__wrap">
+                  <span class="detailpage-info__usernickname"><%=comment.getNickname()%></span>
                   <% if (memberId == comment.getMemberId()) { %>
-                  	<button type="button">수정</button>
-                  	<button type="button">삭제</button>
+                  <a href="" class="">
+                  	<i class="bi bi-pencil">
+                  	<button type="button" class="detailpage-info__updatebtn" style= "cursor: pointer;">수정</button>
+                  	</i>
+                  </a>
+                  <a href="" class="">
+                  	<i class="bi bi-trash">
+                  	<button type="button" class="detailpage-info__delete" style= "cursor: pointer;">삭제</button>
+                  	</i>
+                  </a>
                   <% } %>
-                  <p class="detailpage-info__usernickname"><%=comment.getNickname()%></p>
+                  </div>
+                  
+                  
                   <p class="detailpage-info__usercomment">
                     <%=comment.getText()%>
                   </p>
+                  </div>
                   <br>
-                  <hr class="detailpage-info__commentline" />
+                  <!-- <hr class="detailpage-info__commentline" /> -->
+                  <br>
                 </li>
               </ul>
             </div>

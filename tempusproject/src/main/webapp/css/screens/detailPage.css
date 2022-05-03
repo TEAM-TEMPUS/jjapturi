@@ -37,6 +37,7 @@
     height:500px;
     border-radius: 20px;
     margin: 0 auto;
+    object-fit: cover;
 }
 
 /*상품정보 표시*/
@@ -153,18 +154,15 @@
 
 /*상품정보 박스 설정*/
 .detailpage-info__contents{
-	width:700px;
-	height:500px;
-	border: 1px solid white;
-}
-
-/*상품정보 폰트 적용*/
-.detailpage-info__contents{
-    font-family:"Noto Sans KR";
+	width: 100%;
+	height: 100%;
+	font-family:"Noto Sans KR";
   	font-size:18px;
   	font-weight:400px; /*폰트 폭 적용*/
-    line-height: 30px;  
+    line-height: 30px;
+  	margin-bottom: 60px
 }
+
 /*예약하기버튼 스타일 적용*/
 .detailpage-info__basicbtn{
 	display: block;
@@ -268,24 +266,30 @@ textarea::-webkit-scrollbar {
     list-style: none;
 }
 
+.detailpage-info__useritem {
+	display: flex;
+}
 /*댓글 사용자 프로필 이미지 */
 .detailpage-info__userimg{
     
     width:80px;
 	height:80px;
 	border-radius: 50%;
-    margin-top: 10px;
-    margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+
 }
 
 
 /*유져 이름위치*/
 .detailpage-info__usernickname{
+    
     font-family:"Noto Sans KR";
   	font-size:20px;
   	font-weight:500; /*폰트 폭 적용*/
     margin-top: -130px;
     margin-left: 100px;
+
 }
 
 /*유저 댓글 내용 위치*/
@@ -295,6 +299,8 @@ textarea::-webkit-scrollbar {
   	font-weight:400; /*폰트 폭 적용*/
     width:85%;
     color:#adb5bd;
+    margin-top: 5px;
+    margin-bottom: 10px;
     margin-left: 100px;
     margin-top: 5px;
 }
@@ -390,12 +396,12 @@ textarea::-webkit-scrollbar {
   
        .slick-dots li button{
             position: absolute;
-            background: #adb5bd;
+            background: rgba(255,255,255,0.25);
             width: 20px;
             height: 20px;
             border-radius: 50%;
             border: none;
-            margin-top: -40px;
+            margin-top: -50px;
             overflow: hidden;
             font-size: 0; /*Next글자 사이즈 0으로만듬*/
             color:transparent; /*Next글자를 투명으로 넣어준다*/
@@ -414,41 +420,46 @@ textarea::-webkit-scrollbar {
         display:none
     }
    
-    /*수정 버튼 */
     .detailpage-info__updatebtn{
-	
-
-    }
-    /*삭제 버튼*/
-    .detailpage-info__deletebtn{
+    	margin: 0 auto;
+    	margin-top:-80px;
+    	cursor: pointer 마우스 포인터 손모양으로 바꿈
     
     }
-    
-    .bi-pencil{
-    position:absolute;
-    margin-top:-33px;
-    margin-left:220px;
-    
-    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
-    }
-    
-    .bi-trash{
-    position:absolute;
-    margin-top:-33px;
-    margin-left:250px;
-    cursor: pointer /*마우스 포인터 손모양으로 바꿈*/
-    }
+    .detailpage-info-info__delete{ 
+    margin: 0 auto;
+    margin-top:-80px;
+    margin-left:20px;
+    cursor: pointer 마우스 포인터 손모양으로 바꿈
+    } 
     
     /*댓글 부분 라인 조정*/
     .detailpage-info__comments{
     line-height:200%;
+
+    margin-bottom: 40px;
     }
-    /*서비스 정보내용 스타일조정*/
-    .detailpage-info__contents{
-    width:97.5%; 
-    }
+
+   
+
     /**/
     .detailpage-publisher-info{
     width:250px;
     height:120px;
     }
+    
+    /**/
+    .detailpage-comment{
+    width:700px;
+    height:100%;
+    margin-left:20px;
+    margin-top:10px;
+    border-bottom: 0.75px solid #adb5bd;
+    }
+
+    .nickname-btn__wrap{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    }
+
