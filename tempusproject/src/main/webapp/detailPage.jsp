@@ -1,3 +1,4 @@
+<%@page import="common.Grades"%>
 <%@page import="data.dto.member.TradingInfoDto"%>
 <%@page import="data.dao.member.TradingInfoDao"%>
 <%@page import="data.dto.member.MemberProfileDto"%>
@@ -92,14 +93,15 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
   
   String rank;
   if (completeTradingCount >= 100 && totalGrade >= 3.5) {
-	  rank = "rank_platinum.png";
+	  rank = Grades.PLATINUM.getImagePath();
   } else if (completeTradingCount >= 50 && totalGrade >= 3.0) {
-	  rank = "rank_gold.png";
+	  rank = Grades.GOLD.getImagePath();;
   } else if (completeTradingCount >= 10 && totalGrade >= 2.5) {
-	  rank = "rank_silver.png";
+	  rank = Grades.SILVER.getImagePath();
   } else {
-	  rank = "rank_bronze.png";
+	  rank = Grades.BRONZE.getImagePath();
   }
+  
   
 %>   
   </head>
@@ -138,7 +140,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                   <span class="detailpage-info__rank"
                     ><img
                       alt=""
-                      src="img/<%=rank%>"
+                      src="img/rank-<%=rank%>.svg"
                       class="detailpage-info__rankinfo"
                   /></span>
                 </li>
@@ -278,7 +280,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                   />
 
                   <img
-                    src="img/bronze-badge.png"
+                    src="img/rank-bronze.svg"
                     alt="회원 등급"
                     class="profile__badge"
                   />
