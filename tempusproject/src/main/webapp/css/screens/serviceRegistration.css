@@ -12,6 +12,7 @@
 /*본문 중앙배치*/
 .container__inner {
     margin:0 auto;  /* 화면 중앙에 배치 */
+    margin-bottom: 80px;
     width:900px;    /* 너비 */    
     background-color: #fff;
   }
