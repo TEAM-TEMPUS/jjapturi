@@ -17,8 +17,8 @@ public class ServiceDaoTest {
 //		test.delete(21L);
 //		test.changeStatus();
 //		test.findInqueryServiceId(1L);
-		test.findAll("walk","ant", 0, 10);
-		test.getTotalCountByCategory("walk","ant");
+		test.findAll("walk","grasshopper", 0, 10);
+		test.getTotalCountByCategory("walk","grasshopper");
 	}
 
 	public void store() {
