@@ -1,5 +1,4 @@
-<%@page import="data.dto.comment.CommentListDto"%>
-<%@page import="data.dao.comment.CommentListDao"%>
+<%@page import="data.dao.comment.CommentDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -10,7 +9,7 @@
 </head>
 <body>
 <%
-CommentListDao dao = new CommentListDao();
+CommentDao dao = new CommentDao();
 request.setCharacterEncoding("UTF-8");
 
 Long commentId = Long.parseLong(request.getParameter("commentId"));
