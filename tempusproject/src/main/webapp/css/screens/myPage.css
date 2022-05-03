@@ -1,8 +1,7 @@
 .my-page {
   width: 43vw;
   min-width: 600px;
-  margin: auto;
-  margin-bottom: 0;
+  margin: 80px auto;
 }
 
 .my-page__title {
