@@ -67,6 +67,22 @@ public class ServiceInqueryDto {
 		this.description = description;
 	}
 
+	
+	
+	public ServiceInqueryDto(Long serviceId, Long memberId, String title, String status, String place, Date startDate,
+		Date endDate, int price, String description) {
+	super();
+	this.serviceId = serviceId;
+	this.memberId = memberId;
+	this.title = title;
+	this.status = status;
+	this.place = place;
+	this.startDate = startDate;
+	this.endDate = endDate;
+	this.price = price;
+	this.description = description;
+}
+
 	public Long getServiceId() {
 		return serviceId;
 	}
