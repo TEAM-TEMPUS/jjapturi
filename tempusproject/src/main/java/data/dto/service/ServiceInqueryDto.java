@@ -19,6 +19,23 @@ public class ServiceInqueryDto {
 	public ServiceInqueryDto() {
 	}
 
+	public ServiceInqueryDto(Long serviceId, Long memberId, String types, String title, String category, String status, 
+			String place, Date startDate, Date endDate, int price, String description) {
+		super();
+		this.serviceId = serviceId;
+		this.memberId = memberId;
+		this.types = types;
+		this.title = title;
+		this.category = category;
+		this.status = status;
+		this.place = place;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.price = price;
+		this.description = description;
+	}
+
+
 //	public ServiceInqueryDto(Long serviceId, Long memberId, String types, String title, String category, String status, 
 //			String place, Date startDate, Date endDate, int price, String description) {
 //		super();
@@ -140,9 +157,11 @@ public class ServiceInqueryDto {
 
 	@Override
 	public String toString() {
+
 		return "ServiceInqueryDto [serviceId="+serviceId+",memberId="+memberId+",types=" + types + ", title=" + title + ", category=" + category + ", place=" + place
 				+ ", status = " + status + ",startDate=" + startDate + ", endDate=" + endDate + ", price=" + price + ", description="
 				+ description + "]";
 	}
 
 }
+

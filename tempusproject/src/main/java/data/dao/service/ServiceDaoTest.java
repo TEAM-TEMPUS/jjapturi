@@ -19,6 +19,7 @@ public class ServiceDaoTest {
 //		test.findInqueryServiceId(1L);
 		test.findAll("walk","grasshopper", 0, 10);
 		test.getTotalCountByCategory("walk","grasshopper");
+
 	}
 
 	public void store() {
@@ -44,8 +45,9 @@ public class ServiceDaoTest {
 		dao.changeStatus(dto);
 	}
 
-	public void findInqueryServiceId(Long serviceId) {
-		ServiceInqueryDto sid = dao.findByServiceId(serviceId);
+	public void findByServiceId(Long serviceId) {
+		ServiceInqueryDto sid=dao.findByServiceId(serviceId);
+
 		System.out.println(sid);
 
 	}

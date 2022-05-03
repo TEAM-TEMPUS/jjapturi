@@ -1,3 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="org.json.simple.JSONArray"%>
+<%@page import="data.dto.service.ServiceImageDto"%>
+<%@page import="data.dao.service.ServiceImageDao"%>
 <%@page import="java.util.List"%>
 <%@page import="data.dao.service.ServiceDao"%>
 <%@page import="java.util.Objects"%>
@@ -14,22 +18,32 @@
 </head>
 <body>
 <%
-ServiceDao dao= new ServiceDao();
+ServiceDao serviceDao= new ServiceDao();
+ServiceImageDao serviceImageDao = new ServiceImageDao();
 request.setCharacterEncoding("utf-8");
 
 Long serviceId = Long.parseLong(request.getParameter("serviceId"));
-ServiceInqueryDto service = dao.findByServiceId(serviceId);
+ServiceInqueryDto service = serviceDao.findByServiceId(serviceId);
+List<ServiceImageDto> list = serviceImageDao.findAllByServiceId(serviceId);
 
 JSONObject ob = new JSONObject();
 if(Objects.nonNull(service)){
+	
+	List<String> storeImgNames = new ArrayList<>();
+	for(int i=0; i<list.size(); i++){
+			ServiceImageDto sid = list.get(i);
+			sid.getStoreImageName();
+	}
+	
+	ob.put("storeImgName", storeImgNames.add("storeImgName"));
 	ob.put("types", service.getTypes());
 	ob.put("title", service.getTitle());
-	ob.put("types", service.getCategory());
-	ob.put("types", service.getPlace());
-	ob.put("types", service.getStartDate());
-	ob.put("types", service.getEndDate());
-	ob.put("types", service.getPrice());
-	ob.put("types", service.getDescription());
+	ob.put("category", service.getCategory());
+	ob.put("place", service.getPlace());
+	ob.put("startDate", service.getStartDate());
+	ob.put("endDate", service.getEndDate());
+	ob.put("price", service.getPrice());
+	ob.put("description", service.getDescription());
 }
 %>
 
