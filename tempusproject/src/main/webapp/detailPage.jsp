@@ -255,7 +255,9 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                     src="img/<%=comment.getStoreImgName() %>"
                     class="detailpage-info__userimg"
                   />
-                  
+                  <div>
+                  <div>
+                  <span class="detailpage-info__usernickname"><%=comment.getNickname()%></span>
                   <% if (memberId == comment.getMemberId()) { %>
                   
                   	<i class="bi bi-pencil">
@@ -267,12 +269,15 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                   	</i>
                   	
                   <% } %>
-                  <p class="detailpage-info__usernickname"><%=comment.getNickname()%></p>
+                  </div>
+                  
+                  
                   <p class="detailpage-info__usercomment">
                     <%=comment.getText()%>
                   </p>
+                  </div>
                   <br>
-                  <hr class="detailpage-info__commentline" />
+                  <!-- <hr class="detailpage-info__commentline" /> -->
                   <br>
                 </li>
               </ul>

@@ -268,6 +268,9 @@ textarea::-webkit-scrollbar {
     list-style: none;
 }
 
+.detailpage-info__useritem {
+	display: flex;
+}
 /*댓글 사용자 프로필 이미지 */
 .detailpage-info__userimg{
     
