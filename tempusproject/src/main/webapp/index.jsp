@@ -41,7 +41,7 @@
 		}
 	}
 	
-	if (needToLogin) {
+	if (needToLogin && Objects.isNull(signInMemberId)) {
 		response.sendRedirect("login.html");
 		return;
 	}
