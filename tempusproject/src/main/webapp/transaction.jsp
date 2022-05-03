@@ -276,7 +276,7 @@ for (MyServiceDto myService : myServices) {
 					} else {
 					%>
 					<a
-						href="/tempusproject/serviceList.jsp?currentPage=<%=startPage - 1%>"
+						href="/tempusproject/transaction.jsp?currentPage=<%=startPage - 1%>"
 						class="pagenation__item pagenation--previous" tabindex="-1"
 						aria-disabled="true"> <span class="material-symbols-rounded">
 							arrow_back_ios_new </span>
@@ -288,7 +288,7 @@ for (MyServiceDto myService : myServices) {
 					for (int i = startPage; i <= endPage; i++) {
 					%>
 
-					<a href="/tempusproject/serviceList.jsp?currentPage=<%=i%>"
+					<a href="/tempusproject/transaction.jsp?currentPage=<%=i%>"
 						class="pagenation__item pagenation-number <%=i == currentPage ? "current" : ""%>"><%=i%></a>
 					<%
 					}
@@ -303,7 +303,7 @@ for (MyServiceDto myService : myServices) {
 					} else {
 					%>
 					<a
-						href="/tempusproject/serviceList.jsp?currentPage=<%=endPage + 1%>"
+						href="/tempusproject/transaction.jsp?currentPage=<%=endPage + 1%>"
 						class="pagenation__item pagenation--next"> <span
 						class="material-symbols-rounded"> arrow_forward_ios </span>
 					</a>
