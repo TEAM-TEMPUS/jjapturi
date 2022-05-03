@@ -96,6 +96,22 @@
   width: 3.5rem;
 }
 
+.medal--status img.bronze {
+  display: none;
+}
+
+.medal--status img.silver {
+  width: 3.5rem;
+}
+
+.medal--status img.gold {
+  width: 3.5rem;
+}
+
+.medal--status img.platinum {
+  width: 3.5rem;
+}
+
 .service-item-txt__wrap {
   width: 85%;
   padding-top: 24px;
