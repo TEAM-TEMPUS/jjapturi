@@ -120,60 +120,6 @@ for (MyServiceDto myService : myServices) {
 %>
 </head>
 <body>
-	<header id="header-bar" class="header-bar-box">
-
-
-		<div class="header-bar-box__wrap">
-			<div class="header-logo-box">
-				<a href="#" class="header-logo-box__link">
-					<div class="logo-box">
-						<img src="img/logo.svg" alt="타임마켓" class="header-logo">
-						<p class="logo">짭투리</p>
-					</div>
-				</a>
-			</div>
-
-
-			<section class="header-search">
-				<div class="search">
-					<input type="text" id="header-search-input" class="search__input"
-						placeholder="서비스명, 지역명 입력">
-					<button class="search__button">
-						<a href="#"> <img src="img/icon-search.svg" alt="search"
-							class="search__icon" width="20">
-						</a>
-					</button>
-				</div>
-			</section>
-
-
-			<div class="menu-bar-info-box">
-				<div class="menu-bar">
-					<a href="#menu" id="toggle"> <span>
-							<div class="test"></div>
-					</span></a>
-					<div id="menu">
-						<ul>
-							<li><a href="#">청소</a></li>
-							<li><a href="#">심부름</a></li>
-							<li><a href="#">산책</a></li>
-							<li><a href="#">설치</a></li>
-							<li><a href="#">과외</a></li>
-						</ul>
-					</div>
-				</div>
-
-
-				<div class="info-box">
-					<a href="#" class="info-box__link"> <img
-						src="img/icon-mypage.svg" alt="" class="info-box__img">
-					</a>
-				</div>
-			</div>
-		</div>
-	</header>
-
-
 	<section id="transaction-list">
 		<div class="transaction-list__wrap">
 
@@ -276,7 +222,7 @@ for (MyServiceDto myService : myServices) {
 					} else {
 					%>
 					<a
-						href="/tempusproject/transaction.jsp?currentPage=<%=startPage - 1%>"
+						href="/tempusproject/transac.jsp?currentPage=<%=startPage - 1%>"
 						class="pagenation__item pagenation--previous" tabindex="-1"
 						aria-disabled="true"> <span class="material-symbols-rounded">
 							arrow_back_ios_new </span>
@@ -288,7 +234,7 @@ for (MyServiceDto myService : myServices) {
 					for (int i = startPage; i <= endPage; i++) {
 					%>
 
-					<a href="/tempusproject/transaction.jsp?currentPage=<%=i%>"
+					<a href="/tempusproject/serviceList.jsp?currentPage=<%=i%>"
 						class="pagenation__item pagenation-number <%=i == currentPage ? "current" : ""%>"><%=i%></a>
 					<%
 					}
@@ -303,7 +249,7 @@ for (MyServiceDto myService : myServices) {
 					} else {
 					%>
 					<a
-						href="/tempusproject/transaction.jsp?currentPage=<%=endPage + 1%>"
+						href="/tempusproject/serviceList.jsp?currentPage=<%=endPage + 1%>"
 						class="pagenation__item pagenation--next"> <span
 						class="material-symbols-rounded"> arrow_forward_ios </span>
 					</a>
@@ -332,47 +278,6 @@ for (MyServiceDto myService : myServices) {
 			</div>
 		</div>
 	</section>
-
-	<footer class="p-footer p-footer--dark">
-		<div class="p-footer__inner">
-			<div class="p-footer__site-group-list">
-				<ul class="p-footer__site-group">
-					<li><div class="p-footer__site-group-title">4조 세미프로젝트</div></li>
-					<li class="p-footer__site-group-item"><a href="#">홍길동:aaa@gmail.com</a></li>
-
-					<li class="p-footer__site-group-item"><a href="#">홍길동:aaa@gmail.com</a></li>
-
-					<li class="p-footer__site-group-item"><a href="#">홍길동:aaa@gmail.com</a></li>
-
-					<li class="p-footer__site-group-item"><a href="#">홍길동:aaa@gmail.com</a></li>
-
-					<br>
-					<li class="p-footer__site-group-item"><b>@2022 Article 4
-							Semi-Project.All rights reserved.</b></li>
-
-				</ul>
-
-				<ul class="p-footer__site-group">
-					<li><div class="p-footer__site-group-title">SKILLS</div></li>
-					<li class="p-footer__site-group-item"><a href="#">JAVA,HTML,CSS,Javascript,Git,Bla</a></li>
-				</ul>
-
-				<ul class="p-footer__site-group">
-					<li><div class="p-footer__site-group-title">GITHUB</div></li>
-					<li class="p-footer__site-group-item"><a href="#">깃허브 어쩌구
-							저쩌구 샬라샬라</a></li>
-
-				</ul>
-				<ul class="p-footer__site-group">
-					<li><div class="p-footer__site-group-title">고객센터</div></li>
-					<li class="p-footer__site-group-item"><a href="#">시간마켓
-							고객센터</a></li>
-
-				</ul>
-			</div>
-		</div>
-	</footer>
-
 
 	<script src="js/default.js"></script>
 	<script src="js/serviceNavigation.js"></script>
