@@ -1,4 +1,4 @@
-$('.detailpage-info__productimgespace').slick({
+$('.detailpage-info__serviceimgespace').slick({
     dots: true,
     infinite: true,
     speed: 500,

@@ -96,6 +96,22 @@
   width: 3.5rem;
 }
 
+.medal--status img.bronze {
+  display: none;
+}
+
+.medal--status img.silver {
+  width: 3.5rem;
+}
+
+.medal--status img.gold {
+  width: 3.5rem;
+}
+
+.medal--status img.platinum {
+  width: 3.5rem;
+}
+
 .service-item-txt__wrap {
   width: 85%;
   padding-top: 24px;
@@ -152,13 +168,17 @@
   align-items: center;
 }
 
-.list__transaction-status.complete {
+.list__transaction-status img.basic {
+  display: none;
+}
+
+.list__transaction-status img.completion {
   vertical-align: middle;
   width: 62px;
   margin-right: 8px;
 }
 
-.list__transaction-status.reserved {
+.list__transaction-status img.reservation {
   vertical-align: middle;
   width: 62px;
   margin-right: 8px;
@@ -356,6 +376,7 @@
   transition: background 600ms ease, color 600ms ease;
 }
 
+
 input[type="radio"].toggle {
   display: none;
 }
@@ -397,3 +418,4 @@ input[type="radio"].toggle:checked + label {
 input[type="radio"].toggle:checked + label:after {
   left: 0;
 }
+

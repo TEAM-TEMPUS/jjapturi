@@ -73,7 +73,9 @@ if (endPage > totalPage)
 start = (currentPage - 1) * perPage;
 
 //각페이지에서 필요한 게시글 가져오기
+
 List<ServiceInqueryDto> services = serviceDao.findALL(start, perPage);
+
 
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 DecimalFormat decimalFormat = new DecimalFormat("###,###");
