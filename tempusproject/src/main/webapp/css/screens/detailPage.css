@@ -289,7 +289,7 @@ textarea::-webkit-scrollbar {
   	font-size:20px;
   	font-weight:500; /*폰트 폭 적용*/
     margin-top: -130px;
-    margin-left: 100px;
+    
 }
 
 /*유저 댓글 내용 위치*/
@@ -299,7 +299,6 @@ textarea::-webkit-scrollbar {
   	font-weight:400; /*폰트 폭 적용*/
     width:85%;
     color:#adb5bd;
-    margin-left: 100px;
     margin-top: 5px;
 }
 
@@ -446,6 +445,15 @@ textarea::-webkit-scrollbar {
     height:120px;
     }
     
+    /**/
+    .detailpage-comment{
+    width:700px;
+    height:100px;
+    margin-left:20px;
+    margin-top:10px;
+    border-bottom: 0.75px solid #adb5bd;
+    
+    }
     
  
   
