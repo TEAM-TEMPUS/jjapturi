@@ -149,6 +149,7 @@ public class ServiceDao {
 
 	}
 
+	//서비스 조회 (수정 페이지) 
 	public ServiceInqueryDto findByServiceId(Long serviceId) {
 		ServiceInqueryDto dto = new ServiceInqueryDto();
 
@@ -183,9 +184,41 @@ public class ServiceDao {
 
 		return dto;
 	}
+	
+	
+	//totalCount
+		public int getTotalCount()
+		{
+			int n=0;
+			
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			ResultSet rs=null;
+			
+			String sql="select count(*) from ";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				rs=pstmt.executeQuery();
+				
+				if(rs.next())
+					n=rs.getInt(1);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(rs, pstmt, conn);
+			}
+			
+			
+			return n;
+		}
+	
+	
 
 //	여기에 types를 추가하는게 맞는지 확실하지는 않지만 넣어보기
 	public List<ServiceInqueryDto> findAll(String category, String types, int offset, int limit) {
+
 
 		List<ServiceInqueryDto> serviceList = new ArrayList<ServiceInqueryDto>();
 
@@ -197,6 +230,7 @@ public class ServiceDao {
 				+ "offset ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
+
 			pstmt.setString(1, category);
 			pstmt.setString(2, types);
 			pstmt.setLong(3, limit);
