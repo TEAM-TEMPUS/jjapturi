@@ -34,17 +34,7 @@
 </head>
 </head>
 <%
-	/*왜 안되는지 모르는 것들...
-	
-	totalCount -> types가 안먹힘(내가 잘못적은건지 알수가없...)
-	List<ServiceInqueryDto> service -> 이부분도 types가 안먹음
-	Long serviceId = Long.parseLong(request.getParameter("serviceId").trim())이 부분에서 계속 java.lang.NumberFormatException: null;오류가 뜸
-	검색을 해봤을때 변수에 값이 전달받지 못해서 생기는 오류일수도 있다는데 dao에 들어가서 변수부분을 확인해도 뭐가 틀린건지 모르겠다....
-	
-	*/
-	
-	
-	String category = request.getParameter("category");
+    String category = request.getParameter("category");
 	String types = request.getParameter("types");
 	HashMap<String, String> categoryMap = new HashMap<>();
 	categoryMap.put("errand", "심부름");
@@ -66,7 +56,7 @@
 	
 	//총갯수
 	totalCount = serviceDao.getTotalCountByCategory(category, types);
-	
+
 	//현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
 	if (request.getParameter("currentPage") == null)
 		currentPage = 1;
@@ -90,7 +80,6 @@
 	offset = (currentPage - 1) * sizePerPage;
 	
 	//각페이지에서 필요한 게시글 가져오기, 여기에 types를 추가하는게 맞는지는 모르겠지만 해보기
-// 	List<ServiceInqueryDto> services = dao.findAll(category, offset, sizePerPage);
 	List<ServiceInqueryDto> services = serviceDao.findAll(category, types, offset, sizePerPage);
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -227,22 +216,6 @@
           </div>
         </div>
 
-        <!-- 
-        <div class="pagenation__wrap">
-          <div class="pagenation__inner">
-            <a href="#" class="pagenation__item pagenation--previous">
-              <span class="material-symbols-rounded"> arrow_back_ios_new </span>
-            </a>
-            <a href="#" class="pagenation__item pagenation-number">6</a>
-            <a href="#" class="pagenation__item pagenation-number current">7</a>
-            <a href="#" class="pagenation__item pagenation-number">8</a>
-            <a href="#" class="pagenation__item pagenation-number">9</a>
-            <a href="#" class="pagenation__item pagenation-number">10</a>
-            <a href="#" class="pagenation__item pagenation--next">
-              <span class="material-symbols-rounded"> arrow_forward_ios </span>
-            </a>
-          </div>
-        </div> -->
         <!-- pagenation -->
         <div class="pagenation__wrap">
           <div class="pagenation__inner">
@@ -251,13 +224,13 @@
               <span class="material-symbols-rounded"> arrow_back_ios_new </span>
             </a>
             <%} else {%>
-            <a href="list.jsp?page=<%= startPage -1 %>" class="pagenation__item pagenation--previous" tabindex="-1" aria-disabled="true">
+            <a href="/tempusproject/serviceList.jsp?category=walk&types=ant&currentPage=<%= startPage -1 %>" class="pagenation__item pagenation--previous" tabindex="-1" aria-disabled="true">
               <span class="material-symbols-rounded"> arrow_back_ios_new </span>
             </a>
             <%} %>
             <% for (int i = startPage; i<= endPage; i++) {%>
             
-            <a href="list.jsp?page=<%= i %>" class="pagenation__item pagenation-number current"><%= i %></a>
+            <a href="/tempusproject/serviceList.jsp?category=walk&types=ant&currentPage=<%= i %>" class="pagenation__item pagenation-number <%= i == currentPage ? "current" : ""%>"><%= i %></a>
             <%} %>
             <%
             if (totalPage == endPage){
@@ -266,7 +239,7 @@
               <span class="material-symbols-rounded"> arrow_forward_ios </span>
             </a>
             <%} else {%>
-            <a href="#" class="pagenation__item pagenation--next">
+            <a href="/tempusproject/serviceList.jsp?category=walk&types=ant&currentPage=<%= endPage + 1 %>" class="pagenation__item pagenation--next">
               <span class="material-symbols-rounded"> arrow_forward_ios </span>
             </a>
             <%} %>
