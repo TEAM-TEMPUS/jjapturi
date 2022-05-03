@@ -146,6 +146,7 @@ DbConnect db = new DbConnect();
 		
 	}
 
+	//서비스 조회 (수정 페이지) 
 	public ServiceInqueryDto findByServiceId(Long serviceId) {
 		ServiceInqueryDto dto = new ServiceInqueryDto();
 		
@@ -181,8 +182,36 @@ DbConnect db = new DbConnect();
 	}
 	
 	
+	//totalCount
+		public int getTotalCount()
+		{
+			int n=0;
+			
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			ResultSet rs=null;
+			
+			String sql="select count(*) from ";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				rs=pstmt.executeQuery();
+				
+				if(rs.next())
+					n=rs.getInt(1);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(rs, pstmt, conn);
+			}
+			
+			
+			return n;
+		}
+	
 	//전체출력...페이지에서 필요한 만큼만 리턴
-	List<ServiceInqueryDto> findAll(int offset, int limit){
+	public List<ServiceInqueryDto> findALL(int start, int perpage){
 		List<ServiceInqueryDto> serviceList = new ArrayList<ServiceInqueryDto>();
 		
 		Connection conn = db.getConnection();
@@ -193,8 +222,8 @@ DbConnect db = new DbConnect();
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setLong(1, limit);
-			pstmt.setLong(2, offset);
+			pstmt.setLong(1, start);
+			pstmt.setLong(2, perpage);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
