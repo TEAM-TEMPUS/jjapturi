@@ -105,7 +105,7 @@
             </div>
 
             <div class="transaction-history">
-              <a href="index.jsp?home=transaction.jsp">거래내역</a>
+              <a href="index.jsp?home=transaction.jsp" class="transaction-history__link">거래내역</a>
             </div>
           </article>
         </main>
