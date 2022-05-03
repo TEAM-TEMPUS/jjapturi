@@ -23,12 +23,6 @@
   MemberDao memberDao = new MemberDao();
   TradingInfoDao tradingInfoDao = new TradingInfoDao();
   
-  if (Objects.isNull(session) || Objects.isNull(session.getAttribute("signInMemberId"))) {
-	  System.out.println("1");
-	  response.sendRedirect("login.html");
-	  return;
-  }
-  System.out.println(session.getAttribute("signInMemberId"));
   Long signInMemberId = (Long)session.getAttribute("signInMemberId");
   
   MemberProfileDto memberProfile =  memberDao.findMemberProfileByMemberId(signInMemberId);

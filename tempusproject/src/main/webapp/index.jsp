@@ -1,3 +1,4 @@
+<%@page import="java.util.Objects"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -24,6 +25,25 @@
 	
 	if(request.getParameter("home")!=null){
 		context=request.getParameter("home");
+	}
+	
+	Long signInMemberId = null;
+	if (Objects.nonNull(session.getAttribute("signInMemberId"))) {
+		signInMemberId = (Long)session.getAttribute("signInMemberId");
+	}
+	
+	String[] whiteListPaths = new String[] {"serviceList.jsp", "home.html"}; 
+	boolean needToLogin = true;
+	for (String path : whiteListPaths) {
+		if (context.startsWith(path)) {
+			needToLogin = false;
+			break;
+		}
+	}
+	
+	if (needToLogin && Objects.isNull(signInMemberId)) {
+		response.sendRedirect("login.html");
+		return;
 	}
 %>
 <body>
