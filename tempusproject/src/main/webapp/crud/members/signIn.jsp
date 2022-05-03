@@ -33,7 +33,7 @@
 	<%
 	} else {
 		session.setAttribute("signInMemberId", findMember.getMemberId());
-		response.sendRedirect("../../home.html");
+		response.sendRedirect("../../index.jsp");
 	}
 	%>
 </body>
