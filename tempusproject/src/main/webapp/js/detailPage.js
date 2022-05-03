@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
 
 function addReservationConfirmModalEvent() {
-  const detailPageInfoReservationBtn = document.querySelector(".detailpage-info__reservationbtn");
+  const detailPageInfoReservationBtn = document.querySelector(".detailpage-info__basicbtn");
   const reservationConfirmCancel = document.querySelector(".reservation-confirm__cancel");
   const modalReservationConfirm = document.querySelector(".modal--reservation-confirm");
   
