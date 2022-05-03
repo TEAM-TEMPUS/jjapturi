@@ -19,12 +19,27 @@ public class ServiceInqueryDto {
 	public ServiceInqueryDto() {
 	}
 
-	public ServiceInqueryDto(Long serviceId, Long memberId, String types, String title, String category, String status, 
+//	public ServiceInqueryDto(Long serviceId, Long memberId, String types, String title, String category, String status, 
+//			String place, Date startDate, Date endDate, int price, String description) {
+//		super();
+//		this.serviceId = serviceId;
+//		this.memberId = memberId;
+//		this.types = types;
+//		this.title = title;
+//		this.category = category;
+//		this.status = status;
+//		this.place = place;
+//		this.startDate = startDate;
+//		this.endDate = endDate;
+//		this.price = price;
+//		this.description = description;
+//	}
+	
+	public ServiceInqueryDto(Long serviceId, Long memberId, String title, String category, String status, 
 			String place, Date startDate, Date endDate, int price, String description) {
 		super();
 		this.serviceId = serviceId;
 		this.memberId = memberId;
-		this.types = types;
 		this.title = title;
 		this.category = category;
 		this.status = status;
@@ -35,6 +50,22 @@ public class ServiceInqueryDto {
 		this.description = description;
 	}
 
+	public Long getServiceId() {
+		return serviceId;
+	}
+
+	public void setServiceId(Long serviceId) {
+		this.serviceId = serviceId;
+	}
+
+	public Long getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
+	}
+	
 	public String getTypes() {
 		return types;
 	}
@@ -109,7 +140,7 @@ public class ServiceInqueryDto {
 
 	@Override
 	public String toString() {
-		return "ServiceInqueryDto [types=" + types + ", title=" + title + ", category=" + category + ", place=" + place
+		return "ServiceInqueryDto [serviceId="+serviceId+",memberId="+memberId+",types=" + types + ", title=" + title + ", category=" + category + ", place=" + place
 				+ ", status = " + status + ",startDate=" + startDate + ", endDate=" + endDate + ", price=" + price + ", description="
 				+ description + "]";
 	}
