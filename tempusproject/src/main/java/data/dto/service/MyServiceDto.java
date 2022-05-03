@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class MyServiceDto {
 	private Long serviceId;
+	private Long memberId;
 	private String title;
 	private String status;
 	private String place;
@@ -13,10 +14,11 @@ public class MyServiceDto {
 	private String description;
 	private String types;
 
-	public MyServiceDto(Long serviceId, String title, String status, String place, Date startDate, Date endDate,
-			Long price, String description, String types) {
+	public MyServiceDto(Long serviceId, Long memberId, String title, String status, String place, Date startDate,
+			Date endDate, Long price, String description, String types) {
 		super();
 		this.serviceId = serviceId;
+		this.memberId = memberId;
 		this.title = title;
 		this.status = status;
 		this.place = place;
@@ -33,6 +35,14 @@ public class MyServiceDto {
 
 	public void setServiceId(Long serviceId) {
 		this.serviceId = serviceId;
+	}
+
+	public Long getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
 	}
 
 	public String getTitle() {
@@ -101,9 +111,9 @@ public class MyServiceDto {
 
 	@Override
 	public String toString() {
-		return "MyServiceDto [serviceId=" + serviceId + ", title=" + title + ", status=" + status + ", place=" + place
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", price=" + price + ", description="
-				+ description + ", types=" + types + "]";
+		return "MyServiceDto [serviceId=" + serviceId + ", memberId=" + memberId + ", title=" + title + ", status="
+				+ status + ", place=" + place + ", startDate=" + startDate + ", endDate=" + endDate + ", price=" + price
+				+ ", description=" + description + ", types=" + types + "]";
 	}
 
 }

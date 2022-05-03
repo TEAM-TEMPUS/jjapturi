@@ -191,7 +191,7 @@ public class ServiceDao {
 		ResultSet rs = null;
 
 		String sql =  
-				"select s.service_id, s.title, s.status, s.place, s.start_date, s.end_date, s.price, s.description, ti.types "
+				"select s.service_id, s.member_id, s.title, s.status, s.place, s.start_date, s.end_date, s.price, s.description, ti.types "
 				+ "from Service as s "
 				+ "inner join Trading_Info as ti "
 				+ "on ti.service_id = s.service_id "
@@ -208,6 +208,7 @@ public class ServiceDao {
 
 			while (rs.next()) {
 				Long serviceId = rs.getLong("service_id");
+				Long ownerId = rs.getLong("member_id");
 				String title = rs.getString("title");
 				String status = rs.getString("status");
 				String place = rs.getString("place");
@@ -217,7 +218,7 @@ public class ServiceDao {
 				String description = rs.getString("description");
 				String types = rs.getString("types");
 
-				list.add(new MyServiceDto(serviceId, title, status, place, startDate, endDate, price,
+				list.add(new MyServiceDto(serviceId, ownerId, title, status, place, startDate, endDate, price,
 						description, types));
 			}
 		} catch (SQLException e) {
