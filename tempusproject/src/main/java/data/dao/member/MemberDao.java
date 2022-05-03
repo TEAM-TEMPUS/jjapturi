@@ -126,7 +126,7 @@ public class MemberDao {
 	public MemberProfileDto findMemberProfileByMemberId(Long memberId) {
 		MemberProfileDto memberProfile = null;
 		DbConnect db = new DbConnect();		
-		String sql = "select m.nickname, m.self_introduction, mi.store_img_name "
+		String sql = "select m.nickname, m.self_introduction, mi.store_img_name, m.phone_number "
 				+ "from Member m "
 				+ "INNER JOIN Member_Image mi on m.member_id = mi.member_id "
 				+ "where m.member_id = ?";
@@ -143,7 +143,8 @@ public class MemberDao {
 				String nickname = rs.getString("nickname");
 				String selfIntroduction = rs.getString("self_introduction");
 				String storeImgName = rs.getString("store_img_name");
-				memberProfile = new MemberProfileDto(nickname, selfIntroduction, storeImgName);
+				String phoneNumber = rs.getString("phone_number");
+				memberProfile = new MemberProfileDto(nickname, selfIntroduction, storeImgName, phoneNumber);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
