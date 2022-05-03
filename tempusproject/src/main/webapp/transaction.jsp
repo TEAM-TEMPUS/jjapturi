@@ -1,3 +1,4 @@
+<%@page import="data.dto.service.MyServiceDto"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.DecimalFormat"%>
@@ -28,7 +29,10 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
 <link rel="stylesheet" type="text/css" href="css/screens/transactions.css" />
 <%
+Long signInMemberId = (Long) session.getAttribute("signInMemberId");
+
 ServiceDao serviceDao = new ServiceDao();
+TradingInfoDao tradingInfoDao = new TradingInfoDao();
 
 int totalCount; //총 서비스 수
 int totalPage; //총 페이지수
@@ -40,7 +44,7 @@ int sizePerBlock = 5; //한 블럭당 보여지는 페이지 개수
 int currentPage; //현재페이지
 
 //총갯수
-totalCount = serviceDao.getTotalCount();
+totalCount = tradingInfoDao.getTotalCountByMemberId(signInMemberId);
 
 //현재 페이지번호 읽기(단 null일경우는 1페이지로 설정)
 if (request.getParameter("currentPage") == null)
@@ -64,10 +68,7 @@ if (endPage > totalPage) {
 //각페이지에서 불러올 시작번호
 offset = (currentPage - 1) * sizePerPage;
 
-//각페이지에서 필요한 게시글 가져오기, 여기에 types를 추가하는게 맞는지는 모르겠지만 해보기
-List<ServiceInqueryDto> services = serviceDao.getList(offset, sizePerPage);
-
-Long memberId = Long.parseLong(request.getParameter("memberId"));
+List<MyServiceDto> myServices = serviceDao.findMyServicesByMemberId(signInMemberId, offset, sizePerPage);
 
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 DecimalFormat decimalFormat = new DecimalFormat("###,###");
@@ -77,45 +78,44 @@ ServiceImageDao serviceImageDao = new ServiceImageDao();
 
 List<List<ServiceImageDto>> serviceImagesList = new ArrayList<>();
 List<String> medalImageNames = new ArrayList<>();
-for (ServiceInqueryDto service : services) {
-	serviceImagesList.add(serviceImageDao.findAllByServiceId(service.getServiceId()));
-}
+for (MyServiceDto myService : myServices) {
+	serviceImagesList.add(serviceImageDao.findAllByServiceId(myService.getServiceId()));
 
-//서비스 거래 상태에 따라서 나오는 회원 등급
-MemberDao memberDao = new MemberDao();
-TradingInfoDao tradingInfoDao = new TradingInfoDao();
-
-for (ServiceInqueryDto service : services) {
-	List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(service.getMemberId());
-
-	int completeTradingCount = tradingInfos.size();
-
-	double totalGrade = 0;
-	int gradeSum = 0;
-	int grantedGradeCount = 0;
-	for (TradingInfoDto tradingInfo : tradingInfos) {
-		int grade = tradingInfo.getGrade();
-		if (grade > 0) {
-			gradeSum += grade;
-			grantedGradeCount++;
-		}
+	if (myService.getTypes().equals("owner")) {
+		medalImageNames.add("");
+		continue;
 	}
-
-	totalGrade = (double) gradeSum / grantedGradeCount;
-
-	String medalImageName;
-	if (completeTradingCount >= 100 && totalGrade >= 3.5) {
-		medalImageName = Grades.PLATINUM.getImagePath();
-	} else if (completeTradingCount >= 50 && totalGrade >= 3.0) {
-		medalImageName = Grades.GOLD.getImagePath();
-	} else if (completeTradingCount >= 10 && totalGrade >= 2.5) {
-		medalImageName = Grades.SILVER.getImagePath();
-	} else {
-		medalImageName = Grades.BRONZE.getImagePath();
-	}
-
+	
+	List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(myService.getMemberId());
+  
+  	int completeTradingCount = tradingInfos.size();
+  
+  	double totalGrade = 0;
+  	int gradeSum = 0;
+  	int grantedGradeCount = 0;
+  	for (TradingInfoDto tradingInfo : tradingInfos) {
+	  int grade = tradingInfo.getGrade();
+	  if (grade > 0) {
+		  gradeSum += grade;
+		  grantedGradeCount++;
+	  }
+ 	}
+  	
+  	totalGrade = (double) gradeSum / grantedGradeCount;
+  
+  	String medalImageName;
+  	if (completeTradingCount >= 100 && totalGrade >= 3.5) {
+  	  medalImageName = Grades.PLATINUM.getImagePath();
+  	} else if (completeTradingCount >= 50 && totalGrade >= 3.0) {
+  	  medalImageName = Grades.GOLD.getImagePath();
+ 	} else if (completeTradingCount >= 10 && totalGrade >= 2.5) {
+ 	  medalImageName = Grades.SILVER.getImagePath();
+ 	} else {
+ 	  medalImageName = Grades.BRONZE.getImagePath();
+  	}
+  	
 	medalImageNames.add(medalImageName);
-
+		
 }
 %>
 </head>
@@ -183,8 +183,8 @@ for (ServiceInqueryDto service : services) {
 			<div class="transaction__wrap">
 				<div class="transaction-item__wrap">
 					<%
-					for (int i = 0; i < services.size(); i++) {
-						ServiceInqueryDto service = services.get(i);
+					for (int i = 0; i < myServices.size(); i++) {
+						MyServiceDto myService = myServices.get(i);
 					%>
 					<div class="transaction-item">
 						<a href="#" class="transaction-item__inner">
@@ -195,38 +195,32 @@ for (ServiceInqueryDto service : services) {
 									<img src="img/medal-<%=medalImageNames.get(i)%>.svg" alt="" class="medal__img <%=medalImageNames.get(i)%>" />
 									</span>
 
-									<%
-									for (ServiceImageDto serviceImage : serviceImagesList.get(i)) {
-									%>
-
 									<img class="transaction-list__img"
-										src="img/<%=serviceImage.getStoreImageName()%>" alt="이미지" />
-									<%
-									}
-									%>
+										src="img/<%=serviceImagesList.get(i).get(0).getStoreImageName()%>" alt="이미지" />
+
 								</div>
 								<div class="transaction-item-text__wrap">
 									<div class="transaction-item__title">
-										<%=service.getTitle()%></div>
-									<div class="transaction-item__place"><%=service.getPlace()%></div>
+										<%=myService.getTitle()%></div>
+									<div class="transaction-item__place"><%=myService.getPlace()%></div>
 									<div class="transaction-item-date__wrap">
 										<div class="transaction-item-date__icon">
 											<span class="material-symbols-rounded"> calendar_today
 											</span>
 										</div>
 										<div class="date__wrap">
-											<span><%=sdf.format(service.getStartDate())%> ~ <%=sdf.format(service.getEndDate())%></span>
+											<span><%=sdf.format(myService.getStartDate())%> ~ <%=sdf.format(myService.getEndDate())%></span>
 										</div>
 									</div>
-									<div class="transaction-item__price"><%=decimalFormat.format(service.getPrice())%></div>
+									<div class="transaction-item__price"><%=decimalFormat.format(myService.getPrice())%></div>
 									<div class="transaction-item__description">
-										<span class="description__text"><%=service.getDescription()%>
+										<span class="description__text"><%=myService.getDescription()%>
 										</span>
 									</div>
 
 									<div class="box__item-btn">
 										<%
-										if (memberId == service.getMemberId()) {
+										if (signInMemberId == myService.getMemberId()) {
 										%>
 										<button type="submit" class="btn__update">수정</button>
 										<button type="submit" class="btn__delete">삭제</button>
@@ -239,9 +233,9 @@ for (ServiceInqueryDto service : services) {
 							</div>
 
 							<div class="box__information-reservation">
-							<%String status = service.getStatus(); %>
+							<%String status = myService.getStatus(); %>
 							
-							
+				
 								<button type="submit" class="btn__sale">판매중</button>
 								<button type="submit" class="btn__reserved">예약중</button>
 								<button type="submit" class="btn__completed">거래완료</button>
