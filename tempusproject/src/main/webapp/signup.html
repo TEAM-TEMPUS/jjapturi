@@ -38,7 +38,7 @@
       <form
         class="form-signup"
         id="join"
-        action="join"
+        action="crud/members/registration.jsp"
         method="post"
         name="joinform"
       >
@@ -78,12 +78,12 @@
 
         <!-- 비밀번호 -->
         <div class="form-label-group">
-          <label for="pwd">비밀번호</label>
+          <label for="password">비밀번호</label>
           <br />
           <input
             type="password"
-            id="pwd"
-            name="pwd"
+            id="password"
+            name="password"
             class="form-control form-margin-top"
             placeholder="비밀번호"
             required=""
@@ -104,11 +104,12 @@
         </div>
 
         <div class="form-label-group">
-          <label for="addr">주소</label>
+          <label for="address">주소</label>
           <br />
           <input
             type="text"
-            name="addr"
+            id="address"
+            name="address"
             class="form-control form-margin-top"
             placeholder="주소"
           />
@@ -128,12 +129,12 @@
         </div>
 
         <div class="form-label-group btn-sign-up-margin">
-          <label for="phone">휴대전화</label>
+          <label for="phoneNumber">휴대전화</label>
           <br />
           <input
             type="text"
-            id="phone"
-            name="phone"
+            id="phoneNumber"
+            name="phoneNumber"
             class="form-control form-margin-top"
             placeholder="휴대전화"
             required=""
