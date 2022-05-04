@@ -1,3 +1,4 @@
+<%@page import="data.dao.tradinginfo.TradingInfoDao"%>
 <%@page import="data.dto.service.ServiceDto"%>
 <%@page import="data.dao.service.ServiceDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -12,13 +13,18 @@
 <%
 request.setCharacterEncoding("UTF-8");
 ServiceDao serviceDao = new ServiceDao();
+TradingInfoDao tradingInfo = new TradingInfoDao();
 
 String status = request.getParameter("status");
 Long serviceId = Long.parseLong(request.getParameter("serviceId"));
+Long memberId = (Long)session.getAttribute("signInMemberId");
 
-ServiceDto service = new ServiceDto(status, serviceId);
+serviceDao.changeStatus(new ServiceDto(status, serviceId));
 
-serviceDao.changeStatus(service);
+if (status.equals("basic")) {
+	tradingInfo.deleteByMemberIdAndServiceId(memberId, serviceId);	
+}
+
 %>
 </body>
 </html>
