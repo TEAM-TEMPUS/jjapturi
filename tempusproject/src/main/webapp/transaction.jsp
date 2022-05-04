@@ -179,17 +179,7 @@ for (MyServiceDto myService : myServices) {
 										</span>
 									</div>
 
-									<div class="box__item-btn">
-										<%
-										if (signInMemberId == myService.getMemberId()) {
-										%>
-										<button type="button" class="btn__update"
-										onclick="href='index.jsp?home=serviceModify.html?serviceId=<%= myService.getServiceId()%>'">수정</button>
-										<button type="button" class="btn__delete">삭제</button>
-										<%
-										}
-										%>
-									</div>
+									
 								</div>
 
 							</div>
@@ -218,6 +208,19 @@ for (MyServiceDto myService : myServices) {
 							<%} %>
 							
 							<% %>
+							<div class="box__item-btn">
+										<%
+										if (signInMemberId == myService.getMemberId()) {
+										%>
+										<a href="index.jsp?home=serviceModify.html?serviceId=<%= myService.getServiceId()%>">
+										<button type="button" class="btn__update"
+										onclick="href='index.jsp?home=serviceModify.html?serviceId=<%= myService.getServiceId()%>'">수정</button>
+										</a>
+										<button type="button" class="btn__delete">삭제</button>
+										<%
+										}
+										%>
+									</div>
 							</div>
 						
 					</div>
