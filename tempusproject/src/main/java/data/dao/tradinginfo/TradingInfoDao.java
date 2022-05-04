@@ -57,7 +57,7 @@ public class TradingInfoDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			db.dbClose(ps, conn);
+			db.dbClose(rs, ps, conn);
 		}
 		
 		return gradeList;
@@ -89,4 +89,25 @@ public class TradingInfoDao {
 		return n;
 	}	
 
+	public void deleteByMemberIdAndServiceId(Long memberId, Long serviceId) {
+		int n = 0;
+
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+
+		String sql = "delete from Trading_Info where member_id = ? and service_id = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, memberId);
+			pstmt.setLong(2, serviceId);
+
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(pstmt, conn);
+		}
+	}	
 }
