@@ -14,8 +14,8 @@ public class ServiceImageDao {
 
 	DbConnect db = new DbConnect();
 
-	public void store(ServiceImageDto serviceImage) {
-
+	public static void store(ServiceImageDto serviceImage) {
+		DbConnect db = new DbConnect();
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
 
