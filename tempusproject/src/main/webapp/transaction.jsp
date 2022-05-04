@@ -183,7 +183,8 @@ for (MyServiceDto myService : myServices) {
 										<%
 										if (signInMemberId == myService.getMemberId()) {
 										%>
-										<button type="button" class="btn__update">수정</button>
+										<button type="button" class="btn__update"
+										onclick="href='index.jsp?home=serviceModify.html?serviceId=<%= myService.getServiceId()%>'">수정</button>
 										<button type="button" class="btn__delete">삭제</button>
 										<%
 										}
