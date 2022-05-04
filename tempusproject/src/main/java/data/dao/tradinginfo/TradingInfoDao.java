@@ -7,11 +7,32 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import data.dto.member.TradingInfoDto;
+import data.dto.tradinginfo.TradingInfoDto;
 import mysql.db.DbConnect;
 
 public class TradingInfoDao {
 	DbConnect db = new DbConnect();
+	
+	public void updateGrade(TradingInfoDto tradingInfo){
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update Trading_Info set grade = ? where service_id = ? and member_id != ?";
+	
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, tradingInfo.getGrade());
+			pstmt.setLong(2, tradingInfo.getServiceId());
+			pstmt.setLong(3, tradingInfo.getMemberId());
+				
+			pstmt.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
 	
 	public List<TradingInfoDto> findCompleteTradingInfosByMemberId(Long memberId) {
 		List<TradingInfoDto> gradeList = new ArrayList<>();
