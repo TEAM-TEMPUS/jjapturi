@@ -338,7 +338,6 @@ button {
 	border-radius: 20px;
 	width: 90px;
 	height: 30px;
-	margin-left: 10px;
 	cursor: pointer;
 	box-shadow: 0 1px 8px rgb(0 0 0/ 10%);
 }
@@ -352,9 +351,13 @@ button {
 	border-radius: 20px;
 	width: 90px;
 	height: 30px;
-	margin-left: 10px;
 	cursor: pointer;
 	box-shadow: 0 1px 8px rgb(0 0 0/ 10%);
+}
+
+.box__item-btn{
+	display: flex;
+	flex-direction: column;
 }
 
 .btn--selected {
@@ -369,7 +372,6 @@ button {
 	border-radius: 20px;
 	width: 90px;
 	height: 30px;
-	margin-left: 10px;
 	cursor: pointer;
 	box-shadow: 0 1px 8px rgb(0 0 0/ 10%);
 }
@@ -395,6 +397,7 @@ button {
 	display: flex;
 	flex-direction: column;
 	gap: 0.8rem;
+	align-items: center;
 }
 
 .btn__update {
@@ -417,7 +420,6 @@ button {
 	cursor: pointer;
 	border: 1.5px solid #4751fd;
 	margin-top: 10px;
-	margin-left: 5px;
 }
 
 .transaction-item__title {
