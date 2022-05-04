@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
 
 
-function addStarRadingEvent() {
+function addStarRatingEvent() {
   const starRatingFormCancel = document.querySelector(".star-rating-form__cancel");
   const modalStarRating = document.querySelector(".modal--star-rating");
 
@@ -19,4 +19,20 @@ function addStarRadingEvent() {
   })
 }
 
-addStarRadingEvent();
+addStarRatingEvent();
+
+$(document).on("click",".btn__cancle",function(event){
+  const serviceId = event.target.parentElement.getAttribute("serviceid");
+
+  $.ajax({
+    
+    type:"post",
+    dataType:"html",
+    url:"crud/service/statusChange.jsp",
+    data:{"status":"basic", "serviceId":serviceId},
+    success:function(){
+      location.reload();
+    }
+  });
+  
+});
