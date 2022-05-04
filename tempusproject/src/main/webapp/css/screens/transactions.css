@@ -386,6 +386,11 @@ button {
 	gap: 3rem;
 }
 
+.transaction-item-text__wrap {
+	width: 500px;
+	text-overflow: ellipsis;	
+}
+
 .box__information-reservation {
 	display: flex;
 	flex-direction: column;
