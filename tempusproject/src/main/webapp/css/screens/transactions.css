@@ -263,10 +263,7 @@ button {
 .transaction-item {
 	/* width: 18rem;*/
 	width: 60rem;
-	margin-bottom: 3rem
-}
-
-.transaction-item__inner {
+	margin-bottom: 3rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;

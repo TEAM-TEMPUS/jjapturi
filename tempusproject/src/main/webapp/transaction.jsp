@@ -192,8 +192,8 @@ for (MyServiceDto myService : myServices) {
 								</div>
 
 							</div>
-
-							<div class="box__information-reservation">
+						</a>
+						<div class="box__information-reservation">
 							<%String status = myService.getStatus(); 
 							  String types = myService.getTypes();
 							%>
@@ -216,7 +216,7 @@ for (MyServiceDto myService : myServices) {
 							
 							<% %>
 							</div>
-						</a>
+						
 					</div>
 					<%
 					}
@@ -366,8 +366,6 @@ for (MyServiceDto myService : myServices) {
 
 	<script src="js/default.js"></script>
 	<script src="js/serviceNavigation.js"></script>
-	<script type="text/javascript">
-
-	</script>
+	<script src="js/transaction.js"></script>
 </body>
 </html>
