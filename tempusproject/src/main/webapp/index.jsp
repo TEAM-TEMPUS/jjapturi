@@ -18,9 +18,6 @@
 
 </head>
 <%
-	//프로젝트 경로구하기
-	String root=request.getContextPath();
-	
 	String context="home.html";
 	
 	if(request.getParameter("home")!=null){

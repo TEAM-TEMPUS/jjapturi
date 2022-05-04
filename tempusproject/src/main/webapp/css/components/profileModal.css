@@ -75,6 +75,12 @@
   width: 70px;
 }
 
+.transaction-info__item  {
+  display: block;
+  width: 70px;
+  font-size: 16px;
+}
+
 .transaction-info__title {
   font-size: 18px;
   color: #787878;

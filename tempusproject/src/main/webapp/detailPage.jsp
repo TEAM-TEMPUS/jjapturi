@@ -53,6 +53,7 @@ Long serviceId = Long.parseLong(request.getParameter("serviceId"));
 
 // TODO 로그인 처리 하면, 로그인한 회원 ID로 변경하기
 Long signInMemberId = (Long) session.getAttribute("signInMemberId");
+Long memberId = Long.parseLong(request.getParameter("memberId"));
 
 MemberDao memberDao = new MemberDao();
 ServiceDao serviceDao = new ServiceDao();
@@ -73,9 +74,9 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
 //이미지 조회 //타입은 dto에있는거다
 List<ServiceImageDto> images = serviceImageDao.findAllByServiceId(serviceId);
 //등록자 프로필과 닉네임
-MemberProfileDto memberprofiledto = memberDao.findMemberProfileByMemberId(signInMemberId);
+MemberProfileDto memberprofiledto = memberDao.findMemberProfileByMemberId(memberId);
 //프로필 등급
-List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(signInMemberId);
+List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(memberId);
   
   int completeTradingCount = tradingInfos.size();
   
@@ -91,7 +92,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
   }
   
   totalGrade = (double) gradeSum / grantedGradeCount;
-  
+  DecimalFormat decimalFormat = new DecimalFormat("#.#");
   String rank;
   String rankImageName;
   if (completeTradingCount >= 100 && totalGrade >= 3.5) {
@@ -333,7 +334,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
 
                     <li class="transaction-info__item">
                       <span class="transaction-info__title">평점</span><br />
-                      <span class="transaction-info__content"><%= totalGrade > 0 ? totalGrade : "없음" %></span>
+                      <span class="transaction-info__content"><%= totalGrade > 0 ? decimalFormat.format(totalGrade)  : "없음" %></span>
                     </li>
                   </ul>
                 </div>
