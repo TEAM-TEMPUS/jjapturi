@@ -193,7 +193,7 @@ for (MyServiceDto myService : myServices) {
 
 							</div>
 						</a>
-						<div class="box__information-reservation">
+						<div class="box__information-reservation" serviceid="<%= myService.getServiceId()%>">
 							<%String status = myService.getStatus(); 
 							  String types = myService.getTypes();
 							%>
@@ -298,11 +298,15 @@ for (MyServiceDto myService : myServices) {
 	<section class="modals">
         <article class="modal modal--star-rating">
           <div class="modal__body modal__body--star-rating">
-            <form action="" method="" class="star-rating-form">
+            <form action="crud/transactions/edit.jsp" method="post" class="star-rating-form">
               <h1 class="star-rating-form__description">
                 거래에 만족하셨나요?
               </h1>
-
+	
+			  <input type="hidden" id="memberId" name="memberId" class="star-rating-form__member" value="<%= signInMemberId%>">
+			  
+			  <input type="hidden" id="serviceId" name="serviceId" class="star-rating-form__service">
+			  
               <div class="star-rating">
                 <input
                   type="radio"
