@@ -11,13 +11,13 @@ public class ServiceImageDaoTest {
 	public static void main(String[] args) {
 		ServiceImageDaoTest test = new ServiceImageDaoTest();
 		
-//		test.store();
-		test.findAllByServiceId(1L);
+		test.store();
+//		test.findAllByServiceId(1L);
 	}
 	
 	public void store() {
-		ServiceImageDto dto = new ServiceImageDto(21L,"testImg23123.png");
-		dao.store(dto);
+		ServiceImageDto dto = new ServiceImageDto(6L,"testImg2355.png");
+		ServiceImageDao.store(dto);
 	}
 	
 	public void findAllByServiceId(Long serviceId) {

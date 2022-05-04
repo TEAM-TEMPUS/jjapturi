@@ -28,6 +28,11 @@ public class ServiceImageDto {
 	public void setStoreImageName(String storeImageName) {
 		this.storeImageName = storeImageName;
 	}
+	
+	public ServiceImageDto(Long serviceId) {
+		super();
+		this.serviceId = serviceId;
+	}
 
 	public ServiceImageDto(Long serviceId, String storeImageName) {
 		super();
