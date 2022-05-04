@@ -171,7 +171,7 @@
           	ServiceInqueryDto service = services.get(i);
           %>
             <div class="service-item">
-              <a href="#" class="service-item__inner">
+              <a href="index.jsp?home=detailPage.jsp?serviceId=<%= service.getServiceId()%>" class="service-item__inner">
                 <div class="service-item__img img-hover--color">
                   <span class="medal--status">
                     <img src="img/medal-<%= medalImageNames.get(i) %>.svg" alt="" class="medal__img <%= medalImageNames.get(i) %>" />
@@ -224,13 +224,13 @@
               <span class="material-symbols-rounded"> arrow_back_ios_new </span>
             </a>
             <%} else {%>
-            <a href="/tempusproject/serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= startPage -1 %>" class="pagenation__item pagenation--previous" tabindex="-1" aria-disabled="true">
+            <a href="index.jsp?home=serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= startPage -1 %>" class="pagenation__item pagenation--previous" tabindex="-1" aria-disabled="true">
               <span class="material-symbols-rounded"> arrow_back_ios_new </span>
             </a>
             <%} %>
             <% for (int i = startPage; i<= endPage; i++) {%>
             
-            <a href="/tempusproject/serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= i %>" class="pagenation__item pagenation-number <%= i == currentPage ? "current" : ""%>"><%= i %></a>
+            <a href="index.jsp?home=serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= i %>" class="pagenation__item pagenation-number <%= i == currentPage ? "current" : ""%>"><%= i %></a>
             <%} %>
             <%
             if (totalPage == endPage){
@@ -239,7 +239,7 @@
               <span class="material-symbols-rounded"> arrow_forward_ios </span>
             </a>
             <%} else {%>
-            <a href="/tempusproject/serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= endPage + 1 %>" class="pagenation__item pagenation--next">
+            <a href="index.jsp?home=serviceList.jsp?category=<%=category %>&types=<%=types %>&currentPage=<%= endPage + 1 %>" class="pagenation__item pagenation--next">
               <span class="material-symbols-rounded"> arrow_forward_ios </span>
             </a>
             <%} %>

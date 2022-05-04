@@ -52,7 +52,7 @@
 Long serviceId = Long.parseLong(request.getParameter("serviceId"));
 
 // TODO 로그인 처리 하면, 로그인한 회원 ID로 변경하기
-Long memberId = Long.parseLong(request.getParameter("memberId"));
+Long signInMemberId = (Long) session.getAttribute("signInMemberId");
 
 MemberDao memberDao = new MemberDao();
 ServiceDao serviceDao = new ServiceDao();
@@ -73,9 +73,9 @@ List<CommentInqueryDto> comments = commentDao.findAllByServiceId(serviceId);
 //이미지 조회 //타입은 dto에있는거다
 List<ServiceImageDto> images = serviceImageDao.findAllByServiceId(serviceId);
 //등록자 프로필과 닉네임
-MemberProfileDto memberprofiledto = memberDao.findMemberProfileByMemberId(memberId);
+MemberProfileDto memberprofiledto = memberDao.findMemberProfileByMemberId(signInMemberId);
 //프로필 등급
-List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(memberId);
+List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMemberId(signInMemberId);
   
   int completeTradingCount = tradingInfos.size();
   
@@ -228,7 +228,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
             </div>
 			<form action="crud/comments/registration.jsp" method="post">
             <!-- 상품문의 내용적기 -->
-            <input type="hidden" name="memberId" value="<%=memberId%>">
+            <input type="hidden" name="memberId" value="<%=signInMemberId%>">
             <input type="hidden" name="serviceId" value="<%=serviceId%>">
             <div class="detailpage-info__inquiry">
               <h5 class="detailpage-info__inquirys">서비스 문의</h5>
@@ -258,7 +258,7 @@ List<TradingInfoDto> tradingInfos = tradingInfoDao.findCompleteTradingInfosByMem
                   <div class="detailpage-comment">
                   <div class="nickname-btn__wrap">
                   <span class="detailpage-info__usernickname"><%=comment.getNickname()%></span>
-                  <% if (memberId == comment.getMemberId()) { %>
+                  <% if (signInMemberId == comment.getMemberId()) { %>
                   <a href="" class="">
                   	<i class="bi bi-pencil">
                   	<button type="button" class="detailpage-info__updatebtn" style= "cursor: pointer;">수정</button>

@@ -148,7 +148,7 @@ for (MyServiceDto myService : myServices) {
 						MyServiceDto myService = myServices.get(i);
 					%>
 					<div class="transaction-item">
-						<a href="#" class="transaction-item__inner">
+						<a href="index.jsp?home=detailPage.jsp?serviceId=<%= myService.getServiceId()%>" class="transaction-item__inner">
 
 							<div class="transaction-text__img">
 								<div class="transaction-item__img">
@@ -183,7 +183,8 @@ for (MyServiceDto myService : myServices) {
 										<%
 										if (signInMemberId == myService.getMemberId()) {
 										%>
-										<button type="button" class="btn__update">수정</button>
+										<button type="button" class="btn__update"
+										onclick="href='index.jsp?home=serviceModify.html?serviceId=<%= myService.getServiceId()%>'">수정</button>
 										<button type="button" class="btn__delete">삭제</button>
 										<%
 										}
