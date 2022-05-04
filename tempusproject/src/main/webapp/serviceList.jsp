@@ -50,7 +50,7 @@
 	int startPage; //각 블럭의 시작페이지
 	int endPage; //각 블럭의 끝페이지
 	int offset; //각 페이지의 시작번호
-	int sizePerPage = 5; //한 페이지에 보여질 글 갯수
+	int sizePerPage = 20; //한 페이지에 보여질 글 갯수
 	int sizePerBlock = 5; //한 블럭당 보여지는 페이지 개수
 	int currentPage; //현재페이지
 	
