@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import data.dto.service.ServiceDto;
+import data.dto.service.ServiceImageDto;
 import data.dto.service.ServiceInqueryDto;
 import data.dto.service.MyServiceDto;
 import mysql.db.DbConnect;
@@ -16,24 +17,25 @@ import mysql.db.DbConnect;
 public class ServiceDao {
 	DbConnect db = new DbConnect();
 
-//	���� ���, �׽�Ʈ�Ϸ�
+//	서비스 등록
 	public Long store(ServiceDto service) {
 
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
-		String sql = "insert into Service(types,title,category,place,start_date,end_date,price,description) values(?,?,?,?,?,?,?,?)";
+		String sql = "insert into Service(member_id,types,title,category,place,start_date,end_date,price,description) values(?,?,?,?,?,?,?,?,?)";
 
 		try {
 
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, service.getTypes());
-			pstmt.setString(2, service.getTitle());
-			pstmt.setString(3, service.getCategory());
-			pstmt.setString(4, service.getPlace());
-			pstmt.setString(5, service.getStartDate());
-			pstmt.setString(6, service.getEndDate());
-			pstmt.setInt(7, service.getPrice());
-			pstmt.setString(8, service.getDescription());
+			pstmt.setLong(1, service.getMemberId());
+			pstmt.setString(2, service.getTypes());
+			pstmt.setString(3, service.getTitle());
+			pstmt.setString(4, service.getCategory());
+			pstmt.setString(5, service.getPlace());
+			pstmt.setString(6, service.getStartDate());
+			pstmt.setString(7, service.getEndDate());
+			pstmt.setInt(8, service.getPrice());
+			pstmt.setString(9, service.getDescription());
 
 			pstmt.execute();
 		} catch (SQLException e) {
@@ -43,7 +45,7 @@ public class ServiceDao {
 		}
 		return getLastIndex();
 	}
-
+	
 //	아이디값 받아오는거
 
 	private Long getLastIndex() {
@@ -79,11 +81,11 @@ public class ServiceDao {
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
 
-		String sql = "update Service set types=?, title=?, category=?, place=?, start_date=?, end_date=?, price=?, description=? where service_id=?";
+		String sql = "update Service set member_id=? types=?, title=?, category=?, place=?, start_date=?, end_date=?, price=?, description=? where service_id=?";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-
+			pstmt.setLong(1, service.getMemberId());
 			pstmt.setString(1, service.getTypes());
 			pstmt.setString(2, service.getTitle());
 			pstmt.setString(3, service.getCategory());

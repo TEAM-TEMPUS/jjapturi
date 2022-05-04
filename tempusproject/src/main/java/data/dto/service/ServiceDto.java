@@ -2,6 +2,7 @@ package data.dto.service;
 
 public class ServiceDto {
 
+	private Long memberId;
 	private String types;
 	private String title;
     private String category;
@@ -14,10 +15,11 @@ public class ServiceDto {
 	private Long serviceId;
     
 //    Date를 전부 String으로 바꿈
-    public ServiceDto(String types, String title, String category, 
+    public ServiceDto(Long memberId, String types, String title, String category, 
     		String status, String place,String startDate, String endDate, 
     		int price, String description) {
     	super();
+    	this.memberId = memberId;
     	this.types = types;
     	this.title = title;
     	this.category = category;
@@ -28,11 +30,12 @@ public class ServiceDto {
     	this.price = price;
     	this.description = description;
     }
-    
-    public ServiceDto(String types, String title, String category, 
+
+	public ServiceDto(Long memberId, String types, String title, String category, 
     		String status, String place, String startDate, String endDate, 
     		int price, String description, Long serviceId) {
-
+		super();
+		this.memberId = memberId;
     	this.types = types;
     	this.title = title;
     	this.category = category;
@@ -45,9 +48,11 @@ public class ServiceDto {
     	this.serviceId = serviceId;
     }
     
-    public ServiceDto(String types, String title, String category, String place, String startDate, String endDate,
+    public ServiceDto(Long memberId, String types, String title, String category, String place, String startDate, String endDate,
 			int price, String description) {
 		super();
+		
+		this.memberId = memberId;
 		this.types = types;
 		this.title = title;
 		this.category = category;
@@ -75,6 +80,14 @@ public class ServiceDto {
 
 	public void setServiceId(Long serviceId) {
 		this.serviceId = serviceId;
+	}
+	
+    public Long getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
 	}
 
 	public String getTypes() {
