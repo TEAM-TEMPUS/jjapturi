@@ -1,4 +1,4 @@
-.start-rating-form {
+.star-rating-form {
   width: 862px;
   height: 484px;
   background-color: white;
@@ -10,7 +10,7 @@
   border: 2px solid #d4d4d4;
 }
 
-.start-rating-form__description {
+.star-rating-form__description {
   margin-top: 85px;
   text-align: center;
   font-weight: 700;
@@ -37,12 +37,12 @@
   color: #d8d8d8;
 }
 
-.start-rating-form__buttons {
+.star-rating-form__buttons {
   margin-bottom: 57px;
 }
 
-.start-rating-form__check, 
-.start-rating-form__cancel {
+.star-rating-form__check, 
+.star-rating-form__cancel {
   width: 344px;
   height: 83px;
   border: none;
@@ -52,17 +52,17 @@
   cursor: pointer;
 }
 
-.start-rating-form__check:active, 
-.start-rating-form__cancel:active {
+.star-rating-form__check:active, 
+.star-rating-form__cancel:active {
   opacity: 0.7;
 }
 
-.start-rating-form__check {
+.star-rating-form__check {
   margin-right: 30px;
   background-color: #EFEFEF;
 }
 
-.start-rating-form__cancel {
+.star-rating-form__cancel {
   background-color: #4751FD;
   color: white;
 }

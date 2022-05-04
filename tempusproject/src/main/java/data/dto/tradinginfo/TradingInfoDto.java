@@ -7,6 +7,11 @@ public class TradingInfoDto {
 	private int grade;
 	private String types;
 
+	public TradingInfoDto(int grade) {
+		super();
+		this.grade = grade;
+	}
+
 	public TradingInfoDto(Long memberId, Long serviceId, int grade) {
 		super();
 		this.memberId = memberId;

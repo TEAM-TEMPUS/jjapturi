@@ -7,11 +7,32 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import data.dto.member.TradingInfoDto;
+import data.dto.tradinginfo.TradingInfoDto;
 import mysql.db.DbConnect;
 
 public class TradingInfoDao {
 	DbConnect db = new DbConnect();
+	
+	public void updateGrade(TradingInfoDto tradingInfo){
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update Trading_Info set grade = ? where service_id = ? and member_id != ?";
+	
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, tradingInfo.getGrade());
+			pstmt.setLong(2, tradingInfo.getServiceId());
+			pstmt.setLong(3, tradingInfo.getMemberId());
+				
+			pstmt.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
 	
 	public List<TradingInfoDto> findCompleteTradingInfosByMemberId(Long memberId) {
 		List<TradingInfoDto> gradeList = new ArrayList<>();
@@ -36,7 +57,7 @@ public class TradingInfoDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			db.dbClose(ps, conn);
+			db.dbClose(rs, ps, conn);
 		}
 		
 		return gradeList;
@@ -68,4 +89,25 @@ public class TradingInfoDao {
 		return n;
 	}	
 
+	public void deleteByMemberIdAndServiceId(Long memberId, Long serviceId) {
+		int n = 0;
+
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+
+		String sql = "delete from Trading_Info where member_id = ? and service_id = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, memberId);
+			pstmt.setLong(2, serviceId);
+
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(pstmt, conn);
+		}
+	}	
 }

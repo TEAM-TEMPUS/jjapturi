@@ -1,8 +1,8 @@
+<%@page import="data.dto.tradinginfo.TradingInfoDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="data.dao.member.MemberDao"%>
 <%@page import="common.Grades"%>
 <%@page import="data.dao.tradinginfo.TradingInfoDao"%>
-<%@page import="data.dto.member.TradingInfoDto"%>
 <%@page import="data.dto.service.ServiceImageDto"%>
 <%@page import="data.dao.service.ServiceImageDao"%>
 <%@page import="java.text.DecimalFormat"%>

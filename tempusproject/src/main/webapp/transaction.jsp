@@ -1,9 +1,9 @@
+<%@page import="data.dto.tradinginfo.TradingInfoDto"%>
 <%@page import="data.dto.service.MyServiceDto"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="common.Grades"%>
-<%@page import="data.dto.member.TradingInfoDto"%>
 <%@page import="data.dto.member.MemberProfileDto"%>
 <%@page import="data.dao.tradinginfo.TradingInfoDao"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -21,7 +21,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+    <!--1번 cdn방법 slick에서 css링크가져옴--> 
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+     
+   <!--8번 xeicon을 가져온다 방법: xeicon사이트-> 메뉴바 get started -> 사이트 <head> 태그 안에 아래의 코드를 붙입니다 밑 코드 복사
+       그다음 라이브러리를 들어가 원하는 아이콘을 가져온다-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
+   <!--5번 제이쿼리 가져오기-->
+   <!--제이쿼리 다운방법: 제이쿼리 홈페이지->다운로드->맨아래 cdn링크클릭-> 맨위 minified클릭->코드 복사-->
+   <!--제이쿼리 스크립트 삽입 방법은 라이브러리 제일 맨위에 와야한다-->
+   <!--src남겨놓고 다 삭제-->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   <!--2번 cdn방법 slick에서 js링크가져옴-->
+   <!--1번 2번 실행 안될시 //cdn 앞에 http://넣어줘야 한다.-->
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!-- google Material Icons -->
 <link rel="stylesheet"
 	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -168,8 +183,8 @@ for (MyServiceDto myService : myServices) {
 										<%
 										if (signInMemberId == myService.getMemberId()) {
 										%>
-										<button type="submit" class="btn__update">수정</button>
-										<button type="submit" class="btn__delete">삭제</button>
+										<button type="button" class="btn__update">수정</button>
+										<button type="button" class="btn__delete">삭제</button>
 										<%
 										}
 										%>
@@ -177,30 +192,33 @@ for (MyServiceDto myService : myServices) {
 								</div>
 
 							</div>
-
-							<div class="box__information-reservation">
+						</a>
+						<div class="box__information-reservation" serviceid="<%= myService.getServiceId()%>">
 							<%String status = myService.getStatus(); 
 							  String types = myService.getTypes();
 							%>
 							<%if (types.equals("owner")) {%>
-								<button type="submit" class="btn__sale <%=status.equals("basic") ? " btn--selected" : ""%>">판매중</button>
-								<button type="submit" class="btn__reserved <%=status.equals("reservation") ? " btn--selected" : ""%>">예약중</button>
-								<button type="submit" class="btn__completed <%=status.equals("completion") ? " btn--selected" : ""%>">거래완료</button>
+								<button type="button" class="btn__sale <%=status.equals("basic") ? " btn--selected" : ""%>">판매중</button>
+								<button type="button" class="btn__reserved <%=status.equals("reservation") ? " btn--selected" : ""%>">예약중</button>
+								<button type="button" class="btn__completed <%=status.equals("completion") ? " btn--selected" : ""%>">거래완료</button>
 								<%if (status.equals("completion")) { %>
-								<button type="submit" class="btn__star">리뷰</button>
+								<button type="button" class="btn__star">리뷰</button>
 								<%} %>
 								
 							<%} else { // custom인 경우%>
-								<button type="submit" class="btn__cancle <%=status.equals("reservation") ? " btn--selected" : ""%>">예약취소</button>
-								<button type="submit" class="btn__completed <%=status.equals("completion") ? " btn--selected" : ""%>">거래완료</button>
+								
 								<%if (status.equals("completion")) { %>
-								<button type="submit" class="btn__star">리뷰</button>
-								<%} %>
+								<button type="button" class="btn__completed btn--selected">거래완료</button>
+								<button type="button" class="btn__star">리뷰</button>
+								
+								<%} else {%>
+								<button type="button" class="btn__cancle btn--selected">예약취소</button>								
+								<%}%>
 							<%} %>
 							
 							<% %>
 							</div>
-						</a>
+						
 					</div>
 					<%
 					}
@@ -222,7 +240,7 @@ for (MyServiceDto myService : myServices) {
 					} else {
 					%>
 					<a
-						href="/tempusproject/transac.jsp?currentPage=<%=startPage - 1%>"
+						href="index.jsp?home=transaction.jsp?currentPage=<%=startPage - 1%>"
 						class="pagenation__item pagenation--previous" tabindex="-1"
 						aria-disabled="true"> <span class="material-symbols-rounded">
 							arrow_back_ios_new </span>
@@ -234,7 +252,7 @@ for (MyServiceDto myService : myServices) {
 					for (int i = startPage; i <= endPage; i++) {
 					%>
 
-					<a href="/tempusproject/serviceList.jsp?currentPage=<%=i%>"
+					<a href="index.jsp?home=transaction.jsp?currentPage=<%=i%>"
 						class="pagenation__item pagenation-number <%=i == currentPage ? "current" : ""%>"><%=i%></a>
 					<%
 					}
@@ -249,7 +267,7 @@ for (MyServiceDto myService : myServices) {
 					} else {
 					%>
 					<a
-						href="/tempusproject/serviceList.jsp?currentPage=<%=endPage + 1%>"
+						href="index.jsp?home=transaction.jsp?currentPage=<%=endPage + 1%>"
 						class="pagenation__item pagenation--next"> <span
 						class="material-symbols-rounded"> arrow_forward_ios </span>
 					</a>
@@ -278,8 +296,82 @@ for (MyServiceDto myService : myServices) {
 			</div>
 		</div>
 	</section>
+	
+	<section class="modals">
+        <article class="modal modal--star-rating">
+          <div class="modal__body modal__body--star-rating">
+            <form action="crud/transactions/edit.jsp" method="post" class="star-rating-form">
+              <h1 class="star-rating-form__description">
+                거래에 만족하셨나요?
+              </h1>
+	
+			  <input type="hidden" id="memberId" name="memberId" class="star-rating-form__member" value="<%= signInMemberId%>">
+			  
+			  <input type="hidden" id="serviceId" name="serviceId" class="star-rating-form__service">
+			  
+              <div class="star-rating">
+                <input
+                  type="radio"
+                  id="5-stars"
+                  name="grade"
+                  value="5"
+                  class="star-rating__radio"
+                />
+                <label for="5-stars" class="star-rating__star">★</label>
+
+                <input
+                  type="radio"
+                  id="4-stars"
+                  name="grade"
+                  value="4"
+                  class="star-rating__radio"
+                />
+                <label for="4-stars" class="star-rating__star">★</label>
+
+                <input
+                  type="radio"
+                  id="3-stars"
+                  name="grade"
+                  value="3"
+                  class="star-rating__radio"
+                />
+                <label for="3-stars" class="star-rating__star">★</label>
+
+                <input
+                  type="radio"
+                  id="2-stars"
+                  name="grade"
+                  value="2"
+                  class="star-rating__radio"
+                />
+                <label for="2-stars" class="star-rating__star">★</label>
+
+                <input
+                  type="radio"
+                  id="1-star"
+                  name="grade"
+                  value="1"
+                  class="star-rating__radio"
+                />
+                <label for="1-star" class="star-rating__star">★</label>
+              </div>
+
+              <div class="star-rating-form__buttons">
+                <button type="submit" class="star-rating-form__check">
+                  확인
+                </button>
+
+                <button type="reset" class="star-rating-form__cancel">
+                  취소
+                </button>
+              </div>
+            </form>
+          </div>
+        </article>
+      </section>
 
 	<script src="js/default.js"></script>
 	<script src="js/serviceNavigation.js"></script>
+	<script src="js/transaction.js"></script>
 </body>
 </html>
