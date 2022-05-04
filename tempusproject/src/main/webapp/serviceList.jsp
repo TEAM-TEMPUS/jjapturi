@@ -171,7 +171,7 @@
           	ServiceInqueryDto service = services.get(i);
           %>
             <div class="service-item">
-              <a href="#" class="service-item__inner">
+              <a href="index.jsp?home=detailPage.jsp?serviceId=<%= service.getServiceId()%>" class="service-item__inner">
                 <div class="service-item__img img-hover--color">
                   <span class="medal--status">
                     <img src="img/medal-<%= medalImageNames.get(i) %>.svg" alt="" class="medal__img <%= medalImageNames.get(i) %>" />
