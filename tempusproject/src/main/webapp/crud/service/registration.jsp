@@ -1,3 +1,4 @@
+<%@page import="data.dto.service.ServiceImageDto"%>
 <%@page import="data.dao.service.ServiceImageDao"%>
 <%@page import="data.dto.service.ServiceDto"%>
 <%@page import="data.dao.service.ServiceDao"%>
@@ -13,7 +14,11 @@
 <%
 request.setCharacterEncoding("UTF-8");
 ServiceDao serviceDao = new ServiceDao();
+ServiceImageDao serviceImageDao = new ServiceImageDao();
 
+Long serviceId = Long.parseLong(request.getParameter("serviceId"));
+Long memberId = Long.parseLong(request.getParameter("memberId"));
+String storeImageName = request.getParameter("storeImageName");
 String types = request.getParameter("types");
 String title = request.getParameter("title");
 String category = request.getParameter("category");
@@ -23,9 +28,15 @@ String endDate = request.getParameter("endDate");
 int price = Integer.parseInt(request.getParameter("price"));
 String description = request.getParameter("description");
 
-ServiceDto service = new ServiceDto(types, title, category, place, startDate, endDate, price, description);
-
+ServiceDto service = new ServiceDto(memberId, types, title, category, place, startDate, endDate, price, description);
 serviceDao.store(service);
+
+ServiceImageDto serviceImage = new ServiceImageDto(serviceId, storeImageName);
+ServiceImageDao.store(serviceImage);
+
+response.sendRedirect("../../serviceRegistration.jsp");
+
+
 %>
 </body>
 </html>
