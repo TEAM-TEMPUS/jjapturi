@@ -148,7 +148,7 @@
               value="false"
               type="radio"
               <%= types.equals("ant") ? "checked" : ""%>
-              OnClick="location.href='/tempusproject/serviceList.jsp?category=<%=category %>&types=ant'"
+              OnClick="location.href='index.jsp?home=serviceList.jsp?category=<%=category %>&types=ant'"
             />
 <!--             개미, 베짱이 해야함 -->
             <label for="toggle-on" class="btn" >개미</label>
@@ -159,7 +159,7 @@
               value="true"
               type="radio"
               <%= types.equals("grasshopper") ? "checked" : ""%>
-              OnClick="location.href='/tempusproject/serviceList.jsp?category=<%=category %>&types=grasshopper'"
+              OnClick="location.href='index.jsp?home=serviceList.jsp?category=<%=category %>&types=grasshopper'"
             />
             <label for="toggle-off" class="btn" >베짱이</label>
           </div>
