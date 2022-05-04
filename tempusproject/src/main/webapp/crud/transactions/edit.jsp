@@ -14,13 +14,16 @@
 	TradingInfoDao dao = new TradingInfoDao();
 	request.setCharacterEncoding("utf-8");
 
-	Long memberId = Long.parseLong("memberId");
-	Long serviceId = Long.parseLong("serviceId");
-	int grade = Integer.parseInt("grade");
+	
+	Long memberId = Long.parseLong(request.getParameter("memberId"));
+	Long serviceId = Long.parseLong(request.getParameter("serviceId"));
+	int grade = Integer.parseInt(request.getParameter("grade"));
 
 	TradingInfoDto tradingInfo = new TradingInfoDto(memberId, serviceId, grade);
 
 	dao.updateGrade(tradingInfo);
+	
+	response.sendRedirect("../../index.jsp?home=transaction.jsp");
 	%>
 </body>
 </html>
