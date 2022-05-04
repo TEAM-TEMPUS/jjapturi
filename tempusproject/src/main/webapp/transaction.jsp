@@ -206,12 +206,14 @@ for (MyServiceDto myService : myServices) {
 								<%} %>
 								
 							<%} else { // custom인 경우%>
-								<button type="button" class="btn__cancle <%=status.equals("reservation") ? " btn--selected" : ""%>">예약취소</button>
-								<button type="button" class="btn__completed <%=status.equals("completion") ? " btn--selected" : ""%>">거래완료</button>
+								
 								<%if (status.equals("completion")) { %>
+								<button type="button" class="btn__completed btn--selected">거래완료</button>
 								<button type="button" class="btn__star">리뷰</button>
 								
-								<%} %>
+								<%} else {%>
+								<button type="button" class="btn__cancle btn--selected">예약취소</button>								
+								<%}%>
 							<%} %>
 							
 							<% %>

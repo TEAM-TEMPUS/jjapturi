@@ -9,9 +9,10 @@ public class TradingInfoDaoTest {
 	
 	public static void main(String[] args) {
 		TradingInfoDaoTest test = new TradingInfoDaoTest();
-		test.updateGrade(1L, 33L, 4);
+//		test.updateGrade(1L, 33L, 4);
 //		test.findCompleteTradingInfosByMemberId(1L);
 //		test.getTotalCountByMemberId(1L);
+		test.deleteByMemberIdAndServiceId(5L, 41L);
 	}
 	
 	public void updateGrade(Long memberId, Long serviceId, int grade) {
@@ -27,5 +28,9 @@ public class TradingInfoDaoTest {
 	public void getTotalCountByMemberId(Long memberId) {
 		int totalCount = dao.getTotalCountByMemberId(memberId);
 		System.out.println(totalCount);
+	}
+	
+	public void deleteByMemberIdAndServiceId(Long memberId, Long serviceId) {
+		dao.deleteByMemberIdAndServiceId(memberId, serviceId);
 	}
 }
